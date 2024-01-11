@@ -1,0 +1,86 @@
+[
+    {
+        "key": "bookanartist",
+        "value": "Book An Artist",
+        "position": "Web Developer",
+        "companyURL": "https://bookanartist.co/",
+        "timeLine": {
+            "start": "Jun 2021",
+            "end": "Present"
+        },
+        "jobDescription": [
+            "Collaborated with design team to deliver high-quality user experiences, seamlessly translating wireframes and mockups into visually appealing, responsive and cross-browser compatible interfaces that met business requirements",
+            "Integrated frontend code seamlessly with backend APIs to ensure data consistency, smooth application functionality, and optimal user experiences",
+            "Transformed Mobile Application mockups into fully functional and visually appealing user interfaces, ensuring a seamless and engaging user experience",
+            "Achieved 25% faster page load times by optimizing images and implementing minification. Established a reusable UI component library for efficient development and project-wide consistency",
+            "Managed and maintained WordPress installations for multiple blogs, ensuring uptime, security, and optimal performance",
+            "Conducted in-depth research on competitors' products, including features, pricing, user experience, and marketing strategies and developed detailed reports and presentations summarizing research findings and making recommendations for product enhancements and new features"
+        ],
+        "jobSkills": "JavaScript, ReactJS, NextJS, NodeJS, React-Native, Redux, Git, Gitlab, Webpack, Core Web Vital, Page Optimization, SEO, HTML, CSS, Ant.design, WordPress, Figma, AdobeXD"
+    },
+    {
+        "key": "infratech",
+        "value": "Infratech",
+        "position": "Web Developer",
+        "companyURL": "https://infratech.ind.in/",
+        "timeLine": {
+            "start": "Jan 2021",
+            "end": "Jun 2021"
+        },
+        "jobDescription": [
+            "Proficiently redesigned and developed company websites, enhancing both aesthetics and functionality. Additionally, created a secure CRM system that streamlined the process of exporting daily website inquiries with a one-click action, ensuring efficient management and data security.",
+            "Led the creation of websites, landing pages, email templates, and a robust dashboard to streamline customer and client interactions.",
+            "Showcased expertise in optimizing website performance, effective web hosting management, and implementing SEO strategies to boost online visibility and engagement."
+        ],
+        "jobSkills": "PHP, JavaScript, HTML, CSS, Bootstrap, Figma"
+    },
+    {
+        "key": "bhri1",
+        "value": "Bhaktivedanta Hospital & Research Institute",
+        "position": "Intern",
+        "companyURL": "https://www.bhaktivedantahospital.com/",
+        "timeLine": {
+            "start": "May 2020",
+            "end": "Aug 2020"
+        },
+        "jobDescription": [
+            "Spearheaded the development of a Hospital Housekeeping Department application, transforming paper-based daily checklists into digital forms equipped with QR code functionality. This innovative solution introduced user access controls and offered a comprehensive dashboard for real-time progress tracking and operational insights",
+            "Managed and mentored a 14-member college team, emphasizing performance measurement for project success",
+            "Utilized PHP, Bootstrap, JavaScript, HTML, CSS, and SQL to create an efficient, user-friendly solution for the Hospital Housekeeping Department"
+        ],
+        "jobSkills": "PHP, JavaScript, HTML, CSS, Bootstrap"
+    },
+    {
+        "key": "bhri2",
+        "value": "Bhaktivedanta Hospital & Research Institute",
+        "position": "Intern",
+        "companyURL": "https://www.bhaktivedantahospital.com/",
+        "timeLine": {
+            "start": "December 2018",
+            "end": "January 2019"
+        },
+        "jobDescription": [
+            "Worked within the NABH (National Accreditation Board for Hospitals) department, addressing their need for tailored software solutions that met their specific requirements",
+            "Conducted comprehensive software analysis to understand and fulfill their custom requirements effectively",
+            "Proficiently handled data visualization tasks by utilizing Tableau, presenting hospital data in a visually insightful manner"
+        ],
+        "jobSkills": "Tableau"
+    },
+    {
+        "key": "apl",
+        "value": "APL",
+        "position": "Support Associate",
+        "companyURL": "https://www.apl.com/",
+        "timeLine": {
+            "start": "May 2017",
+            "end": "July 2017"
+        },
+        "jobDescription": [
+            "Integral member of a 25 persons team responsible for acquiring and processing GST data for clients, which included meticulous verification and input into their ERP system",
+            "Successfully verified and processed a substantial dataset of over 300k+ users, ensuring data accuracy and completeness",
+            "Collated daily data from fellow team members, applied data quality rules, and meticulously forwarded the organized data to the head office",
+            "Actively contributed to website quality assurance by identifying and reporting bugs to the development team, ensuring optimal functionality and user experience"
+        ],
+        "jobSkills": "CRM, Word, Excel, Powerpoint"
+    }
+]
