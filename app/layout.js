@@ -1,9 +1,11 @@
 import './globals.css';
-import { Inter, Work_Sans, Cabin, Lexend } from 'next/font/google';
+import { Lexend } from 'next/font/google';
 import Header from '@/components/header';
 import Providers from './providers';
 import classNames from 'classnames';
 import AOSInit from '@/components/AOSInit';
+import SocialMenu from '@/components/ContactMenu/SocialMenu';
+import EmailManu from '@/components/ContactMenu/EmailManu';
 
 const inter = Lexend({ subsets: ['latin'] })
 
@@ -19,9 +21,13 @@ export default function RootLayout({ children }) {
         <AOSInit />
         <Providers>
           <Header />
+          <SocialMenu 
+            source='sideMenu'
+          />
           <main className={classNames('main__wrapper', 'bg-white dark:bg-gray-900')}>
             {children}
           </main>
+          <EmailManu />
         </Providers>
       </body>
     </html>

@@ -59,7 +59,7 @@ const Header = () => {
                             </div>
                             <button onClick={toggleDrawer} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false">
                                 <span className="sr-only">Open main menu</span>
-                                <IconAssests.HumbergMenuOutlineIcon height='20' width='20' filledColor={'#ddd'} />
+                                <IconAssests.HumbergMenuOutlineIcon height='20' width='20' filledColor={'#ccd6f6'} />
                             </button>
                         </div>
                         <div className="items-center justify-between hidden w-full lg:flex md:w-auto md:order-1 pr-5">
@@ -80,7 +80,7 @@ const Header = () => {
             <aside id="default-sidebar" className={`fixed top-0 right-0 z-40 h-screen w-1/2 transition-transform ${!isDrawerOpen ? 'translate-x-full' : 'transform-none'}`} aria-label="Sidebar">
                 <div className="h-full py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     <button onClick={toggleDrawer} type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" >
-                        <IconAssests.CloseFilledIcon height='20' width='20' filledColor={'#ddd'} />
+                        <IconAssests.CloseFilledIcon height='20' width='20' filledColor={'#ccd6f6'} />
                         <span className="sr-only">Close menu</span>
                     </button>
                     <ul className="space-y-2 pt-10 font-medium">

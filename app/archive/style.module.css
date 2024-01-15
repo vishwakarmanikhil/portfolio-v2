@@ -1,0 +1,8 @@
+.main_heading__txt {
+    font-size: clamp(32px, 8vw, 70px);
+    line-height: 110%;
+}
+
+.archive__banner_wrap {
+    padding: 100px 0px;
+}
