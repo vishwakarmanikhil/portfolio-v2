@@ -2,15 +2,15 @@ import Image from 'next/image';
 import styles from './style.module.css';
 import classNames from 'classnames';
 import IconAssests from '../svgAssests/IconAssests';
-import featuredProjectList from './projectsList.json';
+import featuredProjectList from '../projectsList.json';
 import { isValidValue } from '../commonFunctions';
 
 const FeaturedProject = () => {
     return (
         <ul className={classNames(styles.featured_project__list)}>
-            {featuredProjectList?.filter(d => d?.projectType === 'featured')?.map((data, key) => {
+            {featuredProjectList?.filter(d => d?.projectType === 'featured')?.sort((a, b) => a?.projectPriority - b?.projectPriority)?.map((data, key) => {
                 return (
-                    <li key={`featured-project-${data?.key}-${key}`} className={classNames(styles.featured_project__item, key%2 == 0 ? styles.fpi__right : styles.fpi__left)}>
+                    <li key={`featured-project-${data?.key}-${key}`} className={classNames(styles.featured_project__item, key % 2 == 0 ? styles.fpi__right : styles.fpi__left)}>
                         <a href={data?.projectLink} target='_blank' className={classNames(styles.fp_image__wrap)}>
                             <Image src='/person.jpg' height='400' width='400' priority={false} className={classNames(styles.fp_image)} alt={data?.title} />
                         </a>
@@ -20,7 +20,7 @@ const FeaturedProject = () => {
                             <div className={classNames(styles.fp_description__wrap, 'p-6 bg-slate-700 dark:bg-slate-700 rounded-md')}>
                                 <p className={classNames('text-md font-medium text-gray-500 md:text-gray-400 dark:text-gray-400')}>{data?.description}</p>
                             </div>
-                            {isValidValue(data?.technology) ? 
+                            {isValidValue(data?.technology) ?
                                 <ul className={classNames(styles.fp_technology__list, 'flex flex-row flex-wrap gap-x-3 gap-y-1 mt-5 mb-5')}>
                                     {data?.technology?.split(",")?.map((data, index) => {
                                         return (
@@ -30,14 +30,14 @@ const FeaturedProject = () => {
                                         )
                                     })}
                                 </ul>
-                            :   ""}
-                            <div className={classNames(styles.fp_link__wrap, 'flex flex-row gap-3')}>
+                                : ""}
+                            <div className={classNames(styles.fp_link__wrap, 'flex flex-row gap-3', 'fp_link__wrap')}>
                                 {isValidValue(data?.repositoryLink) ?
                                     <a href={data?.repositoryLink} target='_blank'><IconAssests.GithubOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>
-                                :   ""}
+                                    : ""}
                                 {isValidValue(data?.projectLink) ?
                                     <a href={data?.projectLink} target='_blank'><IconAssests.LinkOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>
-                                :   ""}
+                                    : ""}
                             </div>
                         </div>
                     </li>

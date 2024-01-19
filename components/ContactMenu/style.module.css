@@ -36,18 +36,13 @@
     filter: brightness(0) saturate(100%) invert(52%) sepia(19%) saturate(5234%) hue-rotate(170deg) brightness(101%) contrast(83%);
 }
 
-.cms__list::after {
+.cms__item_line,
+.cme__divison_line {
     content: "";
     display: block;
-    width: 1px;
+    width: 2px;
     height: 90px;
     margin: 0px auto;
-    background-color: #ccd6f6;
-}
-
-
-.cms__dark .cms__list::after {
-    background-color: #6b728080;
 }
 
 .contact_menu__email {
@@ -72,33 +67,13 @@
     letter-spacing: 0.1em;
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
-    color: #ccd6f6;
     transition: all linear 0.3s;
 }
 
-.cme__dark a {
-    color: #6b7280;
-}
-
-.cme__link_email:hover {
-    color: #1ba5e9;
-}
-
-.cme__division::after {
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0px auto;
-    background-color: #ccd6f6;
-}
-
-.cme__dark .cme__division::after {
-    background-color: rgba(107, 114, 128, 0.5);
-}
-
 @media only screen and (max-width: 767.5px) {
-    .side_menu, .contact_menu__email {
+
+    .side_menu,
+    .contact_menu__email {
         display: none;
     }
 
@@ -111,7 +86,8 @@
         margin-top: 50px;
     }
 
-    .footer_menu ul::after {
+    .cms__item_line,
+    .cme__divison_line {
         display: none;
     }
 

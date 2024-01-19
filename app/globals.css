@@ -51,6 +51,12 @@ body {
     padding: 0px 150px;
 }
 
+.light .cms__link svg,
+.light .fp_link__wrap svg,
+.light .apc__link_list svg {
+    filter: brightness(0) saturate(100%) invert(46%) sepia(8%) saturate(692%) hue-rotate(182deg) brightness(93%) contrast(84%);
+}
+
 @media (max-width: 1080px) {
     .main__wrapper {
         padding: 0px 100px;

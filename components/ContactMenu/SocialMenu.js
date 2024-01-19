@@ -1,10 +1,7 @@
-'use client';
-
 import React from 'react';
 import IconAssests from '../svgAssests/IconAssests';
 import classNames from 'classnames';
 import style from './style.module.css';
-import { useTheme } from 'next-themes';
 
 const socialMenuList = [
     {
@@ -28,24 +25,22 @@ const socialMenuList = [
         link: 'https://www.instagram.com/nikhil_vishwakarma__/',
     },
 ];
- 
-const SocialMenu = (props) => {
-    const { resolvedTheme } = useTheme();
-    const isDarkMode = resolvedTheme === 'dark';
 
+const SocialMenu = (props) => {
     const { source } = props;
 
     return (
-        <div className={classNames(style.contact_menu__social, source === 'sideMenu' ? style.side_menu :  style.footer_menu, !isDarkMode ? style.cms__dark : '')}>
+        <div className={classNames(style.contact_menu__social, source === 'sideMenu' ? style.side_menu : style.footer_menu)}>
             <ul className={classNames(style.cms__list)}>
                 {socialMenuList?.map((data, key) => {
                     const IconComponent = IconAssests[data?.iconName];
                     return (
                         <li key={`social-link-${key}`} className={classNames(style.cms__item)}>
-                            <a href={data?.link} target='_blank' className={classNames(style.cms__link)}><IconComponent height='20' width='20' filledColor={!isDarkMode ? "#6b7280" : "#ccd6f6"} /></a>
+                            <a href={data?.link} target='_blank' className={classNames(style.cms__link, 'cms__link')}><IconComponent height='20' width='20' filledColor={'#ccd6f6'} /></a>
                         </li>
                     )
                 })}
+                <li className={classNames(style.cms__item_line, ' bg-gray-500 dark:bg-gray-400')}></li>
             </ul>
         </div>
     )

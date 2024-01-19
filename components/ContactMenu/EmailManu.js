@@ -1,18 +1,16 @@
-'use client';
-
 import React from 'react';
 import style from './style.module.css';
 import classNames from 'classnames';
-import { useTheme } from 'next-themes';
 
 const EmailManu = () => {
-    const { resolvedTheme } = useTheme();
-    let isDarkMode = resolvedTheme === 'dark';
 
     return (
-        <div className={classNames(style.contact_menu__email, !isDarkMode ? style.cme__dark : '')}>
-            <div className={classNames(style.cme__division)}>
-                <a href='mailto:vnikhil3101@gmail.com' className={classNames(style.cme__link_email)}>vnikhil3101@gmail.com</a>
+        <div className={classNames(style.contact_menu__email)}>
+            <div className={classNames('flex flex-col')}>
+                <div className={classNames(style.cme__division)}>
+                    <a href='mailto:vnikhil3101@gmail.com' className={classNames(style.cme__link_email, ' text-gray-500 dark:text-gray-400 hover:text-sky-500')}>vnikhil3101@gmail.com</a>
+                </div>
+                <div className={classNames(style.cme__divison_line, 'bg-gray-500 dark:bg-gray-400')}></div>
             </div>
         </div>
     );
