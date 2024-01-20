@@ -43,7 +43,7 @@ export default function Home() {
 
       <section className={classNames(styles.section__style, styles.experience__section)} id='experience' data-aos='fade-up'>
         <div>
-          <h2 className={classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold')}>Workplaces I've Been</h2>
+          <h2 className={classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold')}>Workplaces I&apos;ve Been</h2>
         </div>
         <div>
           <Experience />
@@ -52,7 +52,7 @@ export default function Home() {
 
       <section className={classNames(styles.section__style, styles.featured_project__section)} id='work' data-aos='fade-up'>
         <div>
-          <h2 className={classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold')}>Projects I've Crafted</h2>
+          <h2 className={classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold')}>Projects I&apos;ve Crafted</h2>
         </div>
         <div>
           <FeaturedProject />
