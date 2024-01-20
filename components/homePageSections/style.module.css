@@ -1,7 +1,7 @@
 /* Page Banner */
 
 .main_heading__txt {
-    font-size: clamp(32px, 8vw, 70px);
+    font-size: clamp(32px, 8vw, 60px);
     line-height: 110%;
     margin-bottom: 0px;
 }
@@ -35,17 +35,44 @@
     line-height: 12px;
 }
 
-.self__image {
+.self_image__wrap {
+    position: relative;
+    height: auto;
     width: 100%;
     max-width: 400px;
+    transition: all linear 0.3s;
+}
+
+.self__image {
+    position: relative;
+    background: var(--primary-color);
+    width: 100%;
+    height: auto;
     height: auto;
     border-radius: 7.5px;
-    transition: all linear 0.3s;
     margin: 0px auto;
 }
 
-.self__image:hover {
+.self_image__overlay {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 164, 233, 0.4);
+    z-index: 1;
+    border-radius: 7.5px;
+}
+
+.self_image__wrap:hover {
     transform: scale(1.05);
+}
+
+.self_image__wrap:hover .self_image__overlay {
+    display: none;
 }
 
 
@@ -115,6 +142,7 @@
     position: relative;
     width: 100%;
     height: 100%;
+    max-height: 360px;
     transition: all linear 0.3s;
 }
 
@@ -127,15 +155,17 @@
     z-index: 3;
     background: #0ea5e980;
     mix-blend-mode: screen;
+    border-radius: 5px;
 }
 
 .fp_image {
     width: 100%;
     height: 100%;
-    max-height: 360px;
     object-fit: cover;
+    object-position: left;
     filter: grayscale(100%) contrast(1) brightness(90%);
     opacity: 0.5;
+    border-radius: 5px;
 }
 
 .fp_image__wrap:hover .fp_image__wrap::before {
@@ -172,7 +202,7 @@
 }
 
 .other_project__item:hover .opi_title__txt {
-    color: #1ba5e9 !important;
+    color: var(--primary-color) !important;
 }
 
 .opi_redirect__link {
@@ -211,18 +241,18 @@
     .experience_tab__list::-webkit-scrollbar {
         height: 5px;
     }
-    
+
     .experience_tab__list::-webkit-scrollbar-track {
         background: transparent;
     }
-    
+
     .experience_tab__list::-webkit-scrollbar-thumb {
-        background: #0ea4e9;
+        background: var(--primary-color);
         border-radius: 5px;
     }
-    
+
     .experience_tab__list::-webkit-scrollbar-thumb:hover {
-        background: #0a6c9a;
+        background: var(--primary-hover-color);
     }
 
 
@@ -259,6 +289,10 @@
     .featured_project__item.fpi__right .fp_content__wrap .fp_technology__list,
     .featured_project__item.fpi__right .fp_link__wrap {
         justify-content: flex-start;
+    }
+
+    .fp_image__wrap {
+        max-height: 100%;
     }
 
     .fp_image {

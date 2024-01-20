@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+:root {
+    --primary-color: #1BA5E9;
+    --primary-hover-color: #0a6c9a;
+
+    --icon-dark-color: #000;
+    --icon-light-color: #ccd6f6;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -11,12 +20,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #0ea4e9;
+    background: var(--primary-color);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #0a6c9a;
+    background: var(--primary-hover-color);
 }
 
 * {
@@ -30,6 +39,7 @@ html,
 body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -57,6 +67,55 @@ body {
     filter: brightness(0) saturate(100%) invert(46%) sepia(8%) saturate(692%) hue-rotate(182deg) brightness(93%) contrast(84%);
 }
 
+.page__preloader {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 50%;
+    top: 50%;
+    min-height: 102px;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.page__preloader .small-circle {
+    stroke-dasharray: 210;
+    stroke-dashoffset: 210;
+    transform-origin: 50%;
+    animation: 1s draw-small infinite alternate;
+}
+
+@keyframes draw-small {
+    0% {
+        stroke-dashoffset: 0;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        stroke-dashoffset: 210;
+        transform: rotate(360deg);
+    }
+}
+
+.page__preloader .big-circle {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    transform-origin: 50%;
+    animation: 1s draw-big infinite alternate 0.5s;
+}
+
+@keyframes draw-big {
+    0% {
+        stroke-dashoffset: 0;
+        transform: rotateY(180deg) rotate(360deg);
+    }
+
+    100% {
+        stroke-dashoffset: 240;
+        transform: rotateY(180deg) rotate(0deg);
+    }
+}
+
+
 @media (max-width: 1080px) {
     .main__wrapper {
         padding: 0px 100px;
@@ -72,5 +131,11 @@ body {
 @media (max-width: 600px) {
     .main__wrapper {
         padding: 0px 20px;
+    }
+
+    .page__preloader,
+    .page__preloader svg {
+        height: 100px;
+        width: 100px;
     }
 }

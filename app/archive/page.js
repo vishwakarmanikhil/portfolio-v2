@@ -4,7 +4,8 @@ import style from './style.module.css';
 import ProjectList from '../../components/projectsList.json';
 import { isValidValue } from '@/components/commonFunctions';
 import IconAssests from '@/components/svgAssests/IconAssests';
-import SocialMenu from '@/components/ContactMenu/SocialMenu';
+import Color from '@/constants/color';
+import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 
 const tableHeader = [
     {
@@ -41,11 +42,11 @@ const Archive = () => {
     return (
         <section className={classNames(style.archive__page)}>
             <div className={classNames(style.archive__banner_wrap)}>
-                <h1 className={classNames(style.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-4')}>Archive</h1>
-                <p className={classNames('text-lg tracking-wider font-regular text-sky-500 dark:text-sky-500')}>A big list of things I&apos;ve worked on</p>
+                <h1 className={classNames(style.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-4')} data-aos='fade-up' data-aos-delay='900'>Archive</h1>
+                <p className={classNames('text-lg tracking-wider font-regular text-sky-500 dark:text-sky-500')} data-aos='fade-up' data-aos-delay='1000'>A Vast Array of Projects I've Engaged With</p>
             </div>
 
-            <div className={classNames(style.archive__project_wrap)}>
+            <div className={classNames(style.archive__project_wrap)} data-aos='fade-up' data-aos-delay='1100'>
                 <div className={classNames(style.ap__table)}>
                     <div className={classNames(style.ap__row, 'px-5 py-3 mb-5')}>
                         {tableHeader.map((data, key) => {
@@ -68,7 +69,7 @@ const Archive = () => {
                                 </div>
                                 <div className={classNames(style.ap__column)}>
                                     {isValidValue(data?.companyName) ?
-                                        <a href={data?.companyLink} target='_blank' className={classNames(style.ap__item, 'text-md font-normal text-gray-500 dark:text-gray-400 hover:text-sky-500')}>{data?.companyName}</a>
+                                        <a href={data?.companyLink} target='_blank' className={classNames(style.ap__item, 'text-md font-normal text-gray-500 dark:text-gray-400 hover:text-sky-500')} title={data?.companyName}>{data?.companyName}</a>
                                         :
                                         <p className={classNames(style.ap__item, 'text-md font-normal text-gray-500 dark:text-gray-400')}>—</p>
                                     }
@@ -83,11 +84,11 @@ const Archive = () => {
                                     </ul>
                                 </div>
                                 <div className={classNames(style.ap__column, 'flex flex-row flex-wrap gap-3', 'apc__link_list')}>
-                                    {isValidValue(data?.repositoryLink) && <a href={data?.repositoryLink} target='_blank' className={classNames(style.ap__item)}><IconAssests.GithubOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>}
-                                    {isValidValue(data?.projectLink) && <a href={data?.projectLink} target='_blank' className={classNames(style.ap__item)}><IconAssests.LinkOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>}
-                                    {isValidValue(data?.androidAppStoreLink) && <a href={data?.androidAppStoreLink} target='_blank' className={classNames(style.ap__item)}><IconAssests.GooglePlayStoreOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>}
-                                    {isValidValue(data?.appleAppStoreLink) && <a href={data?.appleAppStoreLink} target='_blank' className={classNames(style.ap__item)}><IconAssests.AppleStoreOutlineIcon height='30' width='30' filledColor={'#ccd6f6'} /></a>}
-                                    {isValidValue(data?.otherLink) && <a href={data?.otherLink} target='_blank' className={classNames(style.ap__item)}><IconAssests.LinkOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>}
+                                    {isValidValue(data?.repositoryLink) && <a href={data?.repositoryLink} target='_blank' className={classNames(style.ap__item)} title='Github project link'><IconAssests.GithubOutlineIcon height='25' width='25' filledColor={Color.iconDark} /></a>}
+                                    {isValidValue(data?.projectLink) && <a href={data?.projectLink} target='_blank' className={classNames(style.ap__item)} title='Project Live link'><IconAssests.LinkOutlineIcon height='25' width='25' filledColor={Color.iconDark} /></a>}
+                                    {isValidValue(data?.androidAppStoreLink) && <a href={data?.androidAppStoreLink} target='_blank' className={classNames(style.ap__item)} title='Project playstore link'><IconAssests.GooglePlayStoreOutlineIcon height='25' width='25' filledColor={Color.iconDark} /></a>}
+                                    {isValidValue(data?.appleAppStoreLink) && <a href={data?.appleAppStoreLink} target='_blank' className={classNames(style.ap__item)} title='Project applestore link'><IconAssests.AppleStoreOutlineIcon height='30' width='30' filledColor={Color.iconDark} /></a>}
+                                    {isValidValue(data?.otherLink) && <a href={data?.otherLink} target='_blank' className={classNames(style.ap__item)} title='project other link'><IconAssests.LinkOutlineIcon height='25' width='25' filledColor={Color.iconDark} /></a>}
                                 </div>
                             </div>
                         )
@@ -96,10 +97,8 @@ const Archive = () => {
                 </div>
             </div>
 
-            <div className={classNames('pb-20')}>
-                <SocialMenu
-                    source='footer'
-                />
+            <div className={classNames('pb-5')}>
+                <DeveloperCredit />
             </div>
         </section>
     )

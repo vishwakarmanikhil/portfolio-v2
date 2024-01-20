@@ -46,6 +46,7 @@
 .featured_project__section {
   margin: 0px auto;
   max-width: 1000px;
+  overflow: hidden;
 }
 
 .featured_project__contact {
@@ -59,7 +60,7 @@
   max-width: 600px;
 }
 
-@media only screen and (max-width: 767.5px) { 
+@media only screen and (max-width: 767.5px) {
   .section__style {
     padding: 80px 0px;
   }
@@ -73,7 +74,7 @@
   }
 }
 
-@media only screen and (max-width: 767.5px) { 
+@media only screen and (max-width: 767.5px) {
   .section__style {
     padding: 50px 0px;
   }

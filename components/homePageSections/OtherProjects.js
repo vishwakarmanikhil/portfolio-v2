@@ -3,6 +3,7 @@ import otherProjectsList from '../projectsList.json';
 import IconAssests from '../svgAssests/IconAssests';
 import { isValidValue } from '../commonFunctions';
 import styles from './style.module.css';
+import Color from "@/constants/color";
 
 const OtherProjects = () => {
 
@@ -10,29 +11,29 @@ const OtherProjects = () => {
         <ul className={classNames(styles.other_project__list)}>
             {otherProjectsList?.filter(d => d?.projectType === 'normal')?.sort((a, b) => a?.projectPriority - b?.projectPriority)?.map((data, key) => {
                 return (
-                    <li key={`normal-project-${data?.key}-${key}`} className={classNames(styles.other_project__item, 'p-5 md:p-7 bg-slate-700 dark:bg-slate-700 rounded-md')}>
+                    <li key={`normal-project-${data?.key}-${key}`} className={classNames(styles.other_project__item, 'p-5 md:p-7 bg-slate-700 dark:bg-slate-700 rounded-md')} data-aos='fade-up' data-aos-delay={`${key * 200}`}>
                         <div className='flex flex-row items-center justify-between mb-7'>
                             <div>
-                                <IconAssests.FolderOutlineIcon height="40" width="40" filledColor={"#1ba5e9"} />
+                                <IconAssests.FolderOutlineIcon height="40" width="40" filledColor={Color.primary} />
                             </div>
                             <div className={classNames('flex flex-row gap-3')}>
                                 {isValidValue(data?.repositoryLink) ?
-                                    <a href={data?.repositoryLink} target='_blank' className={classNames('z-10')}><IconAssests.GithubOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>
+                                    <a href={data?.repositoryLink} title='github project link' target='_blank' className={classNames('z-10')}><IconAssests.GithubOutlineIcon height='25' width='25' filledColor={Color.iconDark} /></a>
                                     : ""}
                                 {isValidValue(data?.projectLink) ?
-                                    <a href={data?.projectLink} target='_blank' className={classNames('z-10')}><IconAssests.LinkOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>
+                                    <a href={data?.projectLink} title='project link' target='_blank' className={classNames('z-10')}><IconAssests.LinkOutlineIcon height='25' width='25' filledColor={Color.iconDark} /></a>
                                     : ""}
                                 {isValidValue(data?.androidAppStoreLink) ?
-                                    <a href={data?.androidAppStoreLink} target='_blank' className={classNames('z-10')}><IconAssests.GooglePlayStoreOutlineIcon height='25' width='25' filledColor={'#ccd6f6'} /></a>
+                                    <a href={data?.androidAppStoreLink} title='playstore app link' target='_blank' className={classNames('z-10')}><IconAssests.GooglePlayStoreOutlineIcon height='25' width='25' filledColor={Color.iconDark} /></a>
                                     : ""}
                                 {isValidValue(data?.appleAppStoreLink) ?
-                                    <a href={data?.appleAppStoreLink} target='_blank' className={classNames('z-10')}><IconAssests.AppleStoreOutlineIcon height='30' width='30' filledColor={'#ccd6f6'} /></a>
+                                    <a href={data?.appleAppStoreLink} title='applestore app link' target='_blank' className={classNames('z-10')}><IconAssests.AppleStoreOutlineIcon height='30' width='30' filledColor={Color.iconDark} /></a>
                                     : ""}
                             </div>
                         </div>
                         <h3 className={classNames(styles.opi_title__txt, 'block text-xl font-bold text-gray-100 dark:text-gray-300 mb-5')}>
                             {isValidValue(data?.projectLink) ?
-                                <a href={data?.projectLink} className={classNames(styles.opi_redirect__link)}>{data?.title}</a>
+                                <a href={data?.projectLink} title={`${data?.title} link`} className={classNames(styles.opi_redirect__link)}>{data?.title}</a>
                                 :
                                 <p>{data?.title}</p>
                             }

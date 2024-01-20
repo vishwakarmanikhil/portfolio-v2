@@ -292,7 +292,7 @@
         "key": "personal-portfolio-V2",
         "projectType": "featured",
         "projectPriority": 1,
-        "image": "invoice-generator.png",
+        "image": "personal-portfolio-V2.png",
         "title": "Personal Portfolio V2",
         "description": "Welcome to the enhanced version of my personal portfolio website, designed to showcase my introduction, work experience, projects, and a dedicated contact section. Leveraging the power of Next.js, Tailwind CSS, and Webpack, this dynamic platform offers a seamless and engaging experience for visitors.",
         "technology": "NextJS, Tailwind, Webpack",

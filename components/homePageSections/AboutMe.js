@@ -4,42 +4,46 @@ import Image from 'next/image';
 
 const AboutMe = () => {
 
-    return (
-        <div className={classNames(styles.about__container)}>
-          <div className={classNames(styles.about__left_wrap)}>
-            <div>
-              <p className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!</p>
+  return (
+    <div className={classNames(styles.about__container)}>
+      <div className={classNames(styles.about__left_wrap)} data-aos='fade-up' data-aos-delay='100'>
+        <div>
+          <p className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>Hi! I'm Nikhil Vishwakarma. I enjoy exploring the internet for technology insights and implementing them hands-on for "Learning by Doing". I began my career in a logistics company as a support associate for data verification. While working with CRM, I found myself debugging and reporting issues, sparking my passion for engineering.</p>
 
-              <p className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.</p>
+          <div className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>Today, with expertise gained from working with <a href='https://www.apl.com/' target='_blank' title='APL India Private Limited' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>a major logistics company</a>, <a href='https://www.bhaktivedantahospital.com/' target='_blank' title='Bhaktivedanta Hospital & Research Institute' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>a hospitality sector</a>, <a href='https://infratech.ind.in/' target='_blank' title='Infratech' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>a real estate agency</a>, and <a href='https://bookanartist.co/' target='_blank' title='Book An Artist' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>a startup</a>, I continually learn and expand my skills online. I aim to bring valuable insights to the companies I serve.</div>
 
-              <p className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.</p>
-            </div>
-
-            <div>
-              <p className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>Here are a few technologies I've been working with recently:</p>
-              <ul className={classNames(styles.skill__list)}>
-                <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>JavaScript (ES6+)</li>
-                <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>Webpack</li>
-                <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>ReactJS</li>
-                <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>Wordpress</li>
-                <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>NextJS</li>
-                <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>PHP</li>
-                <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>NodeJS</li>
-              </ul>
-            </div>
-          </div>
-          <div className={classNames(styles.about__right_wrap)}>
-            <Image 
-              src='/person.jpg'
-              priority={false}
-              className={classNames(styles.self__image)}
-              height={500}
-              width={500}
-              alt=''
-            />
-          </div>
+          <p className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>Outside of work, I enjoy being a helping hand and visiting temples to delve deeper into Indian sanskriti. !! Hare Krishna<span>❤ </span>
+            !!</p>
         </div>
-    );
+
+        <div>
+          <p className={classNames('text-md font-medium text-gray-500 dark:text-gray-400 mb-3')}>Here are some technologies I've actively engaged with recently:</p>
+          <ul className={classNames(styles.skill__list)}>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>JavaScript</li>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>Webpack</li>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>ReactJS</li>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>Wordpress</li>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>NextJS</li>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>PHP</li>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>NodeJS</li>
+          </ul>
+        </div>
+      </div>
+      <div className={classNames(styles.about__right_wrap)} data-aos='zoom-in' data-aos-delay='100'>
+        <div className={classNames(styles.self_image__wrap)}>
+          <div className={classNames(styles.self_image__overlay)}></div>
+          <Image
+            src='https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png'
+            priority={false}
+            className={classNames(styles.self__image)}
+            height={500}
+            width={500}
+            alt={`It's me Nikhil Vishwakarma`}
+          />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default AboutMe;
