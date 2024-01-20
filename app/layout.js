@@ -7,6 +7,7 @@ import { AOSInit } from '@/components/AOSInit';
 import SocialMenu from '@/components/ContactMenu/SocialMenu';
 import EmailManu from '@/components/ContactMenu/EmailManu';
 import Loader from './loader';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -59,12 +60,16 @@ export const metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  other: {
+    author: 'Nikhil Vishwakarma',
+  },
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <body suppressHydrationWarning={true} className={classNames(lexend.className, "dark:bg-gray-800")}>
+        <div className='bg__overlay'></div>
         <AOSInit />
         <Providers>
           <Loader>
@@ -78,6 +83,7 @@ export default function RootLayout({ children }) {
             <EmailManu />
           </Loader>
         </Providers>
+        <GoogleAnalytics gaId="G-MLXN9M48Q2" />
       </body>
     </html>
   )
