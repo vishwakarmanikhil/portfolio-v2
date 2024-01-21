@@ -69,7 +69,7 @@ const Header = () => {
                             <div className='w-16'>
                                 <ThemeSwitch />
                             </div>
-                            <button onClick={toggleDrawer} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-cta" aria-expanded="false" title='Menu toggler' name='Menu toggler'>
+                            <button onClick={toggleDrawer} type="button" className="inline-flex items-center z-10 p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" title='Menu toggler' name='Menu toggler'>
                                 <span className="sr-only">Open main menu</span>
                                 <IconAssests.HumbergMenuOutlineIcon height='20' width='20' filledColor={Color.iconDark} />
                             </button>
@@ -91,7 +91,7 @@ const Header = () => {
 
             <aside id="default-sidebar" className={`fixed top-0 right-0 z-40 h-screen w-1/2 transition-transform ${!isDrawerOpen ? 'translate-x-full' : 'transform-none'}`} aria-label="Sidebar">
                 <div className="h-full py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-                    <button onClick={toggleDrawer} type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" title='Close Menu Drawer' name='Close Menu Drawer'>
+                    <button onClick={toggleDrawer} type="button" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 end-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" title='Close Menu Drawer' name='Close Menu Drawer'>
                         <IconAssests.CloseFilledIcon height='20' width='20' filledColor={Color.iconDark} />
                         <span className="sr-only">Close menu</span>
                     </button>
@@ -99,7 +99,7 @@ const Header = () => {
                         {menuLink?.map((data, index) => {
                             return (
                                 <li key={`mobile-menu-${index}`}>
-                                    <a href={`/#${data?.link}`} title={data?.link} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                    <a href={`/#${data?.link}`} title={data?.link} onClick={toggleDrawer} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                         <span className="flex-1 ms-3 text-md text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white whitespace-nowrap">{data?.name}</span>
                                     </a>
                                 </li>

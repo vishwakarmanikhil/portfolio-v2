@@ -1,10 +1,14 @@
 import classNames from 'classnames';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './style.module.css';
 import WorkExperience from './workExperience.json';
 
 const Experience = () => {
-    const [activeTab, setActiveTab] = useState('bookanartist');
+    const [activeTab, setActiveTab] = useState('');
+
+    useEffect(() => {
+        setActiveTab(WorkExperience?.[0]?.key);
+    }, [WorkExperience]);
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
