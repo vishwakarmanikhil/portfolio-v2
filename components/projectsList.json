@@ -295,7 +295,7 @@
         "image": "personal-portfolio-V2.png",
         "title": "Personal Portfolio V2",
         "description": "Welcome to the enhanced version of my personal portfolio website, designed to showcase my introduction, work experience, projects, and a dedicated contact section. Leveraging the power of Next.js, Tailwind CSS, and Webpack, this dynamic platform offers a seamless and engaging experience for visitors.",
-        "technology": "NextJS, Tailwind, Webpack",
+        "technology": "NextJS, Tailwind, Webpack, Vercel",
         "repositoryLink": "https://github.com/vishwakarmanikhil/portfolio-v2-public",
         "projectLink": "https://nikhilvishwakarma.com/",
         "androidAppStoreLink": "",

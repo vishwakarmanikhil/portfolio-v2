@@ -17,7 +17,7 @@ const Experience = () => {
     return (
         <div className={classNames('flex flex-col md:flex-row')} data-aos='fade-up' data-aos-delay='100'>
             <div className="border-s-0 md:border-s border-b md:border-b-0 border-gray-200 dark:border-gray-700 h-max">
-                <nav className={classNames(styles.experience_tab__list, "flex flex-row md:flex-col overflow-auto md:overflow-hidden")} aria-label="Tabs" role="tablist" data-hs-tabs-vertical="true">
+                <nav className={classNames(styles.experience_tab__list, "flex flex-row md:flex-col overflow-auto md:overflow-hidden pb-1")} aria-label="Tabs" role="tablist" data-hs-tabs-vertical="true">
                     {WorkExperience?.map((data, key) => {
                         return (
                             <button key={`tab-button-${data?.key}-${key}`} onClick={() => handleTabClick(data?.key)} type="button" className={classNames('py-3 ps-5 pe-5 md:pe-3 inline-flex items-center gap-x-2 text-sm whitespace-nowrap  hover:text-sky-600 focus:outline-none focus:text-sky-600 disabled:opacity-50 disabled:pointer-events-none dark:text-gray-400 dark:hover:text-sky-500 w-auto md:w-52 hover:bg-sky-100 dark:hover:bg-gray-800 transition duration-150 ease-out hover:ease-in', activeTab === data?.key ? 'text-sky-500 dark:text-sky-500 border-s-0 md:border-s-4 border-b-4 md:border-b-0 border-sky-500 dark:border-sky-500' : 'text-gray-500 border-s-0 md:border-s-4 border-b-4 md:border-b-0 border-transparent dark:border-transparent')} id={`vertical-tab-with-border-item-${key + 1}`} data-hs-tab={`#vertical-tab-with-border-${key + 1}`} aria-controls={`vertical-tab-with-border-${key + 1}`} role="tab" title={`${data?.value} tab`} name={`${data?.value} tab`}>

@@ -61,7 +61,7 @@ const Header = () => {
         <header className={classNames(isSticky && style.header__sticky, isDrawerOpen ? ' overflow-visible' : 'overflow-hidden', 'shadow-xl shadow-gray-100/55 dark:shadow-gray-900/55')}>
             <nav className="bg-white border-gray-200 dark:bg-gray-900">
                 <div className="max-w-screen-xxl flex flex-wrap items-center justify-between mx-auto py-4 px-4 md:px-12">
-                    <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse" title='Nikhil Vishwakarma'>
+                    <Link href="/" className="flex items-center z-10 space-x-3 rtl:space-x-reverse" title='Nikhil Vishwakarma'>
                         <LogoAssets.LogoMini height='40' width='40' filledColor={Color.primary} />
                     </Link>
                     <div className='flex'>

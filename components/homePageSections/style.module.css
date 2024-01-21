@@ -243,7 +243,8 @@
     }
 
     .experience_tab__list::-webkit-scrollbar-track {
-        background: transparent;
+        background: #ddd;
+        border-radius: 5px;
     }
 
     .experience_tab__list::-webkit-scrollbar-thumb {

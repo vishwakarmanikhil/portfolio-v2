@@ -19,9 +19,12 @@ export default function Loader({ children }) {
                     {children}
                 </Fragment>
             ) : (
-                <div className="page__preloader">
-                    <LogoAssets.LoaderLogoIcon height='150' width='150' filledColor={Color.primary} />
-                </div>
+                <Fragment>
+                    <div className="page__preloader">
+                        <LogoAssets.LoaderLogoIcon height='150' width='150' filledColor={Color.primary} />
+                    </div>
+                    <p className="page__preloader_txt text-gray-300 dark:text-sky-900">Learning by Doing</p>
+                </Fragment>
             )}
         </Fragment>
     )
