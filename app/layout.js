@@ -63,6 +63,9 @@ export const metadata = {
   other: {
     author: 'Nikhil Vishwakarma',
   },
+  verification: {
+    google: 'KK0pw48bFRbf5iwW7yHi5JDOEoP_bYxG1SXs1iPff9o'
+  }
 }
 
 export default function RootLayout({ children }) {
