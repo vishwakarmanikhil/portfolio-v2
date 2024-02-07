@@ -20,7 +20,7 @@ const PageBanner = () => {
                 </p>
             </div>
             <div className='mt-5' data-aos='fade-up' data-aos-delay='1200'>
-                <a href='https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/Nikhil%20Vishwakarma%20resume.pdf' target='_blank' title='resume link' className="inline-block px-6 py-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900">Check out my Resume!</a>
+                <a href='https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/Nikhil-Vishwakarma-resume.pdf' target='_blank' title='resume link' className="inline-block px-6 py-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900">Check out my Resume!</a>
             </div>
         </div>
     );
