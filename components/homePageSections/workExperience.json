@@ -1,15 +1,33 @@
 [
     {
+        "key": "aartas",
+        "value": "Aartas",
+        "position": "Software Developer",
+        "companyURL": "https://aartas.com/",
+        "timeLine": {
+            "start": "February 2024",
+            "end": "Present"
+        },
+        "jobDescription": [
+            "Leading a team in product development, creating software that enhances user experience for doctors and improves patient care",
+            "Developing a rich text editor from scratch for doctors to create EMRs (prescriptions), templates, and forms, ensuring a seamless and intuitive user interface ",
+            "Designed and developed the product from inception, collaborating closely with designers and the founding team to gather and refine requirements, ensuring the final product aligns with user needs and business goals ",
+            "Integrated key features such as calendar scheduling, patient appointment booking, patient lists, sales reports, and AI-driven insights (GalenAI) to provide a comprehensive and efficient tool for healthcare professionals"
+        ],
+        "jobSkills": "JavaScript, ReactJS, NextJS, NodeJS, Redux, Git, Github, Webpack, Core Web Vital, Page Optimization, SEO, HTML, CSS, Ant.design, Figma"
+    },
+    {
         "key": "bookanartist",
         "value": "Book An Artist",
         "position": "Web Developer",
         "companyURL": "https://bookanartist.co/",
         "timeLine": {
             "start": "Jun 2021",
-            "end": "Present"
+            "end": "January 2024"
         },
         "jobDescription": [
             "Collaborated with design team to deliver high-quality user experiences, seamlessly translating wireframes and mockups into visually appealing, responsive and cross-browser compatible interfaces that met business requirements",
+            "Converted design wireframes into fully functional email templates from scratch using HTML/CSS, with expertise in creating templates on stripo.email.",
             "Integrated frontend code seamlessly with backend APIs to ensure data consistency, smooth application functionality, and optimal user experiences",
             "Transformed Mobile Application mockups into fully functional and visually appealing user interfaces, ensuring a seamless and engaging user experience",
             "Achieved 25% faster page load times by optimizing images and implementing minification. Established a reusable UI component library for efficient development and project-wide consistency",
