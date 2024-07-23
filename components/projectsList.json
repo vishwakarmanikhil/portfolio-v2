@@ -256,8 +256,8 @@
     },
     {
         "key": "app-usage-visualizer",
-        "projectType": "normal",
-        "projectPriority": "1",
+        "projectType": "",
+        "projectPriority": "",
         "image": "app-usage-visualizer.png",
         "title": "App Usage Visualizer",
         "description": "Developed a dynamic React application that serves as an intuitive app usage visualizer. The app utilizes JSON data containing on and off times throughout the day for various applications. The centerpiece is a donut graph, representing a 24-hour clock, where each application's usage is depicted by colored areas based on its active periods. Users can easily switch between different apps using a dropdown menu, gaining insights into their usage patterns over time.",
@@ -304,5 +304,22 @@
         "companyName": "",
         "companyLink": "",
         "createdDate": "20-01-2024"
+    },
+    {
+        "key": "aartas-clinisaure",
+        "projectType": "normal",
+        "projectPriority": 1,
+        "image": "",
+        "title": "Clinisquare",
+        "description": "CliniSquare is a robust yet user-friendly software designed for doctors, offering seamless access to essential tools. It includes a comprehensive calendar for scheduling, a patient booking system, sales tracking, and a powerful electronic medical record (EMR) feature. This all-in-one solution enhances efficiency and patient care through intuitive and accessible technology.",
+        "technology": "Javascript, ReactJS, NextJS, NodeJS, SQL, HTML, CSS, Ant Design",
+        "repositoryLink": "",
+        "projectLink": "https://clinisquare.com/",
+        "androidAppStoreLink": "",
+        "appleAppStoreLink": "",
+        "otherLink": "",
+        "companyName": "",
+        "companyLink": "",
+        "createdDate": "01-03-2024"
     }
 ]
