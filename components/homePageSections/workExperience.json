@@ -1,13 +1,16 @@
 [
     {
         "key": "aartas",
-        "value": "Aartas",
+        "companyName": "Aartas",
         "position": "Software Developer",
+        "employmentType": "FULL_TIME",
         "companyURL": "https://aartas.com/",
         "timeLine": {
             "start": "February 2024",
             "end": "Present"
         },
+        "isoStart": "2024-02",
+        "isoEnd": null,
         "jobDescription": [
             "Leading a team in product development, creating software that enhances user experience for doctors and improves patient care",
             "Developing a rich text editor from scratch for doctors to create EMRs (prescriptions), templates, and forms, ensuring a seamless and intuitive user interface ",
@@ -18,13 +21,16 @@
     },
     {
         "key": "bookanartist",
-        "value": "Book An Artist",
+        "companyName": "Book An Artist",
         "position": "Web Developer",
+        "employmentType": "FULL_TIME",
         "companyURL": "https://bookanartist.co/",
         "timeLine": {
-            "start": "Jun 2021",
+            "start": "June 2021",
             "end": "January 2024"
         },
+        "isoStart": "2021-06",
+        "isoEnd": "2024-01",
         "jobDescription": [
             "Collaborated with design team to deliver high-quality user experiences, seamlessly translating wireframes and mockups into visually appealing, responsive and cross-browser compatible interfaces that met business requirements",
             "Converted design wireframes into fully functional email templates from scratch using HTML/CSS, with expertise in creating templates on stripo.email.",
@@ -38,13 +44,16 @@
     },
     {
         "key": "infratech",
-        "value": "Infratech",
+        "companyName": "Infratech",
         "position": "Web Developer",
+        "employmentType": "FULL_TIME",
         "companyURL": "https://infratech.ind.in/",
         "timeLine": {
-            "start": "Jan 2021",
-            "end": "Jun 2021"
+            "start": "January 2021",
+            "end": "June 2021"
         },
+        "isoStart": "2021-01",
+        "isoEnd": "2021-06",
         "jobDescription": [
             "Proficiently redesigned and developed company websites, enhancing both aesthetics and functionality. Additionally, created a secure CRM system that streamlined the process of exporting daily website inquiries with a one-click action, ensuring efficient management and data security.",
             "Led the creation of websites, landing pages, email templates, and a robust dashboard to streamline customer and client interactions.",
@@ -54,13 +63,16 @@
     },
     {
         "key": "bhri1",
-        "value": "Bhaktivedanta Hospital & Research Institute",
+        "companyName": "Bhaktivedanta Hospital & Research Institute",
         "position": "Web Developer Intern",
+        "employmentType": "INTERNSHIP",
         "companyURL": "https://www.bhaktivedantahospital.com/",
         "timeLine": {
             "start": "May 2020",
-            "end": "Aug 2020"
+            "end": "August 2020"
         },
+        "isoStart": "2020-05",
+        "isoEnd": "2020-08",
         "jobDescription": [
             "Spearheaded the development of a Hospital Housekeeping Department application, transforming paper-based daily checklists into digital forms equipped with QR code functionality. This innovative solution introduced user access controls and offered a comprehensive dashboard for real-time progress tracking and operational insights",
             "Managed and mentored a 14-member college team, emphasizing performance measurement for project success",
@@ -70,13 +82,16 @@
     },
     {
         "key": "bhri2",
-        "value": "Bhaktivedanta Hospital & Research Institute",
+        "companyName": "Bhaktivedanta Hospital & Research Institute",
         "position": "Intern",
+        "employmentType": "INTERNSHIP",
         "companyURL": "https://www.bhaktivedantahospital.com/",
         "timeLine": {
             "start": "December 2018",
             "end": "January 2019"
         },
+        "isoStart": "2018-12",
+        "isoEnd": "2019-01",
         "jobDescription": [
             "Worked within the NABH (National Accreditation Board for Hospitals) department, addressing their need for tailored software solutions that met their specific requirements",
             "Conducted comprehensive software analysis to understand and fulfill their custom requirements effectively",
@@ -86,13 +101,16 @@
     },
     {
         "key": "apl",
-        "value": "APL",
+        "companyName": "APL",
         "position": "Support Associate",
+        "employmentType": "FULL_TIME",
         "companyURL": "https://www.apl.com/",
         "timeLine": {
             "start": "May 2017",
             "end": "July 2017"
         },
+        "isoStart": "2017-05",
+        "isoEnd": "2017-07",
         "jobDescription": [
             "Integral member of a 25 persons team responsible for acquiring and processing GST data for clients, which included meticulous verification and input into their ERP system",
             "Successfully verified and processed a substantial dataset of over 300k+ users, ensuring data accuracy and completeness",

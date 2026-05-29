@@ -7,7 +7,8 @@ import { AOSInit } from '@/components/AOSInit';
 import SocialMenu from '@/components/ContactMenu/SocialMenu';
 import EmailManu from '@/components/ContactMenu/EmailManu';
 import Loader from './loader';
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google';
+import workExperience from '@/components/homePageSections/workExperience.json';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -24,7 +25,7 @@ export const metadata = {
       'de-DE': '/de-DE',
     },
   },
-  title: 'Nikhil Vishwakarma',
+  title: 'Nikhil Vishwakarma | Software Developer',
   description: 'Experienced software engineer dedicated to building, researching, and getting things done.',
   icons: {
     icon: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/favicon-16x16.png',
@@ -39,22 +40,15 @@ export const metadata = {
   manifest: '/site.webmanifest',
   twitter: {
     card: 'summary_large_image',
-    title: 'Nikhil Vishwakarma',
-    description: 'Experienced software engineer dedicated to building, researching, and getting things done.',
-    creator: '@vishwakarmanikhil',
-    images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
-  },
-  og: {
-    card: 'summary_large_image',
-    title: 'Nikhil Vishwakarma',
+    title: 'Nikhil Vishwakarma | Software Developer',
     description: 'Experienced software engineer dedicated to building, researching, and getting things done.',
     creator: '@vishwakarmanikhil',
     images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
   },
   openGraph: {
-    title: 'Nikhil Vishwakarma',
+    title: 'Nikhil Vishwakarma | Software Developer',
     description: 'Experienced software engineer dedicated to building, researching, and getting things done.',
-    url: 'nikhilvishwakarma.com',
+    url: 'https://nikhilvishwakarma.com',
     siteName: 'Nikhil Vishwakarma',
     images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
     locale: 'en_US',
@@ -68,10 +62,60 @@ export const metadata = {
   }
 }
 
+const currentJob = workExperience[0];
+
+const allSkills = [...new Set(
+  workExperience.flatMap(job =>
+    job.jobSkills?.split(',').map(s => s.trim()).filter(Boolean) ?? []
+  )
+)];
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Nikhil Vishwakarma',
+  url: 'https://nikhilvishwakarma.com',
+  image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png',
+  jobTitle: currentJob.position,
+  description: 'Experienced software engineer dedicated to building, researching, and getting things done.',
+  email: 'vnikhil3101@gmail.com',
+  sameAs: [
+    'https://github.com/vishwakarmanikhil',
+    'https://www.linkedin.com/in/vishwakarmanikhil/',
+    'https://www.facebook.com/profile.php?id=100047871463007',
+    'https://www.instagram.com/nikhil_vishwakarma__/',
+  ],
+  worksFor: {
+    '@type': 'Organization',
+    name: currentJob.companyName,
+    url: currentJob.companyURL,
+  },
+  knowsAbout: allSkills,
+  hasOccupation: workExperience.map(job => ({
+    '@type': 'Role',
+    roleName: job.position,
+    startDate: job.isoStart,
+    ...(job.isoEnd && { endDate: job.isoEnd }),
+    hasOccupation: {
+      '@type': 'Occupation',
+      name: job.position,
+      occupationLocation: {
+        '@type': 'Organization',
+        name: job.companyName,
+        url: job.companyURL,
+      },
+    },
+  })),
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true} className="dark">
       <body suppressHydrationWarning={true} className={classNames(lexend.className, "dark:bg-gray-800")}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         <div className='bg__overlay'></div>
         <AOSInit />
         <Providers>
