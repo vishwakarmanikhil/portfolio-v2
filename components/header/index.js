@@ -100,7 +100,7 @@ const Header = () => {
                             return (
                                 <li key={`mobile-menu-${index}`}>
                                     <a href={`/#${data?.link}`} title={data?.link} onClick={toggleDrawer} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                                        <span className="flex-1 ms-3 text-md text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white whitespace-nowrap">{data?.name}</span>
+                                        <span className="flex-1 ms-3 text-base text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white whitespace-nowrap">{data?.name}</span>
                                     </a>
                                 </li>
                             )
