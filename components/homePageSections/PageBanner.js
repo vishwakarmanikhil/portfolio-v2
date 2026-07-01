@@ -16,7 +16,7 @@ const PageBanner = () => {
             </div>
             <div className='mt-5 md:w-1/2' data-aos='fade-up' data-aos-delay='1050'>
                 <div className={classNames('text-base font-normal text-gray-500 dark:text-gray-400')}>
-                    Experienced software engineer dedicated to building, researching, and getting things done. Currently, I’m building accessible, human-centred applications at <a href='https://aartas.com/' target='_blank' className=" text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg hover:text-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent">Aartas</a> to help doctors deliver better patient care through technology.
+                    Software Engineer with 5+ years of experience building scalable SaaS and healthcare products. Currently leading cross-functional teams at <a href='https://aartas.com/' target='_blank' className=" text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg hover:text-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent">Aartas</a>, architecting cloud infrastructure and delivering AI-powered platforms that help doctors deliver better patient care.
                 </div>
             </div>
             <div className='mt-5' data-aos='fade-up' data-aos-delay='1200'>

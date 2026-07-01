@@ -12,12 +12,13 @@
         "isoStart": "2024-02",
         "isoEnd": null,
         "jobDescription": [
-            "Leading a team in product development, creating software that enhances user experience for doctors and improves patient care",
-            "Developing a rich text editor from scratch for doctors to create EMRs (prescriptions), templates, and forms, ensuring a seamless and intuitive user interface ",
-            "Designed and developed the product from inception, collaborating closely with designers and the founding team to gather and refine requirements, ensuring the final product aligns with user needs and business goals ",
-            "Integrated key features such as calendar scheduling, patient appointment booking, patient lists, sales reports, Internal team chat, Communication with patient through personalized whatsapp and email channel, Forms, Analytics, Video Call, Customized portfolio and AI-driven insights (GalenAI) to provide a comprehensive and efficient tool for healthcare professionals"
+            "Led cross-functional teams across UI/UX, Frontend, Backend, AI, and DevOps to deliver healthcare products from concept to production, driving technical strategy and execution",
+            "Architected and built scalable healthcare platforms including EMRs, patient management, scheduling, analytics, and AI-powered workflows, with hands-on contributions across frontend, backend, and cloud infrastructure",
+            "Developed a next-generation rich text editor from scratch for clinical documentation, enabling customizable prescriptions, templates, and EMRs",
+            "Integrated Meta WhatsApp Business API, PhonePe, and Razorpay to streamline patient communication, notifications, and payment experiences",
+            "Defined engineering standards through system design, code reviews, and AWS infrastructure management (EC2, S3, Redis, SQS), ensuring high availability and scalable deployments"
         ],
-        "jobSkills": "JavaScript, ReactJS, NextJS, NodeJS, Redux, Git, Github, Webpack, Core Web Vital, Page Optimization, SEO, HTML, CSS, Ant.design, Figma"
+        "jobSkills": "JavaScript, ReactJS, NextJS, NodeJS, Redux, MySQL, MongoDB, AWS, EC2, S3, SQS, Redis, Meta WhatsApp Business API, PhonePe, Razorpay, HTML, CSS, Ant Design, Figma, Adobe XD, Tailwind css"
     },
     {
         "key": "bookanartist",
