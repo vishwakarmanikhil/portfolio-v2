@@ -153,7 +153,7 @@
     height: 100%;
     inset: 0px;
     z-index: 3;
-    background: #0ea5e980;
+    /* background: #0ea5e980; */
     mix-blend-mode: screen;
     border-radius: 5px;
 }
@@ -163,7 +163,7 @@
     height: 100%;
     object-fit: cover;
     object-position: left;
-    filter: grayscale(100%) contrast(1) brightness(90%);
+    /* filter: grayscale(100%) contrast(1) brightness(90%); */
     opacity: 0.5;
     border-radius: 5px;
 }
