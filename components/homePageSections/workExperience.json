@@ -12,13 +12,13 @@
         "isoStart": "2024-02",
         "isoEnd": null,
         "jobDescription": [
-            "Led cross-functional teams across UI/UX, Frontend, Backend, AI, and DevOps to deliver healthcare products from concept to production, driving technical strategy and execution",
-            "Architected and built scalable healthcare platforms including EMRs, patient management, scheduling, analytics, and AI-powered workflows, with hands-on contributions across frontend, backend, and cloud infrastructure",
-            "Developed a next-generation rich text editor from scratch for clinical documentation, enabling customizable prescriptions, templates, and EMRs",
-            "Integrated Meta WhatsApp Business API, PhonePe, and Razorpay to streamline patient communication, notifications, and payment experiences",
-            "Defined engineering standards through system design, code reviews, and AWS infrastructure management (EC2, S3, Redis, SQS), ensuring high availability and scalable deployments"
+            "Architected healthcare platform serving 500+ doctors and 50k+ patients, processing 10k+ appointments/month on AWS (EC2, S3, SQS, Redis) — ensuring high availability and scalable deployments",
+            "Led cross-functional teams across UI/UX, Frontend, Backend, AI, and DevOps to deliver EMRs, scheduling, analytics, and AI-powered clinical workflows from concept to production",
+            "Built a next-generation rich text editor from scratch for clinical documentation, enabling customizable prescriptions, templates, and EMRs used daily by medical professionals",
+            "Integrated Meta WhatsApp Business API, PhonePe, and Razorpay, streamlining patient communication, automated notifications, and end-to-end payment flows",
+            "Defined engineering standards through system design and code reviews, establishing patterns adopted across the entire engineering team"
         ],
-        "jobSkills": "JavaScript, ReactJS, NextJS, NodeJS, Redux, MySQL, MongoDB, AWS, EC2, S3, SQS, Redis, Meta WhatsApp Business API, PhonePe, Razorpay, HTML, CSS, Ant Design, Figma, Adobe XD, Tailwind css"
+        "jobSkills": "JavaScript, TypeScript, ReactJS, NextJS, NodeJS, Redux, MySQL, AWS, EC2, S3, SQS, Redis, Meta WhatsApp Business API, PhonePe, Razorpay, HTML, CSS, Ant Design, Tailwind CSS, Figma"
     },
     {
         "key": "bookanartist",
@@ -33,15 +33,12 @@
         "isoStart": "2021-06",
         "isoEnd": "2024-01",
         "jobDescription": [
-            "Collaborated with design team to deliver high-quality user experiences, seamlessly translating wireframes and mockups into visually appealing, responsive and cross-browser compatible interfaces that met business requirements",
-            "Converted design wireframes into fully functional email templates from scratch using HTML/CSS, with expertise in creating templates on stripo.email.",
-            "Integrated frontend code seamlessly with backend APIs to ensure data consistency, smooth application functionality, and optimal user experiences",
-            "Transformed Mobile Application mockups into fully functional and visually appealing user interfaces, ensuring a seamless and engaging user experience",
-            "Achieved 25% faster page load times by optimizing images and implementing minification. Established a reusable UI component library for efficient development and project-wide consistency",
-            "Managed and maintained WordPress installations for multiple blogs, ensuring uptime, security, and optimal performance",
-            "Conducted in-depth research on competitors' products, including features, pricing, user experience, and marketing strategies and developed detailed reports and presentations summarizing research findings and making recommendations for product enhancements and new features"
+            "Led development of a cross-platform React Native mobile app, now live on both Google Play and the Apple App Store, delivering a seamless experience for artists and clients",
+            "Achieved 25% faster page load times by optimizing images and implementing minification; established a reusable UI component library adopted project-wide",
+            "Integrated frontend code with backend APIs ensuring data consistency and smooth application functionality across web and mobile platforms",
+            "Translated wireframes and mockups into responsive, cross-browser compatible interfaces meeting business requirements across web and mobile"
         ],
-        "jobSkills": "JavaScript, ReactJS, NextJS, NodeJS, React-Native, Redux, Git, Gitlab, Webpack, Core Web Vital, Page Optimization, SEO, HTML, CSS, Ant.design, WordPress, Figma, AdobeXD"
+        "jobSkills": "JavaScript, TypeScript, ReactJS, NextJS, React Native, NodeJS, Redux, SQL, Ant Design, HTML, CSS, Figma"
     },
     {
         "key": "infratech",
@@ -56,11 +53,11 @@
         "isoStart": "2021-01",
         "isoEnd": "2021-06",
         "jobDescription": [
-            "Proficiently redesigned and developed company websites, enhancing both aesthetics and functionality. Additionally, created a secure CRM system that streamlined the process of exporting daily website inquiries with a one-click action, ensuring efficient management and data security.",
-            "Led the creation of websites, landing pages, email templates, and a robust dashboard to streamline customer and client interactions.",
-            "Showcased expertise in optimizing website performance, effective web hosting management, and implementing SEO strategies to boost online visibility and engagement."
+            "Redesigned and developed company websites, enhancing both aesthetics and functionality",
+            "Built a secure CRM system that streamlined daily website inquiry exports with a one-click action, ensuring efficient lead management and data security",
+            "Optimized website performance, managed web hosting, and implemented SEO strategies to boost online visibility"
         ],
-        "jobSkills": "PHP, JavaScript, HTML, CSS, Bootstrap, Figma"
+        "jobSkills": "JavaScript, HTML, CSS, PHP, Bootstrap, Figma"
     },
     {
         "key": "bhri1",
@@ -75,16 +72,15 @@
         "isoStart": "2020-05",
         "isoEnd": "2020-08",
         "jobDescription": [
-            "Spearheaded the development of a Hospital Housekeeping Department application, transforming paper-based daily checklists into digital forms equipped with QR code functionality. This innovative solution introduced user access controls and offered a comprehensive dashboard for real-time progress tracking and operational insights",
-            "Managed and mentored a 14-member college team, emphasizing performance measurement for project success",
-            "Utilized PHP, Bootstrap, JavaScript, HTML, CSS, and SQL to create an efficient, user-friendly solution for the Hospital Housekeeping Department"
+            "Built a Hospital Housekeeping digital system replacing paper checklists with QR-based digital workflows, user access controls, and a real-time dashboard for progress tracking",
+            "Led a 14-member college team, coordinating project execution and performance tracking"
         ],
         "jobSkills": "PHP, JavaScript, HTML, CSS, Bootstrap"
     },
     {
         "key": "bhri2",
         "companyName": "Bhaktivedanta Hospital & Research Institute",
-        "position": "Intern",
+        "position": "Intern — NABH Department",
         "employmentType": "INTERNSHIP",
         "companyURL": "https://www.bhaktivedantahospital.com/",
         "timeLine": {
@@ -94,30 +90,9 @@
         "isoStart": "2018-12",
         "isoEnd": "2019-01",
         "jobDescription": [
-            "Worked within the NABH (National Accreditation Board for Hospitals) department, addressing their need for tailored software solutions that met their specific requirements",
-            "Conducted comprehensive software analysis to understand and fulfill their custom requirements effectively",
-            "Proficiently handled data visualization tasks by utilizing Tableau, presenting hospital data in a visually insightful manner"
+            "Analyzed and supported custom software requirements for NABH compliance workflows",
+            "Created data visualization dashboards for hospital reporting and operational insights using Tableau"
         ],
         "jobSkills": "Tableau"
-    },
-    {
-        "key": "apl",
-        "companyName": "APL",
-        "position": "Support Associate",
-        "employmentType": "FULL_TIME",
-        "companyURL": "https://www.apl.com/",
-        "timeLine": {
-            "start": "May 2017",
-            "end": "July 2017"
-        },
-        "isoStart": "2017-05",
-        "isoEnd": "2017-07",
-        "jobDescription": [
-            "Integral member of a 25 persons team responsible for acquiring and processing GST data for clients, which included meticulous verification and input into their ERP system",
-            "Successfully verified and processed a substantial dataset of over 300k+ users, ensuring data accuracy and completeness",
-            "Collated daily data from fellow team members, applied data quality rules, and meticulously forwarded the organized data to the head office",
-            "Actively contributed to website quality assurance by identifying and reporting bugs to the development team, ensuring optimal functionality and user experience"
-        ],
-        "jobSkills": "CRM, Word, Excel, Powerpoint"
     }
 ]
