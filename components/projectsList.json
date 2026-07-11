@@ -1,8 +1,25 @@
 [
     {
-        "key": "aartas-clinisaure",
+        "key": "noteloom",
         "projectType": "featured",
         "projectPriority": 1,
+        "image": "noteloom.avif",
+        "title": "Noteloom — Open Source Editor",
+        "description": "Noteloom is an open-source rich text editor built for everyone. Whether you're writing notes, documentation, or long-form content, it offers a clean, distraction-free editing experience with powerful formatting and an intuitive interface. Use it freely, explore the codebase, and contribute to help make Noteloom even better.",
+        "technology": "ReactJS, JavaScript, HTML, CSS",
+        "repositoryLink": "",
+        "projectLink": "https://noteloom.qusere.in/",
+        "androidAppStoreLink": "",
+        "appleAppStoreLink": "",
+        "otherLink": "",
+        "companyName": "",
+        "companyLink": "",
+        "createdDate": "01-07-2026"
+    },
+    {
+        "key": "aartas-higalen",
+        "projectType": "featured",
+        "projectPriority": 2,
         "image": "higalen.avif",
         "title": "HiGalen",
         "description": "HiGalen is a scalable healthcare SaaS platform built for doctors, architected and led end-to-end from concept to production. It includes a next-generation EMR with rich text editing, calendar scheduling, patient booking, sales tracking, analytics, AI-powered clinical workflows (GalenAI), video calls, WhatsApp and email patient communication, payment integrations, and customizable doctor portfolios.",
@@ -18,7 +35,7 @@
     },
     {
         "key": "notevo",
-        "projectType": "featured",
+        "projectType": "",
         "projectPriority": 2,
         "image": "notevo.avif",
         "title": "Notevo — Smart Note Editor",
@@ -46,8 +63,8 @@
         "androidAppStoreLink": "",
         "appleAppStoreLink": "",
         "otherLink": "",
-        "companyName": "",
-        "companyLink": "",
+        "companyName": "Aartas",
+        "companyLink": "https://aartas.com/",
         "createdDate": "01-01-2026"
     },
     {
