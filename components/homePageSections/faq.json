@@ -1,0 +1,30 @@
+[
+    {
+        "question": "Who is Nikhil Vishwakarma?",
+        "answer": "Nikhil Vishwakarma is a Full-Stack Engineer based in Mumbai, India, with 5+ years of experience building production web and mobile products across healthcare SaaS, entertainment marketplaces and real estate. He works across the whole stack, from database design and APIs to user interfaces and AWS deployment."
+    },
+    {
+        "question": "What tech stack does Nikhil work with?",
+        "answer": "Nikhil works mainly with React, Next.js, React Native, Node.js, Express.js, TypeScript, MySQL, PostgreSQL, Redis and AWS (EC2, S3, SQS). He also builds LLM-powered product features and uses AI coding tools such as Claude, ChatGPT and GitHub Copilot every day."
+    },
+    {
+        "question": "What has Nikhil built?",
+        "answer": "Most recently, Nikhil built core modules of HiGalen, a multi-tenant healthcare SaaS platform serving 500+ doctors, 50k+ patients and 10k+ appointments per month. His work there includes a custom clinical rich-text editor, appointment booking, billing, WhatsApp patient communication and LLM-powered clinical workflows. Before that, he built the Book An Artist mobile app in React Native, which is live on Google Play and the Apple App Store."
+    },
+    {
+        "question": "What experience does Nikhil have with AI?",
+        "answer": "Nikhil has shipped LLM-powered features to production: document data extraction and summarization, voice-recording transcription and summaries, and AI-assisted prescription writing for doctors. He also uses Claude, ChatGPT and GitHub Copilot daily for code generation, refactoring, debugging and code review."
+    },
+    {
+        "question": "Has Nikhil led an engineering team?",
+        "answer": "Yes. At Aartas, Nikhil led a team of 6 developers through task planning, code reviews, mentoring and technical decisions, and defined coding standards and system design patterns that the team adopted."
+    },
+    {
+        "question": "Is Nikhil open to new roles?",
+        "answer": "Yes. Nikhil is open to full-stack engineering roles and can join immediately. He is based in Mumbai, India."
+    },
+    {
+        "question": "How can I contact Nikhil?",
+        "answer": "You can email Nikhil at vnikhil3101@gmail.com or message him on LinkedIn at linkedin.com/in/vishwakarmanikhil. His resume is linked at the top of this page."
+    }
+]

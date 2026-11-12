@@ -35,7 +35,7 @@ const OtherProjects = () => {
                             {isValidValue(data?.projectLink) ?
                                 <a href={data?.projectLink} title={`${data?.title} link`} className={classNames(styles.opi_redirect__link)}>{data?.title}</a>
                                 :
-                                <p>{data?.title}</p>
+                                <span>{data?.title}</span>
                             }
                         </h3>
                         <p className={classNames('text-sm font-normal text-gray-500 md:text-gray-300 dark:text-gray-400')}>{data?.description}</p>
