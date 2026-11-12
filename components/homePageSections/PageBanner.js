@@ -6,17 +6,17 @@ const PageBanner = () => {
     return (
         <div>
             <div className='mb-5' data-aos='fade-up' data-aos-delay='900'>
-                <h1 className={classNames('text-sm font-medium text-sky-500 dark:text-sky-500')}>Hi, my name is</h1>
+                <p className={classNames('text-sm font-medium text-sky-500 dark:text-sky-500')}>Hi, my name is</p>
             </div>
             <div className='' data-aos='fade-up' data-aos-delay='950'>
-                <h2 className={classNames(styles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold')}>Nikhil Vishwakarma.</h2>
+                <h1 className={classNames(styles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold')}>Nikhil Vishwakarma.</h1>
             </div>
             <div className='' data-aos='fade-up' data-aos-delay='1000'>
-                <h3 className={classNames(styles.main_heading__txt, 'text-gray-600 dark:text-gray-400 font-bold')}>I bring web ideas to vibrant life.</h3>
+                <p className={classNames(styles.main_heading__txt, 'text-gray-600 dark:text-gray-400 font-bold')}>I bring web ideas to vibrant life.</p>
             </div>
             <div className='mt-5 md:w-1/2' data-aos='fade-up' data-aos-delay='1050'>
                 <div className={classNames('text-base font-normal text-gray-500 dark:text-gray-400')}>
-                    Software Engineer with 5+ years of experience building scalable SaaS and healthcare products. Currently leading cross-functional teams at <a href='https://aartas.com/' target='_blank' className=" text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg hover:text-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent">Aartas</a>, architecting cloud infrastructure and delivering AI-powered platforms that help doctors deliver better patient care.
+                    Full-Stack Engineer with 5+ years of experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript and AWS. Most recently at <a href='https://aartas.com/' target='_blank' className=" text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg hover:text-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent">Aartas</a>, I built core parts of <a href='https://higalen.com/' target='_blank' className=" text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg hover:text-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent">HiGalen</a>, a multi-tenant healthcare platform for 500+ doctors, including a custom clinical editor and LLM-powered workflows. Open to senior full-stack roles and available to join immediately.
                 </div>
             </div>
             <div className='mt-5' data-aos='fade-up' data-aos-delay='1200'>

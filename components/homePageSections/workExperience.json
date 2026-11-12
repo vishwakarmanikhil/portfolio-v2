@@ -1,24 +1,28 @@
 [
     {
         "key": "aartas",
-        "companyName": "Aartas",
+        "companyName": "Aartas (HiGalen)",
         "position": "Software Developer",
         "employmentType": "FULL_TIME",
         "companyURL": "https://aartas.com/",
         "timeLine": {
             "start": "February 2024",
-            "end": "Present"
+            "end": "September 2026"
         },
         "isoStart": "2024-02",
-        "isoEnd": null,
+        "isoEnd": "2026-09",
         "jobDescription": [
-            "Architected healthcare platform serving 500+ doctors and 50k+ patients, processing 10k+ appointments/month on AWS (EC2, S3, SQS, Redis) — ensuring high availability and scalable deployments",
-            "Led cross-functional teams across UI/UX, Frontend, Backend, AI, and DevOps to deliver EMRs, scheduling, analytics, and AI-powered clinical workflows from concept to production",
-            "Built a next-generation rich text editor from scratch for clinical documentation, enabling customizable prescriptions, templates, and EMRs used daily by medical professionals",
-            "Integrated Meta WhatsApp Business API, PhonePe, and Razorpay, streamlining patient communication, automated notifications, and end-to-end payment flows",
-            "Defined engineering standards through system design and code reviews, establishing patterns adopted across the entire engineering team"
+            "Built core modules of HiGalen, a multi-tenant healthcare SaaS platform serving 500+ doctors, 50k+ patients and 10k+ appointments per month, with organization-level data isolation and role-based access control (RBAC)",
+            "Designed and built a custom clinical rich-text editor from scratch in React and JavaScript, without any third-party editor framework, powering prescription and clinical-note templates with inline elements, tables and structured clinical data used daily by doctors",
+            "Developed LLM-powered clinical workflows: document data extraction and summarization, voice-recording transcription and summaries, and AI-assisted prescription writing",
+            "Built end-to-end product modules: appointment booking, patient management, billing, cloud document management, internal team chat, business analytics dashboards, forms and team management",
+            "Integrated Meta WhatsApp Business API, Razorpay and PhonePe for patient communication, automated notifications and online payments",
+            "Owned about half of backend development (Node.js, Express.js, MySQL), including REST API design, database schema design and third-party integrations",
+            "Set up and managed AWS infrastructure end to end (EC2, S3, SQS, Redis), covering provisioning, deployment, configuration and CI/CD",
+            "Led a team of 6 developers through task planning, code reviews, mentoring and technical decisions; defined coding standards and system design patterns adopted across the team",
+            "Used AI coding tools (Claude, ChatGPT, GitHub Copilot) daily for code generation, refactoring, debugging and code review to speed up feature delivery"
         ],
-        "jobSkills": "JavaScript, TypeScript, ReactJS, NextJS, NodeJS, Redux, MySQL, AWS, EC2, S3, SQS, Redis, Meta WhatsApp Business API, PhonePe, Razorpay, HTML, CSS, Ant Design, Tailwind CSS, Figma"
+        "jobSkills": "JavaScript, TypeScript, React, Next.js, Node.js, Express.js, Redux, MySQL, AWS, EC2, S3, SQS, Redis, LLM APIs, Prompt Engineering, Meta WhatsApp Business API, PhonePe, Razorpay, Ant Design, Tailwind CSS, Claude, ChatGPT, GitHub Copilot"
     },
     {
         "key": "bookanartist",
@@ -33,12 +37,13 @@
         "isoStart": "2021-06",
         "isoEnd": "2024-01",
         "jobDescription": [
-            "Led development of a cross-platform React Native mobile app, now live on both Google Play and the Apple App Store, delivering a seamless experience for artists and clients",
-            "Achieved 25% faster page load times by optimizing images and implementing minification; established a reusable UI component library adopted project-wide",
-            "Integrated frontend code with backend APIs ensuring data consistency and smooth application functionality across web and mobile platforms",
-            "Translated wireframes and mockups into responsive, cross-browser compatible interfaces meeting business requirements across web and mobile"
+            "Built and shipped the Book An Artist cross-platform mobile app in React Native, live on Google Play and the Apple App Store",
+            "Developed responsive web applications with React, Next.js, Redux and Ant Design from Figma designs, integrated with Node.js backend APIs",
+            "Improved page-load performance by 25% through image optimization and code minification",
+            "Built a reusable UI component library used across projects, improving UI consistency and development speed",
+            "Built BookTree, a Next.js link-management platform that lets artists share all their links on one page"
         ],
-        "jobSkills": "JavaScript, TypeScript, ReactJS, NextJS, React Native, NodeJS, Redux, SQL, Ant Design, HTML, CSS, Figma"
+        "jobSkills": "JavaScript, TypeScript, React, Next.js, React Native, Node.js, Redux, SQL, Ant Design, HTML, CSS, Figma"
     },
     {
         "key": "infratech",

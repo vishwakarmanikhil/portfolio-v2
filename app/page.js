@@ -11,6 +11,7 @@ import ContactMe from '@/components/homePageSections/ContactMe';
 import AboutMe from '@/components/homePageSections/AboutMe';
 import PageBanner from '@/components/homePageSections/PageBanner';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
+import Faq from '@/components/homePageSections/Faq';
 
 export default function Home() {
   useEffect(() => {
@@ -70,6 +71,13 @@ export default function Home() {
             <Link href={'/archive'} className="inline-block p-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900" title='view the archive'>view the archive</Link>
           </div>
         </div>
+      </section>
+
+      <section className={classNames(styles.section__style)} id='faq'>
+        <div data-aos='fade-up'>
+          <h2 className={classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold')}>Frequently Asked Questions</h2>
+        </div>
+        <Faq />
       </section>
 
       <section className={classNames(styles.section__style, styles.featured_project__contact)} id='contact'>

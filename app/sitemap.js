@@ -3,7 +3,7 @@ export default function sitemap() {
         {
             url: 'https://nikhilvishwakarma.com/',
             lastModified: new Date(),
-            changeFrequency: 'montly',
+            changeFrequency: 'monthly',
             priority: 1,
         },
         {
