@@ -1,13 +1,13 @@
 export default function sitemap() {
     return [
         {
-            url: 'https://nikhilvishwakarma.com/',
+            url: 'https://www.nikhilvishwakarma.com/',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 1,
         },
         {
-            url: 'https://nikhilvishwakarma.com/archive',
+            url: 'https://www.nikhilvishwakarma.com/archive',
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,

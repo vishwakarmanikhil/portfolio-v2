@@ -4,7 +4,7 @@ export default function robots() {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://nikhilvishwakarma.com/sitemap.xml',
-        host: 'https://nikhilvishwakarma.com',
+        sitemap: 'https://www.nikhilvishwakarma.com/sitemap.xml',
+        host: 'https://www.nikhilvishwakarma.com',
     }
 }

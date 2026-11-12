@@ -18,9 +18,12 @@ export const viewport = {
 }
 
 export const metadata = {
-  metadataBase: new URL('https://nikhilvishwakarma.com'),
+  metadataBase: new URL('https://www.nikhilvishwakarma.com'),
   alternates: {
     canonical: '/',
+    types: {
+      'text/markdown': '/llms.txt',
+    },
   },
   title: 'Nikhil Vishwakarma | Full-Stack Engineer',
   description: 'Full-Stack Engineer with 5+ years building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
@@ -45,7 +48,7 @@ export const metadata = {
   openGraph: {
     title: 'Nikhil Vishwakarma | Full-Stack Engineer',
     description: 'Full-Stack Engineer with 5+ years building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
-    url: 'https://nikhilvishwakarma.com',
+    url: 'https://www.nikhilvishwakarma.com',
     siteName: 'Nikhil Vishwakarma',
     images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
     locale: 'en_US',
@@ -59,7 +62,7 @@ export const metadata = {
   }
 }
 
-const SITE_URL = 'https://nikhilvishwakarma.com';
+const SITE_URL = 'https://www.nikhilvishwakarma.com';
 const PERSON_ID = `${SITE_URL}/#person`;
 const currentJob = workExperience[0];
 
