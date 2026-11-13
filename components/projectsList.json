@@ -150,7 +150,7 @@
         "projectPriority": "",
         "image": "",
         "title": "Coworkspace",
-        "description": "A modern, conversion-focused website template for co-working space providers, built with Next.js. Features membership tiers (day passes, dedicated desks, private and team offices), member testimonials, location details, an amenities checklist, and clear \"Book a Tour\" calls to action, with clean typography and workspace hero imagery.",
+        "description": "A conversion-focused website template for co-working space providers, built with Next.js. Includes membership plans (day passes, dedicated desks, private and team offices), solution and location pages, member testimonials, FAQs, a blog and enquiry pages, with clear \"Book a Tour\" calls to action.",
         "technology": "NextJS, HTML, CSS, Tailwind CSS",
         "repositoryLink": "",
         "projectLink": "https://coworkspace.nikhilvishwakarma.com/",
@@ -214,6 +214,24 @@
         "companyName": "Book An Artist",
         "companyLink": "https://bookanartist.co/",
         "createdDate": "01-07-2021"
+    },
+    {
+        "key": "infinity-realty-pune",
+        "projectType": "",
+        "category": "freelance",
+        "projectPriority": "",
+        "image": "",
+        "title": "Infinity Realty",
+        "description": "Real estate website for Infinity Realty, which sells farmhouse, weekend-home and investment plots near Pune in the Sahyadri Hills. Features a page for each project location, plot types, amenities, buyer FAQs, legal and document guidance before booking, customer testimonials and an enquiry form that connects buyers with plot advisors.",
+        "technology": "HTML, CSS, JavaScript, Tailwind CSS, PHP",
+        "repositoryLink": "",
+        "projectLink": "https://infinityrealtypune.com/",
+        "androidAppStoreLink": "",
+        "appleAppStoreLink": "",
+        "otherLink": "",
+        "companyName": "Infinity Realty",
+        "companyLink": "https://infinityrealtypune.com/",
+        "createdDate": "01-11-2026"
     },
     {
         "key": "prime-properties-jd",

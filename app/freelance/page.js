@@ -10,6 +10,8 @@ import { isValidValue } from '@/components/commonFunctions';
 import IconAssests from '@/components/svgAssests/IconAssests';
 import Color from '@/constants/color';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
+import FaqAccordion from '@/components/FaqAccordion';
+import ServiceIcon from '@/components/freelance/ServiceIcon';
 
 const SITE_URL = 'https://www.nikhilvishwakarma.com';
 const PAGE_URL = `${SITE_URL}/freelance`;
@@ -96,7 +98,7 @@ const Freelance = () => {
                 <p className={classNames('text-sm font-medium text-sky-500 mb-5')} data-aos='fade-up' data-aos-delay='100'>Freelance</p>
                 <h1 className={classNames(archiveStyles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-6')} data-aos='fade-up' data-aos-delay='150'>Freelance web developer in Mumbai.</h1>
                 <p className={classNames(textClass, 'md:w-2/3 mb-8')} data-aos='fade-up' data-aos-delay='200'>
-                    I build fast, SEO-ready websites and web apps for small businesses: real estate firms, service businesses, agencies and professionals. I have 5+ years of experience as a full-stack engineer, and I have delivered projects for {clientProjects.length} clients since 2021.
+                    I build fast, SEO-ready websites and web apps for small businesses: real estate firms, service businesses, agencies and professionals. I have 5+ years of experience as a full-stack developer, and I have delivered projects for {clientProjects.length} clients since 2021.
                 </p>
                 <div data-aos='fade-up' data-aos-delay='250'>
                     <a href={MAILTO} className={buttonClass} title={`Email ${EMAIL}`}>Email me about your project</a>
@@ -107,11 +109,23 @@ const Freelance = () => {
             <section className={classNames(styles.section__style)} id='services'>
                 <h2 className={titleClass} data-aos='fade-up'>What can I build for your business?</h2>
                 <p className={classNames(textClass, 'mb-10')} data-aos='fade-up'>Websites and web apps that load fast, work well on phones, and help customers find and contact you.</p>
-                <ul className={classNames('grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8')}>
+                <ul className={classNames('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5')}>
                     {freelance.services.map((service, key) => (
-                        <li key={`service-${key}`} data-aos='fade-up' data-aos-delay={`${(key % 2) * 100}`}>
-                            <h3 className={classNames('text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2')}>{service.title}</h3>
-                            <p className={textClass}>{service.description}</p>
+                        <li key={`service-${key}`} data-aos='fade-up' data-aos-delay={`${(key % 3) * 100}`}>
+                            <div className={classNames('group relative h-full overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700/80 bg-white/70 dark:bg-gray-800/40 p-6 transition duration-300 hover:-translate-y-1 hover:border-sky-500/70 hover:shadow-xl hover:shadow-sky-500/10')}>
+                                <span aria-hidden="true" className={classNames('absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-sky-500/0 via-sky-500 to-sky-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100')} />
+                                <div className={classNames('mb-5 flex h-12 w-12 items-center justify-center rounded-lg bg-sky-500/10 text-sky-500 ring-1 ring-sky-500/20 transition-colors duration-300 group-hover:bg-sky-500 group-hover:text-white')}>
+                                    <ServiceIcon name={service.icon} />
+                                </div>
+                                <h3 className={classNames('text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2')}>{service.title}</h3>
+                                <p className={classNames('text-sm leading-6 font-medium text-gray-500 dark:text-gray-400')}>{service.description}</p>
+                                {service.tags?.length > 0 &&
+                                    <ul className={classNames('mt-5 flex flex-wrap gap-2')}>
+                                        {service.tags.map(tag => (
+                                            <li key={`${service.icon}-${tag}`} className={classNames('rounded-full bg-gray-100 dark:bg-gray-900/70 px-3 py-1 text-xs font-medium text-sky-600 dark:text-sky-400')}>{tag}</li>
+                                        ))}
+                                    </ul>}
+                            </div>
                         </li>
                     ))}
                 </ul>
@@ -143,27 +157,31 @@ const Freelance = () => {
 
             <section className={classNames(styles.section__style)} id='process'>
                 <h2 className={titleClass} data-aos='fade-up'>How does a project work?</h2>
-                <p className={classNames(textClass, 'mb-10')} data-aos='fade-up'>Four steps, with a written scope and price agreed before any work starts.</p>
-                <ol className={classNames('grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8')}>
-                    {freelance.process.map((step, key) => (
-                        <li key={`step-${key}`} data-aos='fade-up' data-aos-delay={`${(key % 2) * 100}`}>
-                            <h3 className={classNames('text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2')}><span className='text-sky-500'>{key + 1}.</span> {step.title}</h3>
-                            <p className={textClass}>{step.description}</p>
-                        </li>
-                    ))}
-                </ol>
+                <p className={classNames(textClass, 'mb-14')} data-aos='fade-up'>Four steps, with a written scope and price agreed before any work starts.</p>
+                <div className={classNames('relative')}>
+                    <div aria-hidden="true" className={classNames('hidden md:block absolute top-7 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-sky-500/20 via-sky-500/70 to-sky-500/20')} />
+                    <ol className={classNames('relative grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6')}>
+                        {freelance.process.map((step, key) => (
+                            <li key={`step-${key}`} className={classNames('relative flex gap-5 md:flex-col md:items-center md:text-center')} data-aos='fade-up' data-aos-delay={`${key * 150}`}>
+                                {key < freelance.process.length - 1 &&
+                                    <span aria-hidden="true" className={classNames('md:hidden absolute left-7 top-14 -bottom-10 w-0.5 -translate-x-1/2 bg-sky-500/40')} />}
+                                <div className={classNames('relative z-10 flex h-14 w-14 shrink-0 items-center justify-center rounded-full border-2 border-sky-500 bg-white dark:bg-gray-900 text-lg font-bold text-sky-500 shadow-lg shadow-sky-500/20')}>
+                                    {String(key + 1).padStart(2, '0')}
+                                </div>
+                                <div className={classNames('md:mt-6 md:px-2')}>
+                                    <p className={classNames('text-xs font-semibold uppercase tracking-widest text-sky-500 mb-1')}>Step {key + 1}</p>
+                                    <h3 className={classNames('text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2')}>{step.title}</h3>
+                                    <p className={classNames('text-sm leading-6 font-medium text-gray-500 dark:text-gray-400')}>{step.description}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ol>
+                </div>
             </section>
 
             <section className={classNames(styles.section__style)} id='faq'>
                 <h2 className={titleClass} data-aos='fade-up'>Questions clients ask</h2>
-                <div className={classNames('grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8')}>
-                    {freelance.faq.map((item, key) => (
-                        <div key={`freelance-faq-${key}`} data-aos='fade-up' data-aos-delay={`${(key % 2) * 100}`}>
-                            <h3 className={classNames('text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2')}>{item.question}</h3>
-                            <p className={textClass}>{item.answer}</p>
-                        </div>
-                    ))}
-                </div>
+                <FaqAccordion items={freelance.faq} idPrefix='client-faq' />
             </section>
 
             <section className={classNames(styles.section__style, 'flex flex-col items-center text-center')} id='contact'>

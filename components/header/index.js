@@ -10,6 +10,7 @@ import LogoAssets from '../svgAssests/LogoAssets';
 import Color from '@/constants/color';
 
 const menuLink = [
+    { name: 'Home', href: '/' },
     { name: 'About', link: 'about' },
     { name: 'Experience', link: 'experience' },
     { name: 'Work', link: 'work' },

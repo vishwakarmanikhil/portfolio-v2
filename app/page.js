@@ -24,7 +24,7 @@ const homeStructuredData = {
       '@type': 'ProfilePage',
       '@id': `${SITE_URL}/#profilepage`,
       url: SITE_URL,
-      name: 'Nikhil Vishwakarma | Full-Stack Engineer',
+      name: 'Nikhil Vishwakarma | Senior Software Developer',
       isPartOf: { '@id': `${SITE_URL}/#website` },
       mainEntity: { '@id': `${SITE_URL}/#person` },
     },
@@ -105,7 +105,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={classNames(styles.section__style)} id='faq'>
+      <section className={classNames(styles.section__style, styles.about__section)} id='faq'>
         <div data-aos='fade-up'>
           <h2 className={classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold')}>Frequently Asked Questions</h2>
         </div>
