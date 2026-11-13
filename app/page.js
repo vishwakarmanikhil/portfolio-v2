@@ -12,6 +12,34 @@ import AboutMe from '@/components/homePageSections/AboutMe';
 import PageBanner from '@/components/homePageSections/PageBanner';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 import Faq from '@/components/homePageSections/Faq';
+import faqList from '@/components/homePageSections/faq.json';
+
+const SITE_URL = 'https://www.nikhilvishwakarma.com';
+
+// Homepage-only structured data. WebSite and Person are defined site-wide in layout.js.
+const homeStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'ProfilePage',
+      '@id': `${SITE_URL}/#profilepage`,
+      url: SITE_URL,
+      name: 'Nikhil Vishwakarma | Full-Stack Engineer',
+      isPartOf: { '@id': `${SITE_URL}/#website` },
+      mainEntity: { '@id': `${SITE_URL}/#person` },
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${SITE_URL}/#faq`,
+      url: SITE_URL,
+      mainEntity: faqList.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: { '@type': 'Answer', text: item.answer },
+      })),
+    },
+  ],
+};
 
 export default function Home() {
   useEffect(() => {
@@ -31,6 +59,10 @@ export default function Home() {
 
   return (
     <div className={classNames(styles.main)}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData) }}
+      />
       <section className={classNames(styles.hero__section)} id='main'>
         <PageBanner />
       </section>

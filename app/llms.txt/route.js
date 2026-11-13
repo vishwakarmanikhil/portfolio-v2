@@ -1,6 +1,7 @@
 import workExperience from '@/components/homePageSections/workExperience.json';
 import projectsList from '@/components/projectsList.json';
 import faqList from '@/components/homePageSections/faq.json';
+import freelance from '@/components/freelance.json';
 
 export const dynamic = 'force-static';
 
@@ -42,6 +43,10 @@ function buildMarkdown() {
         lines.push(`- **${p.title}**${link ? ` (${link})` : ''}: ${p.description} Technology: ${p.technology}.`);
     }
     lines.push('', `More projects: ${SITE_URL}/archive`, '');
+
+    lines.push('## Freelance web development', '', `Nikhil also takes freelance projects for small businesses: ${SITE_URL}/freelance`, '');
+    for (const s of freelance.services) lines.push(`- **${s.title}**: ${s.description}`);
+    lines.push('');
 
     lines.push('## Frequently asked questions', '');
     for (const item of faqList) lines.push(`### ${item.question}`, '', item.answer, '');

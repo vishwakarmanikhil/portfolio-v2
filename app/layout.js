@@ -9,7 +9,6 @@ import Loader from './loader';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import workExperience from '@/components/homePageSections/workExperience.json';
-import faqList from '@/components/homePageSections/faq.json';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -135,25 +134,7 @@ const structuredData = {
       inLanguage: 'en',
       publisher: { '@id': PERSON_ID },
     },
-    {
-      '@type': 'ProfilePage',
-      '@id': `${SITE_URL}/#profilepage`,
-      url: SITE_URL,
-      name: 'Nikhil Vishwakarma | Full-Stack Engineer',
-      isPartOf: { '@id': `${SITE_URL}/#website` },
-      mainEntity: { '@id': PERSON_ID },
-    },
     person,
-    {
-      '@type': 'FAQPage',
-      '@id': `${SITE_URL}/#faq`,
-      url: SITE_URL,
-      mainEntity: faqList.map(item => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: { '@type': 'Answer', text: item.answer },
-      })),
-    },
   ],
 };
 
