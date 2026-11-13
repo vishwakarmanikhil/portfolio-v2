@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import classNames from 'classnames';
-import { getAllPosts, getPost, renderPost, formatDate, SITE_URL } from '@/lib/blog';
+import { getAllPosts, getPost, renderPost, formatDate } from '@/lib/blog';
+import { pageMetadata, breadcrumbs, jsonLd, SITE_URL, PERSON_ID } from '@/lib/seo';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 
 export const dynamicParams = false;
@@ -14,29 +15,21 @@ export async function generateMetadata({ params }) {
     const { slug } = await params;
     const post = getPost(slug);
     if (!post) return {};
-    return {
-        title: `${post.title} | Nikhil Vishwakarma`,
+    return pageMetadata({
+        title: post.seoTitle ?? post.title,
         description: post.description,
-        keywords: post.tags,
-        alternates: {
-            canonical: `/blog/${post.slug}`,
-            types: { 'application/rss+xml': '/rss.xml' },
-        },
+        path: `/blog/${post.slug}`,
+        image: null, // ./opengraph-image.js
+        type: 'article',
+        keywords: [...post.tags, 'Nikhil Vishwakarma'],
         openGraph: {
-            title: post.title,
-            description: post.description,
-            url: post.url,
-            siteName: 'Nikhil Vishwakarma',
-            images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
-            locale: 'en_US',
-            type: 'article',
             publishedTime: post.date,
             ...(post.updated && { modifiedTime: post.updated }),
-            authors: ['Nikhil Vishwakarma'],
+            authors: [SITE_URL],
             tags: post.tags,
         },
         ...(post.draft && { robots: { index: false, follow: false } }),
-    };
+    });
 }
 
 export default async function BlogPost({ params }) {
@@ -50,39 +43,33 @@ export default async function BlogPost({ params }) {
     const newer = posts[index - 1];
     const older = posts[index + 1];
 
-    const structuredData = {
-        '@context': 'https://schema.org',
-        '@graph': [
-            {
-                '@type': 'BlogPosting',
-                '@id': `${post.url}#post`,
-                headline: post.title,
-                description: post.description,
-                url: post.url,
-                mainEntityOfPage: post.url,
-                datePublished: post.date,
-                dateModified: post.updated ?? post.date,
-                keywords: post.tags.join(', '),
-                wordCount: post.content.trim().split(/\s+/).length,
-                author: { '@id': `${SITE_URL}/#person` },
-                publisher: { '@id': `${SITE_URL}/#person` },
-                isPartOf: { '@id': `${SITE_URL}/blog#blog` },
-                image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png',
-            },
-            {
-                '@type': 'BreadcrumbList',
-                itemListElement: [
-                    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-                    { '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE_URL}/blog` },
-                    { '@type': 'ListItem', position: 3, name: post.title, item: post.url },
-                ],
-            },
-        ],
-    };
+    const structuredData = jsonLd([
+        {
+            '@type': 'BlogPosting',
+            '@id': `${post.url}#post`,
+            headline: post.seoTitle ?? post.title,
+            name: post.title,
+            description: post.description,
+            url: post.url,
+            mainEntityOfPage: { '@type': 'WebPage', '@id': post.url },
+            datePublished: post.date,
+            dateModified: post.updated ?? post.date,
+            inLanguage: 'en-IN',
+            keywords: post.tags.join(', '),
+            articleSection: post.tags[0],
+            wordCount: post.content.trim().split(/\s+/).length,
+            timeRequired: `PT${post.readingMinutes}M`,
+            image: { '@type': 'ImageObject', url: `${post.url}/opengraph-image`, width: 1200, height: 630 },
+            author: { '@id': PERSON_ID },
+            publisher: { '@id': PERSON_ID },
+            isPartOf: { '@id': `${SITE_URL}/blog#blog` },
+        },
+        breadcrumbs(['Blog', '/blog'], [post.seoTitle ?? post.title, `/blog/${post.slug}`]),
+    ]);
 
     return (
         <div className={classNames('mx-auto pt-16 md:pt-24')} style={{ maxWidth: 1080 }}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
 
             <nav aria-label="Breadcrumb" className={classNames('text-sm font-medium text-gray-500 dark:text-gray-400 mb-8')}>
                 <Link href='/' className='hover:text-sky-500'>Home</Link>

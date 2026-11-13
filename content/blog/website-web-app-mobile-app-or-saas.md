@@ -1,6 +1,7 @@
 ---
 title: "Website, web app, mobile app or SaaS: which does your business need?"
-description: "A website tells people about your business, a web app helps them or your team get work done, a mobile app lives on their phone, and SaaS is software you sell to many customers. Here is how to choose, with real examples."
+seoTitle: "Website, web app, mobile app or SaaS: which do you need?"
+description: "Website, web app, mobile app or SaaS? What each one is for, when your business needs it, and how to choose, with real examples from my projects."
 date: 2026-11-13
 tags: ["Planning", "Web apps", "Mobile apps", "SaaS"]
 ---

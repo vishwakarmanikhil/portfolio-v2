@@ -12,7 +12,8 @@ Every post starts with this block:
 ```md
 ---
 title: "Your post title"
-description: "One or two sentences that answer what the post is about. Shown in Google, on the blog list and in link previews."
+seoTitle: "Shorter title for Google"   # optional: use when the title is over 60 characters
+description: "One or two sentences (under 160 characters) that answer what the post is about. Shown in Google, on the blog list, in link previews and on the share image."
 date: 2026-11-20
 updated: 2026-12-02   # optional: set this when you make a real update
 tags: ["Next.js", "SEO"]

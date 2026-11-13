@@ -1,52 +1,50 @@
 import Link from 'next/link';
 import classNames from 'classnames';
 import archiveStyles from '../archive/style.module.css';
-import { getAllPosts, formatDate, SITE_URL } from '@/lib/blog';
+import { getAllPosts, formatDate } from '@/lib/blog';
+import { pageMetadata, breadcrumbs, jsonLd, absoluteUrl, PERSON_ID, WEBSITE_ID } from '@/lib/seo';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 
-const DESCRIPTION = 'Notes from Nikhil Vishwakarma on building web products: React and Next.js, Node.js, AWS, AI features, and getting websites found on Google and AI assistants.';
+const DESCRIPTION = 'Practical guides on building websites, web apps, mobile apps and SaaS: lead generation, pricing, Next.js, React, Node.js, AWS and AI search.';
 
-export const metadata = {
-    title: 'Blog | Nikhil Vishwakarma',
+export const metadata = pageMetadata({
+    title: 'Blog: Building Websites, Apps & SaaS',
     description: DESCRIPTION,
-    alternates: {
-        canonical: '/blog',
-        types: { 'application/rss+xml': '/rss.xml' },
-    },
-    openGraph: {
-        title: 'Blog | Nikhil Vishwakarma',
-        description: DESCRIPTION,
-        url: `${SITE_URL}/blog`,
-        siteName: 'Nikhil Vishwakarma',
-        images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
-        locale: 'en_US',
-        type: 'website',
-    },
-};
+    path: '/blog',
+    image: null, // app/blog/opengraph-image.js
+    keywords: ['Web development blog', 'Website development guide', 'Web app development', 'SaaS development', 'Real estate website', 'Lead management', 'Next.js', 'AI search SEO'],
+});
 
 export default function BlogIndex() {
     const posts = getAllPosts();
 
-    const structuredData = {
-        '@context': 'https://schema.org',
-        '@type': 'Blog',
-        '@id': `${SITE_URL}/blog#blog`,
-        name: 'Nikhil Vishwakarma – Blog',
-        url: `${SITE_URL}/blog`,
-        description: DESCRIPTION,
-        author: { '@id': `${SITE_URL}/#person` },
-        blogPost: posts.map(post => ({
-            '@type': 'BlogPosting',
-            headline: post.title,
-            url: post.url,
-            datePublished: post.date,
-            ...(post.updated && { dateModified: post.updated }),
-        })),
-    };
+    const structuredData = jsonLd([
+        {
+            '@type': 'Blog',
+            '@id': `${absoluteUrl('/blog')}#blog`,
+            name: 'Nikhil Vishwakarma – Blog',
+            url: absoluteUrl('/blog'),
+            description: DESCRIPTION,
+            inLanguage: 'en-IN',
+            isPartOf: { '@id': WEBSITE_ID },
+            author: { '@id': PERSON_ID },
+            publisher: { '@id': PERSON_ID },
+            blogPost: posts.map(post => ({
+                '@type': 'BlogPosting',
+                '@id': `${post.url}#post`,
+                headline: post.title,
+                url: post.url,
+                datePublished: post.date,
+                dateModified: post.updated ?? post.date,
+                image: `${post.url}/opengraph-image`,
+            })),
+        },
+        breadcrumbs(['Blog', '/blog']),
+    ]);
 
     return (
         <div className={classNames('mx-auto')} style={{ maxWidth: 820 }}>
-            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: structuredData }} />
 
             <section className={classNames(archiveStyles.archive__banner_wrap)}>
                 <p className={classNames('text-sm font-medium text-sky-500 mb-5')} data-aos='fade-up' data-aos-delay='100'>Blog</p>

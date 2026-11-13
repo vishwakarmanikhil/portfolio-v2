@@ -1,6 +1,7 @@
 ---
 title: "What decides the cost of a website or app (and how to get an honest quote)"
-description: "The cost of a website or app depends on how many different things it has to do, not how many pages it has. Here are the factors that change the price, what to prepare before asking for a quote, and the warning signs to watch for."
+seoTitle: "What decides the cost of a website or app?"
+description: "What changes the price of a website or app, what to prepare before asking for a quote, and the warning signs of a quote you shouldn't trust."
 date: 2026-11-13
 tags: ["Pricing", "Hiring a developer", "Planning"]
 ---

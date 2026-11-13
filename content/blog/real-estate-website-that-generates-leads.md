@@ -1,6 +1,6 @@
 ---
 title: "What does a real estate website need to generate leads?"
-description: "A real estate website generates leads when it answers a buyer's questions about location, documents and price, and makes enquiring easy. Here is the checklist I use when building sites for real estate firms."
+description: "A real estate website gets leads by answering buyers' questions on location, documents and price, and making it easy to enquire. My checklist."
 date: 2026-11-13
 tags: ["Real estate", "Lead generation", "Websites"]
 ---

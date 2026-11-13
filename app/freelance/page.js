@@ -13,29 +13,22 @@ import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 import FaqAccordion from '@/components/FaqAccordion';
 import EnquiryButton from '@/components/EnquiryForm';
 import ServiceIcon from '@/components/freelance/ServiceIcon';
+import { pageMetadata, faqPage, breadcrumbs, jsonLd, absoluteUrl, BUSINESS_ID, WEBSITE_ID } from '@/lib/seo';
 
-const SITE_URL = 'https://www.nikhilvishwakarma.com';
-const PAGE_URL = `${SITE_URL}/freelance`;
 const EMAIL = 'vnikhil3101@gmail.com';
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent('Website project enquiry')}`;
-const DESCRIPTION = 'Freelance web and app developer in Mumbai. I turn business problems into working products: websites, web apps, mobile apps and SaaS, for any industry.';
 
-export const metadata = {
-    title: 'Freelance Web & App Developer in Mumbai | Nikhil Vishwakarma',
-    description: DESCRIPTION,
-    alternates: {
-        canonical: '/freelance',
-    },
-    openGraph: {
-        title: 'Freelance Web & App Developer in Mumbai | Nikhil Vishwakarma',
-        description: DESCRIPTION,
-        url: PAGE_URL,
-        siteName: 'Nikhil Vishwakarma',
-        images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
-        locale: 'en_US',
-        type: 'website',
-    },
-};
+export const metadata = pageMetadata({
+    title: 'Freelance Web & App Developer in Mumbai',
+    description: 'Freelance web and app developer in Mumbai. I turn business problems into working products: websites, web apps, mobile apps and SaaS, for any industry.',
+    path: '/freelance',
+    image: null, // app/freelance/opengraph-image.js
+    keywords: [
+        'Freelance web developer Mumbai', 'Freelance app developer', 'Website development', 'Web app development',
+        'Mobile app development', 'React Native app developer', 'SaaS development', 'Real estate website developer',
+        'Next.js developer for hire', 'Lead management system',
+    ],
+});
 
 const products = [
     {
@@ -58,45 +51,31 @@ const clientProjects = projectsList
     .filter(p => p.category === 'freelance')
     .sort((a, b) => toDate(b.createdDate) - toDate(a.createdDate));
 
-const structuredData = {
-    '@context': 'https://schema.org',
-    '@graph': [
-        {
-            '@type': 'ProfessionalService',
-            '@id': `${PAGE_URL}#service`,
-            name: 'Nikhil Vishwakarma – Freelance Web Development',
-            url: PAGE_URL,
-            description: DESCRIPTION,
-            image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png',
-            email: `mailto:${EMAIL}`,
-            address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Mumbai',
-                addressRegion: 'Maharashtra',
-                addressCountry: 'IN',
-            },
-            founder: { '@id': `${SITE_URL}/#person` },
-            hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Web development services',
-                itemListElement: freelance.services.map(s => ({
-                    '@type': 'Offer',
-                    itemOffered: { '@type': 'Service', name: s.title, description: s.description },
-                })),
-            },
-        },
-        {
-            '@type': 'FAQPage',
-            '@id': `${PAGE_URL}#faq`,
-            url: PAGE_URL,
-            mainEntity: freelance.faq.map(item => ({
-                '@type': 'Question',
-                name: item.question,
-                acceptedAnswer: { '@type': 'Answer', text: item.answer },
+const structuredData = jsonLd([
+    {
+        // Merges with the business defined site-wide in layout.js (same @id).
+        '@type': 'ProfessionalService',
+        '@id': BUSINESS_ID,
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Web and app development services',
+            itemListElement: freelance.services.map(service => ({
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: service.title, description: service.description, provider: { '@id': BUSINESS_ID } },
             })),
         },
-    ],
-};
+    },
+    {
+        '@type': 'WebPage',
+        '@id': `${absoluteUrl('/freelance')}#webpage`,
+        url: absoluteUrl('/freelance'),
+        name: 'Freelance Web & App Developer in Mumbai',
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': BUSINESS_ID },
+    },
+    faqPage('/freelance', freelance.faq),
+    breadcrumbs(['Freelance', '/freelance']),
+]);
 
 const buttonClass = 'inline-block px-6 py-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900';
 const titleClass = classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold');
@@ -107,7 +86,7 @@ const Freelance = () => {
         <div className={classNames('mx-auto')} style={{ maxWidth: 1000 }}>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                dangerouslySetInnerHTML={{ __html: structuredData }}
             />
 
             <section className={classNames(archiveStyles.archive__banner_wrap)}>

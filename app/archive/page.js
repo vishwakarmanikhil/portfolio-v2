@@ -7,6 +7,15 @@ import { isValidValue, projectCategoryLabel } from '@/components/commonFunctions
 import IconAssests from '@/components/svgAssests/IconAssests';
 import Color from '@/constants/color';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
+import { pageMetadata, breadcrumbs, jsonLd, absoluteUrl, PERSON_ID, WEBSITE_ID } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+    title: 'Project Archive: Websites, Apps & SaaS',
+    description: 'Every project Nikhil Vishwakarma has built since 2020: client websites, web apps, mobile apps, SaaS products and personal projects, with the tech used.',
+    path: '/archive',
+    image: null, // app/archive/opengraph-image.js
+    keywords: ['Web development portfolio', 'Software projects', 'Website projects', 'Web app projects', 'Mobile app projects', 'SaaS projects', 'Nikhil Vishwakarma projects'],
+});
 
 const tableHeader = [
     {
@@ -38,12 +47,43 @@ const projectListSortedArray = ProjectList.sort((a, b) => {
     return dateB - dateA;
 });
 
+const archiveStructuredData = jsonLd([
+    {
+        '@type': 'CollectionPage',
+        '@id': `${absoluteUrl('/archive')}#webpage`,
+        url: absoluteUrl('/archive'),
+        name: 'Project Archive: Websites, Apps & SaaS',
+        isPartOf: { '@id': WEBSITE_ID },
+        author: { '@id': PERSON_ID },
+        mainEntity: {
+            '@type': 'ItemList',
+            numberOfItems: projectListSortedArray.length,
+            itemListElement: projectListSortedArray.map((project, index) => ({
+                '@type': 'ListItem',
+                position: index + 1,
+                item: {
+                    '@type': 'CreativeWork',
+                    name: project.title,
+                    description: project.description,
+                    dateCreated: project.createdDate.split('-').reverse().join('-'),
+                    creator: { '@id': PERSON_ID },
+                    ...(project.technology && { keywords: project.technology }),
+                    ...((project.caseStudyLink || project.projectLink) && { url: project.caseStudyLink ? absoluteUrl(project.caseStudyLink) : project.projectLink }),
+                    ...(project.category && { genre: projectCategoryLabel[project.category] }),
+                },
+            })),
+        },
+    },
+    breadcrumbs(['Project Archive', '/archive']),
+]);
+
 const Archive = () => {
 
     return (
         <section className={classNames(style.archive__page)}>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: archiveStructuredData }} />
             <div className={classNames(style.archive__banner_wrap)}>
-                <h1 className={classNames(style.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-4')} data-aos='fade-up' data-aos-delay='900'>Archive</h1>
+                <h1 className={classNames(style.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-4')} data-aos='fade-up' data-aos-delay='900'>Project Archive</h1>
                 <p className={classNames('text-lg tracking-wider font-normal text-sky-500 dark:text-sky-500')} data-aos='fade-up' data-aos-delay='1000'>A Vast Array of Projects I&apos;ve Engaged With</p>
             </div>
 

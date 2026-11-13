@@ -1,6 +1,6 @@
 ---
 title: "Why ChatGPT couldn't read my portfolio, and how I fixed it"
-description: "An AI search scan gave my Next.js portfolio 17/100 because its HTML had only 8 words of text. Here is what caused it, how I fixed it, and a checklist you can run on your own site."
+description: "My Next.js portfolio scored 17/100 on an AI search scan because its HTML had only 8 words. What caused it, how I fixed it, and a checklist for your site."
 date: 2026-11-13
 tags: ["Next.js", "SEO", "AI search"]
 ---

@@ -7,72 +7,56 @@ import FaqAccordion from '@/components/FaqAccordion';
 import ServiceIcon from '@/components/freelance/ServiceIcon';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 import EnquiryButton from '@/components/EnquiryForm';
+import { pageMetadata, faqPage, breadcrumbs, jsonLd, absoluteUrl, PERSON_ID, BUSINESS_ID, WEBSITE_ID } from '@/lib/seo';
 
 // Shared layout for product showcase pages (/projects/<slug>).
 // All text comes from components/projects/<slug>.json; the page passes in a
 // `preview` (screenshot or illustration) to show under the hero.
 
-export const SITE_URL = 'https://www.nikhilvishwakarma.com';
 const EMAIL = 'vnikhil3101@gmail.com';
 
-const pageUrl = project => `${SITE_URL}/projects/${project.slug}`;
+const pagePath = project => `/projects/${project.slug}`;
 const mailto = project => `mailto:${EMAIL}?subject=${encodeURIComponent(`${project.name} demo request`)}`;
 
-export function productMetadata(project) {
-    const image = project.image ? `${SITE_URL}${project.image}` : 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png';
-    return {
-        title: `${project.metaTitle} | Nikhil Vishwakarma`,
+/** Page metadata from the product's JSON. Products with an opengraph-image file pass `image: null`. */
+export function productMetadata(project, { image } = {}) {
+    return pageMetadata({
+        title: project.metaTitle,
         description: project.metaDescription,
-        alternates: { canonical: `/projects/${project.slug}` },
-        openGraph: {
-            title: project.title,
-            description: project.metaDescription,
-            url: pageUrl(project),
-            siteName: 'Nikhil Vishwakarma',
-            images: [image],
-            locale: 'en_US',
-            type: 'website',
-        },
-    };
+        path: pagePath(project),
+        keywords: project.keywords ?? [],
+        image: image === undefined ? (project.image ? absoluteUrl(project.image) : undefined) : image,
+    });
 }
 
 function structuredData(project) {
-    const url = pageUrl(project);
-    return {
-        '@context': 'https://schema.org',
-        '@graph': [
-            {
-                '@type': 'SoftwareApplication',
-                '@id': `${url}#app`,
-                name: project.name,
-                url,
-                description: project.summary,
-                applicationCategory: 'BusinessApplication',
-                operatingSystem: 'Web',
-                ...(project.image && { image: `${SITE_URL}${project.image}` }),
-                author: { '@id': `${SITE_URL}/#person` },
-                featureList: project.parts.flatMap(part => part.features),
-            },
-            {
-                '@type': 'FAQPage',
-                '@id': `${url}#faq`,
-                url,
-                mainEntity: project.faq.map(item => ({
-                    '@type': 'Question',
-                    name: item.question,
-                    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-                })),
-            },
-            {
-                '@type': 'BreadcrumbList',
-                itemListElement: [
-                    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-                    { '@type': 'ListItem', position: 2, name: 'Freelance', item: `${SITE_URL}/freelance` },
-                    { '@type': 'ListItem', position: 3, name: project.name, item: url },
-                ],
-            },
-        ],
-    };
+    const url = absoluteUrl(pagePath(project));
+    return jsonLd([
+        {
+            '@type': 'SoftwareApplication',
+            '@id': `${url}#app`,
+            name: project.name,
+            url,
+            description: project.summary,
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web',
+            ...(project.image && { image: absoluteUrl(project.image), screenshot: absoluteUrl(project.image) }),
+            author: { '@id': PERSON_ID },
+            provider: { '@id': BUSINESS_ID },
+            featureList: project.parts.flatMap(part => part.features),
+            keywords: (project.keywords ?? []).join(', '),
+        },
+        {
+            '@type': 'WebPage',
+            '@id': `${url}#webpage`,
+            url,
+            name: project.metaTitle,
+            isPartOf: { '@id': WEBSITE_ID },
+            about: { '@id': `${url}#app` },
+        },
+        faqPage(pagePath(project), project.faq),
+        breadcrumbs(['Freelance', '/freelance'], [project.name, pagePath(project)]),
+    ]);
 }
 
 const buttonClass = 'inline-block px-6 py-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900';
@@ -97,7 +81,7 @@ const ProductPage = ({ project, preview }) => {
         <div className={classNames('mx-auto')} style={{ maxWidth: 1000 }}>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(project)) }}
+                dangerouslySetInnerHTML={{ __html: structuredData(project) }}
             />
 
             <section className={classNames(archiveStyles.archive__banner_wrap)}>

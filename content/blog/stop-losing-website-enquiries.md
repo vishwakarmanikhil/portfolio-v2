@@ -1,6 +1,6 @@
 ---
 title: "How to stop losing enquiries from your website"
-description: "Most businesses don't lose leads because of a bad website. They lose them after the enquiry arrives. Here is why it happens and a simple system to make sure every enquiry gets a reply."
+description: "Most businesses lose leads after the enquiry arrives, not because of the website. Why it happens, and a simple system so every enquiry gets a reply."
 date: 2026-11-13
 tags: ["Lead management", "Sales", "Small business"]
 ---
