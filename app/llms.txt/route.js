@@ -3,6 +3,7 @@ import projectsList from '@/components/projectsList.json';
 import faqList from '@/components/homePageSections/faq.json';
 import freelance from '@/components/freelance.json';
 import coworkspace from '@/components/projects/coworkspace.json';
+import enquiro from '@/components/projects/enquiro.json';
 
 export const dynamic = 'force-static';
 
@@ -49,9 +50,12 @@ function buildMarkdown() {
     for (const s of freelance.services) lines.push(`- **${s.title}**: ${s.description}`);
     lines.push('');
 
-    lines.push('## Coworkspace (product)', '', `${coworkspace.summary} ${coworkspace.codeNote} Details: ${SITE_URL}/projects/coworkspace`, '');
-    for (const part of coworkspace.parts) lines.push(`- **${part.title}**: ${part.features.join('; ')}`);
-    lines.push('');
+    for (const product of [enquiro, coworkspace]) {
+        lines.push(`## ${product.name} (product)`, '', `${product.summary} ${product.codeNote} Details: ${SITE_URL}/projects/${product.slug}`, '');
+        for (const part of product.parts) lines.push(`- **${part.title}**: ${part.features.join('; ')}`);
+        if (product.usedBy?.length) lines.push(`- **Used by**: ${product.usedBy.map(c => c.name).join(', ')}`);
+        lines.push('');
+    }
 
     lines.push('## Frequently asked questions', '');
     for (const item of faqList) lines.push(`### ${item.question}`, '', item.answer, '');

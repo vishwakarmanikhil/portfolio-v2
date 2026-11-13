@@ -1,0 +1,99 @@
+{
+    "slug": "enquiro",
+    "name": "Enquiro",
+    "title": "Enquiro: enquiry management for businesses that get leads online",
+    "metaTitle": "Enquiro – Enquiry and Lead Management for Real Estate and Small Businesses",
+    "badge": "Product · In use by real estate firms",
+    "summary": "Enquiro collects every enquiry from your website into one admin panel. Admins see and export all enquiries, allocate them to employees, and each employee works only on the enquiries allocated to them, adding comments and updating the status as the lead moves forward.",
+    "metaDescription": "Enquiro is an enquiry and lead management system: all website enquiries in one place, filters and Excel export, allocation to employees, comments and status updates. Used by real estate firms. Live demo on request.",
+    "websiteUrl": "",
+    "image": "",
+    "codeNote": "The source code is private. I give a complete live demo of the admin and employee views on request.",
+    "usedByIntro": "Every real estate client I have built a website for runs its enquiries on Enquiro.",
+    "usedBy": [
+        { "name": "Infinity Realty", "note": "Plots near Pune", "url": "https://infinityrealtypune.com/" },
+        { "name": "LandCity Properties", "note": "Plots in Navi Mumbai", "url": "https://landcityproperties.com/" },
+        { "name": "Prime Properties JD", "note": "Plots in Navi Mumbai, Thane, Panvel and Pen", "url": "https://primepropertiesjd.com/" },
+        { "name": "Space Realtors", "note": "Residential plots", "url": "https://spacerealtors.net/" },
+        { "name": "Kshemrealty", "note": "Flats and plots", "url": "https://kshemrealty.in/" }
+    ],
+    "partsIntro": "Everything a sales team needs to stop losing website enquiries, with each person seeing only what they should.",
+    "parts": [
+        {
+            "icon": "search",
+            "title": "All enquiries in one place",
+            "description": "Every enquiry from your website lands in one admin panel.",
+            "features": [
+                "See all enquiries in one list",
+                "Filters to find exactly the enquiries you need",
+                "Export the filtered list to Excel"
+            ]
+        },
+        {
+            "icon": "building",
+            "title": "Team and access control",
+            "description": "Admins decide who sees what.",
+            "features": [
+                "Manage your company's employees",
+                "Give chosen users access to all enquiries",
+                "Allocate enquiries to employees",
+                "Employees see only the enquiries allocated to them"
+            ]
+        },
+        {
+            "icon": "chat",
+            "title": "Follow-up on every enquiry",
+            "description": "Each enquiry keeps its own record of what happened.",
+            "features": [
+                "Add comments to an enquiry",
+                "Update the status as the enquiry moves forward",
+                "Comments stay on the enquiry for everyone with access"
+            ]
+        }
+    ],
+    "audienceIntro": "Enquiro is built for businesses whose sales team handles enquiries from the internet and needs to know who is following up on each one.",
+    "audience": [
+        "Real estate developers and brokers selling plots, flats and projects",
+        "Service businesses that get enquiries through website forms",
+        "Teams that currently share enquiries over Excel sheets, email or WhatsApp groups"
+    ],
+    "techIntro": "A React admin panel on a Node.js backend with an SQL database.",
+    "techStack": ["React", "Node.js", "SQL", "Excel export", "Role-based access"],
+    "demoSteps": [
+        {
+            "title": "Request a demo",
+            "description": "Email me a few lines about your business: where your enquiries come from and how your team handles them today."
+        },
+        {
+            "title": "Live walkthrough",
+            "description": "On a call, I show the admin view and the employee view working end to end, from a new enquiry to a status update."
+        },
+        {
+            "title": "Set up for your team",
+            "description": "If it fits, I connect it to your website's enquiry forms and set it up with your employees."
+        }
+    ],
+    "demoCta": "Email me and I will set up a live demo of the admin and employee views.",
+    "faq": [
+        {
+            "question": "What is Enquiro?",
+            "answer": "Enquiro is an enquiry and lead management system. It collects enquiries from your website into one admin panel, lets admins filter and export them to Excel, and lets you allocate each enquiry to an employee who adds comments and updates its status."
+        },
+        {
+            "question": "Who uses Enquiro?",
+            "answer": "All my real estate clients use it, including Infinity Realty, LandCity Properties, Prime Properties JD, Space Realtors and Kshemrealty."
+        },
+        {
+            "question": "Can employees see only their own enquiries?",
+            "answer": "Yes. Each employee sees only the enquiries allocated to them. Admins, and any users you give access to, can see all enquiries."
+        },
+        {
+            "question": "Can I export enquiries to Excel?",
+            "answer": "Yes. Apply the filters you need and export that list to Excel."
+        },
+        {
+            "question": "Can I see the source code?",
+            "answer": "The source code is private, so it is not published. During the demo I can walk you through how it is built and answer technical questions."
+        }
+    ]
+}

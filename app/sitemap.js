@@ -13,6 +13,12 @@ export default function sitemap() {
             priority: 0.9,
         },
         {
+            url: 'https://www.nikhilvishwakarma.com/projects/enquiro',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: 'https://www.nikhilvishwakarma.com/projects/coworkspace',
             lastModified: new Date(),
             changeFrequency: 'monthly',
