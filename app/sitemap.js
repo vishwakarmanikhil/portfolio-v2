@@ -1,5 +1,6 @@
 import { getAllPosts } from '@/lib/blog';
 import { absoluteUrl, DEFAULT_OG_IMAGE } from '@/lib/seo';
+import coworkspace from '@/components/projects/coworkspace.json';
 
 // /sitemap.xml – every public page, with images so Google can index the
 // social images. Blog posts use their real published/updated dates; other
@@ -21,7 +22,7 @@ export default function sitemap() {
         page('/', { priority: 1, images: [DEFAULT_OG_IMAGE] }),
         page('/freelance', { priority: 0.9, images: [absoluteUrl('/freelance/opengraph-image')] }),
         page('/projects/enquiro', { priority: 0.8, images: [absoluteUrl('/projects/enquiro/opengraph-image')] }),
-        page('/projects/coworkspace', { priority: 0.8, images: [absoluteUrl('/projects/coworkspace/website-home.png')] }),
+        page('/projects/coworkspace', { priority: 0.8, images: [absoluteUrl(coworkspace.image)] }),
         page('/blog', { priority: 0.8, changeFrequency: 'weekly', lastModified: latestPost, images: [absoluteUrl('/blog/opengraph-image')] }),
         ...posts.map(post => page(`/blog/${post.slug}`, {
             priority: 0.7,
