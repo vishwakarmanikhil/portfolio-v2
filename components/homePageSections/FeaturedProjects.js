@@ -3,7 +3,7 @@ import styles from './style.module.css';
 import classNames from 'classnames';
 import IconAssests from '../svgAssests/IconAssests';
 import featuredProjectList from '../projectsList.json';
-import { isValidValue } from '../commonFunctions';
+import { isValidValue, projectCategoryLabel } from '../commonFunctions';
 import Color from '@/constants/color';
 
 const FeaturedProject = () => {
@@ -23,7 +23,7 @@ const FeaturedProject = () => {
                             />
                         </a>
                         <div className={classNames(styles.fp_content__wrap)}>
-                            <p className={classNames('text-sm font-medium text-sky-500 dark:text-sky-500 mb-3')}>Featured Project</p>
+                            <p className={classNames('text-sm font-medium text-sky-500 dark:text-sky-500 mb-3')}>Featured Project{data?.category && <> &nbsp;{<span className={classNames('inline-block text-xs font-medium px-2 py-0.5 rounded-xl border border-sky-500 text-sky-500 dark:text-sky-400 align-middle')}>{projectCategoryLabel[data?.category]}</span>}</>}</p>
                             <h3><a href={data?.projectLink} title={`${data?.title} link`} target='_blank' className={classNames('block text-2xl font-bold text-gray-700 dark:text-gray-300 mb-5')}>{data?.title}</a></h3>
                             <div className={classNames(styles.fp_description__wrap, 'p-6 bg-slate-700 dark:bg-slate-700 rounded-md')}>
                                 <p className={classNames('text-base font-medium text-gray-500 md:text-gray-400 dark:text-gray-400')}>{data?.description}</p>

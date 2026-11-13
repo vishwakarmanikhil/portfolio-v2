@@ -25,6 +25,26 @@
         "jobSkills": "JavaScript, TypeScript, React, Next.js, Node.js, Express.js, Redux, MySQL, AWS, EC2, S3, SQS, Redis, LLM APIs, Prompt Engineering, Meta WhatsApp Business API, PhonePe, Razorpay, Ant Design, Tailwind CSS, Claude, ChatGPT, GitHub Copilot"
     },
     {
+        "key": "freelance",
+        "companyName": "Freelance",
+        "position": "Freelance Web Developer",
+        "employmentType": "FREELANCE",
+        "companyURL": "https://www.nikhilvishwakarma.com/archive",
+        "timeLine": {
+            "start": "February 2021",
+            "end": "Present"
+        },
+        "isoStart": "2021-02",
+        "isoEnd": null,
+        "jobDescription": [
+            "Built websites and web applications for 8 clients across real estate, finance, marketing, automotive and healthcare, including LandCity Properties, Prime Properties JD, NVA Associates and Adwaves Digital",
+            "Built real estate platforms with location-specific listing pages, lead-capture forms and admin panels for daily lead export",
+            "Built a meeting management application with member roles, agendas, scheduling and live discussion tracking, and a vehicle service center website with appointment booking",
+            "Deliver fast, SEO-ready business websites with Next.js and Tailwind CSS, handling requirements, development and launch for each client"
+        ],
+        "jobSkills": "Next.js, JavaScript, Tailwind CSS, PHP, MySQL, HTML, CSS, Bootstrap, jQuery, SEO"
+    },
+    {
         "key": "bookanartist",
         "companyName": "Book An Artist",
         "position": "Web Developer",

@@ -74,7 +74,7 @@ const allSkills = [...new Set(
 
 // Past and current employers, de-duplicated by name.
 const employers = [...new Map(
-  workExperience.map(job => [job.companyName, {
+  workExperience.filter(job => job.employmentType !== 'FREELANCE').map(job => [job.companyName, {
     '@type': 'Organization',
     name: job.companyName,
     url: job.companyURL,

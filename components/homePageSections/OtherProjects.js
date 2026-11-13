@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import otherProjectsList from '../projectsList.json';
 import IconAssests from '../svgAssests/IconAssests';
-import { isValidValue } from '../commonFunctions';
+import { isValidValue, projectCategoryLabel } from '../commonFunctions';
 import styles from './style.module.css';
 import Color from "@/constants/color";
 
@@ -31,6 +31,7 @@ const OtherProjects = () => {
                                     : ""}
                             </div>
                         </div>
+                        {data?.category && <div className='mb-3'><span className={classNames('inline-block text-xs font-medium px-2 py-0.5 rounded-xl border border-sky-500 text-sky-500 dark:text-sky-400 align-middle')}>{projectCategoryLabel[data?.category]}</span></div>}
                         <h3 className={classNames(styles.opi_title__txt, 'block text-xl font-bold text-gray-100 dark:text-gray-300 mb-5')}>
                             {isValidValue(data?.projectLink) ?
                                 <a href={data?.projectLink} title={`${data?.title} link`} className={classNames(styles.opi_redirect__link)}>{data?.title}</a>
