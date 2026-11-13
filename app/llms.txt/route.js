@@ -4,6 +4,7 @@ import faqList from '@/components/homePageSections/faq.json';
 import freelance from '@/components/freelance.json';
 import coworkspace from '@/components/projects/coworkspace.json';
 import enquiro from '@/components/projects/enquiro.json';
+import { getAllPosts } from '@/lib/blog';
 
 export const dynamic = 'force-static';
 
@@ -54,6 +55,13 @@ function buildMarkdown() {
         lines.push(`## ${product.name} (product)`, '', `${product.summary} ${product.codeNote} Details: ${SITE_URL}/projects/${product.slug}`, '');
         for (const part of product.parts) lines.push(`- **${part.title}**: ${part.features.join('; ')}`);
         if (product.usedBy?.length) lines.push(`- **Used by**: ${product.usedBy.map(c => c.name).join(', ')}`);
+        lines.push('');
+    }
+
+    const posts = getAllPosts();
+    if (posts.length) {
+        lines.push('## Blog posts', '');
+        for (const post of posts) lines.push(`- [${post.title}](${post.url}): ${post.description}`);
         lines.push('');
     }
 

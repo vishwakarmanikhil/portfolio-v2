@@ -22,6 +22,7 @@ export const metadata = {
     canonical: '/',
     types: {
       'text/markdown': '/llms.txt',
+      'application/rss+xml': '/rss.xml',
     },
   },
   title: 'Nikhil Vishwakarma | Senior Software Developer',
