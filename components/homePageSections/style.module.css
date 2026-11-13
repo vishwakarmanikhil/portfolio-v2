@@ -164,7 +164,7 @@
     object-fit: cover;
     object-position: left;
     /* filter: grayscale(100%) contrast(1) brightness(90%); */
-    opacity: 0.5;
+    /* opacity: 0.5; */
     border-radius: 5px;
 }
 
@@ -175,7 +175,7 @@
 
 .fp_image__wrap:hover .fp_image {
     filter: unset;
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 /* Other project */

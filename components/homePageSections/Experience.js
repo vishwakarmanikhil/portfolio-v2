@@ -28,11 +28,7 @@ const Experience = () => {
                 {WorkExperience?.map((data, key) => {
                     return (
                         <div key={`tab-wrapper-${data?.key}-${key}`} className={`${activeTab === data?.key ? 'block' : 'hidden'}`} id={`vertical-tab-with-border-${key + 1}`} role="tabpanel" aria-labelledby={`vertical-tab-with-border-item-${key + 1}`}>
-                            {data?.employmentType === 'FREELANCE' ? (
-                                <h3 className={classNames('text-xl font-medium')}><span className={classNames('text-gray-700 dark:text-gray-300')}>{data?.position}</span></h3>
-                            ) : (
-                                <h3 className={classNames('text-xl font-medium')}><span className={classNames('text-gray-700 dark:text-gray-300')}>{data?.position} </span><span className={classNames('text-sky-500')}>@</span> <a href={data?.companyURL} title={data?.companyName} target='_blank' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>{data?.companyName}</a></h3>
-                            )}
+                            <h3 className={classNames('text-xl font-medium')}><span className={classNames('text-gray-700 dark:text-gray-300')}>{data?.position} </span><span className={classNames('text-sky-500')}>@</span> <a href={data?.companyURL} title={data?.companyName} target='_blank' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>{data?.companyName}</a></h3>
                             <div className='inline-block mt-1'>
                                 <p className={classNames('text-xs font-medium text-gray-700 dark:text-gray-500')}>{data?.timeLine?.start} - {data?.timeLine?.end}</p>
                             </div>
