@@ -1,0 +1,104 @@
+{
+    "services": [
+        {
+            "title": "Business websites",
+            "description": "Fast, mobile-friendly websites built with Next.js and Tailwind CSS, with clear service pages, contact forms and the SEO basics set up from day one.",
+            "icon": "website",
+            "tags": [
+                "Next.js",
+                "Tailwind CSS",
+                "SEO"
+            ]
+        },
+        {
+            "title": "Real estate and property websites",
+            "description": "Property listing pages, location pages, legal-document highlights, lead-capture forms and an admin panel to export each day's leads. I have built these for Infinity Realty, LandCity Properties, Prime Properties JD, Space Realtors and Kshemrealty.",
+            "icon": "building",
+            "tags": [
+                "Listings",
+                "Lead capture",
+                "Admin panel"
+            ]
+        },
+        {
+            "title": "Booking and enquiry systems",
+            "description": "Appointment booking, enquiry management and Excel exports for service businesses, plus internal tools such as a meeting management app with roles, agendas and scheduling.",
+            "icon": "calendar",
+            "tags": [
+                "Bookings",
+                "Excel export",
+                "Admin tools"
+            ]
+        },
+        {
+            "title": "WhatsApp and payment integrations",
+            "description": "Meta WhatsApp Business API for notifications and customer messages, and Razorpay or PhonePe for online payments. I have run these in production for a healthcare platform with 500+ doctors.",
+            "icon": "chat",
+            "tags": [
+                "WhatsApp API",
+                "Razorpay",
+                "PhonePe"
+            ]
+        },
+        {
+            "title": "Google and AI search visibility",
+            "description": "Server-rendered pages, structured data, sitemaps, robots.txt and llms.txt, so your site can be read by Google and by AI assistants such as ChatGPT, Claude and Perplexity.",
+            "icon": "search",
+            "tags": [
+                "SEO",
+                "Structured data",
+                "llms.txt"
+            ]
+        },
+        {
+            "title": "Custom web apps and AI features",
+            "description": "Dashboards, admin panels and LLM-powered features such as document summarization, built with React, Node.js and AWS.",
+            "icon": "sparkles",
+            "tags": [
+                "React",
+                "Node.js",
+                "LLMs"
+            ]
+        }
+    ],
+    "process": [
+        {
+            "title": "Tell me about your project",
+            "description": "Email me what your business does and what you need. We then have a short call to go through your goals, pages and features."
+        },
+        {
+            "title": "Get a written scope and quote",
+            "description": "I send a written scope, timeline and price before any work starts, so you know exactly what you are getting."
+        },
+        {
+            "title": "Review as it is built",
+            "description": "You get a live preview link while I build, so you can review pages and ask for changes along the way."
+        },
+        {
+            "title": "Launch",
+            "description": "I connect your domain, deploy the site, and set up the sitemap and analytics so it is ready for visitors and search engines."
+        }
+    ],
+    "faq": [
+        {
+            "question": "How much does a website cost?",
+            "answer": "It depends on the number of pages and features you need. After a short call, I send a written quote with a fixed scope and timeline before any work starts, so there are no surprises."
+        },
+        {
+            "question": "What kind of businesses have you built websites for?",
+            "answer": "I have built websites and web apps for real estate firms, an accounting and compliance firm, a performance marketing agency, a vehicle service center and a hospital. You can see the client projects on this page."
+        },
+        {
+            "question": "Will my website show up on Google?",
+            "answer": "Every site I build is server-rendered, fast and mobile-friendly, with page titles, descriptions, structured data and a sitemap set up, which is what search engines need to read it. Your ranking also depends on your content and competition, so no one can honestly guarantee a position."
+        },
+        {
+            "question": "What technology do you use?",
+            "answer": "For most business websites I use Next.js and Tailwind CSS. For web apps I use React, Node.js, MySQL or PostgreSQL, and AWS. I choose the simplest setup that does the job well."
+        },
+        {
+            "question": "How do I get started?",
+            "answer": "Email me at vnikhil3101@gmail.com with a few lines about your business and what you need. I will reply to set up a short call."
+        }
+    ]
+}

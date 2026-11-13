@@ -9,7 +9,6 @@ import Loader from './loader';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import workExperience from '@/components/homePageSections/workExperience.json';
-import faqList from '@/components/homePageSections/faq.json';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -25,8 +24,8 @@ export const metadata = {
       'text/markdown': '/llms.txt',
     },
   },
-  title: 'Nikhil Vishwakarma | Full-Stack Engineer',
-  description: 'Full-Stack Engineer with 5+ years building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+  title: 'Nikhil Vishwakarma | Senior Software Developer',
+  description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
   icons: {
     icon: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/favicon-16x16.png',
     shortcut: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/favicon-32x32.png',
@@ -40,14 +39,14 @@ export const metadata = {
   manifest: '/site.webmanifest',
   twitter: {
     card: 'summary_large_image',
-    title: 'Nikhil Vishwakarma | Full-Stack Engineer',
-    description: 'Full-Stack Engineer with 5+ years building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+    title: 'Nikhil Vishwakarma | Senior Software Developer',
+    description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
     creator: '@vishwakarmanikhil',
     images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
   },
   openGraph: {
-    title: 'Nikhil Vishwakarma | Full-Stack Engineer',
-    description: 'Full-Stack Engineer with 5+ years building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+    title: 'Nikhil Vishwakarma | Senior Software Developer',
+    description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
     url: 'https://www.nikhilvishwakarma.com',
     siteName: 'Nikhil Vishwakarma',
     images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
@@ -87,8 +86,8 @@ const person = {
   name: 'Nikhil Vishwakarma',
   url: SITE_URL,
   image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png',
-  jobTitle: 'Full-Stack Engineer',
-  description: 'Full-Stack Engineer with 5+ years building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+  jobTitle: 'Senior Software Developer',
+  description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
   email: 'mailto:vnikhil3101@gmail.com',
   address: {
     '@type': 'PostalAddress',
@@ -119,7 +118,7 @@ const person = {
   knowsAbout: allSkills,
   hasOccupation: {
     '@type': 'Occupation',
-    name: 'Full-Stack Engineer',
+    name: 'Senior Software Developer',
     skills: allSkills.join(', '),
   },
 };
@@ -135,25 +134,7 @@ const structuredData = {
       inLanguage: 'en',
       publisher: { '@id': PERSON_ID },
     },
-    {
-      '@type': 'ProfilePage',
-      '@id': `${SITE_URL}/#profilepage`,
-      url: SITE_URL,
-      name: 'Nikhil Vishwakarma | Full-Stack Engineer',
-      isPartOf: { '@id': `${SITE_URL}/#website` },
-      mainEntity: { '@id': PERSON_ID },
-    },
     person,
-    {
-      '@type': 'FAQPage',
-      '@id': `${SITE_URL}/#faq`,
-      url: SITE_URL,
-      mainEntity: faqList.map(item => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: { '@type': 'Answer', text: item.answer },
-      })),
-    },
   ],
 };
 

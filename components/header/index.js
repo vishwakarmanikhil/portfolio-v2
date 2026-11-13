@@ -10,10 +10,12 @@ import LogoAssets from '../svgAssests/LogoAssets';
 import Color from '@/constants/color';
 
 const menuLink = [
+    { name: 'Home', href: '/' },
     { name: 'About', link: 'about' },
     { name: 'Experience', link: 'experience' },
     { name: 'Work', link: 'work' },
     { name: 'Contact', link: 'contact' },
+    { name: 'Freelance', href: '/freelance' },
 ]
 
 const Header = () => {
@@ -79,7 +81,7 @@ const Header = () => {
                                 {menuLink?.map((data, index) => {
                                     return (
                                         <li key={`desktop-menu-${index}`} data-aos="fade-down" data-aos-delay={`${index * 50}`}>
-                                            <a href={`/#${data?.link}`} title={data?.link} className="block py-2 px-3 md:p-0 text-sm text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white rounded md:bg-transparent">{data?.name}</a>
+                                            <a href={data?.href ?? `/#${data?.link}`} title={data?.name} className="block py-2 px-3 md:p-0 text-sm text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white rounded md:bg-transparent">{data?.name}</a>
                                         </li>
                                     )
                                 })}
@@ -99,7 +101,7 @@ const Header = () => {
                         {menuLink?.map((data, index) => {
                             return (
                                 <li key={`mobile-menu-${index}`}>
-                                    <a href={`/#${data?.link}`} title={data?.link} onClick={toggleDrawer} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                                    <a href={data?.href ?? `/#${data?.link}`} title={data?.name} onClick={toggleDrawer} className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
                                         <span className="flex-1 ms-3 text-base text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white whitespace-nowrap">{data?.name}</span>
                                     </a>
                                 </li>

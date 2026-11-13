@@ -1,8 +1,9 @@
 import React from 'react';
+import Link from 'next/link';
 import classNames from 'classnames';
 import style from './style.module.css';
 import ProjectList from '../../components/projectsList.json';
-import { isValidValue } from '@/components/commonFunctions';
+import { isValidValue, projectCategoryLabel } from '@/components/commonFunctions';
 import IconAssests from '@/components/svgAssests/IconAssests';
 import Color from '@/constants/color';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
@@ -65,9 +66,14 @@ const Archive = () => {
                                     <p className={classNames(style.ap__item, 'text-base md:text-lg tracking-wider font-normal text-sky-500 dark:text-sky-500')}>{data?.createdDate?.split('-')[2]}</p>
                                 </div>
                                 <div className={classNames(style.ap__column)}>
-                                    <p className={classNames(style.ap__item, ' text-base md:text-lg tracking-wider font-medium text-gray-600 dark:text-gray-200')}>{data?.title}</p>
+                                    {isValidValue(data?.caseStudyLink) ?
+                                        <Link href={data?.caseStudyLink} className={classNames(style.ap__item, 'text-base md:text-lg tracking-wider font-medium text-gray-600 dark:text-gray-200 hover:text-sky-500 underline decoration-sky-500/50 underline-offset-4')}>{data?.title}</Link>
+                                        :
+                                        <p className={classNames(style.ap__item, ' text-base md:text-lg tracking-wider font-medium text-gray-600 dark:text-gray-200')}>{data?.title}</p>
+                                    }
                                 </div>
                                 <div className={classNames(style.ap__column)}>
+                                    {data?.category && <p className={classNames(style.ap__item, 'text-xs font-medium text-sky-500 dark:text-sky-400 mb-1')}>{projectCategoryLabel[data?.category]}</p>}
                                     {isValidValue(data?.companyName) ?
                                         <a href={data?.companyLink} target='_blank' className={classNames(style.ap__item, 'text-base font-normal text-gray-500 dark:text-gray-400 hover:text-sky-500')} title={data?.companyName}>{data?.companyName}</a>
                                         :

@@ -2,6 +2,7 @@
     {
         "key": "noteloom",
         "projectType": "featured",
+        "category": "personal",
         "projectPriority": 2,
         "image": "noteloom.avif",
         "title": "Noteloom — Open Source Editor",
@@ -19,6 +20,7 @@
     {
         "key": "aartas-higalen",
         "projectType": "featured",
+        "category": "work",
         "projectPriority": 1,
         "image": "higalen.avif",
         "title": "HiGalen",
@@ -36,7 +38,8 @@
     {
         "key": "notevo",
         "projectType": "normal",
-        "projectPriority": 1,
+        "category": "work",
+        "projectPriority": 2,
         "image": "notevo.avif",
         "title": "Notevo — Smart Note Editor",
         "description": "A rich text editor built from scratch as the core documentation engine powering HiGalen's EMR system, deployed independently as a standalone prototype. Notevo supports structured clinical note-taking, customizable templates, and real-time formatting — enabling doctors to create prescriptions and medical records with precision and speed.",
@@ -53,7 +56,8 @@
     {
         "key": "clinishare",
         "projectType": "normal",
-        "projectPriority": 2,
+        "category": "work",
+        "projectPriority": 3,
         "image": "clinishare.avif",
         "title": "CliniShare",
         "description": "A healthcare facility management platform offering fully-serviced clinical spaces for medical specialists — handling operations, staffing, and compliance so doctors can focus entirely on patient care. Features multiple service tiers from pay-per-use rooms to private suites, serving 130+ medical professionals across Delhi NCR.",
@@ -70,6 +74,7 @@
     {
         "key": "bookanartist-mobile-app",
         "projectType": "featured",
+        "category": "work",
         "projectPriority": 3,
         "image": "bookanartist-mobileapp.png",
         "title": "BookAnArtist Mobile App",
@@ -87,6 +92,7 @@
     {
         "key": "landcity-properties",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "landcityproperties.avif",
         "title": "LandCity Properties",
@@ -104,6 +110,7 @@
     {
         "key": "nva-associates",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "",
         "title": "NVA Associates",
@@ -121,6 +128,7 @@
     {
         "key": "adwaves-digital",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "",
         "title": "Adwaves Digital",
@@ -136,15 +144,36 @@
         "createdDate": "01-01-2026"
     },
     {
+        "key": "enquiro",
+        "projectType": "normal",
+        "category": "product",
+        "projectPriority": 0,
+        "image": "",
+        "title": "Enquiro",
+        "description": "Enquiry and lead management system used by all my real estate clients. Collects website enquiries into one admin panel with filters and Excel export, lets admins allocate enquiries to employees, and lets each employee comment on and update the status of their own enquiries. Live demo on request.",
+        "technology": "React, Node.js, SQL",
+        "repositoryLink": "",
+        "projectLink": "",
+        "caseStudyLink": "/projects/enquiro",
+        "androidAppStoreLink": "",
+        "appleAppStoreLink": "",
+        "otherLink": "",
+        "companyName": "",
+        "companyLink": "",
+        "createdDate": "01-01-2023"
+    },
+    {
         "key": "Coworkspace",
-        "projectType": "",
-        "projectPriority": "",
+        "projectType": "normal",
+        "category": "product",
+        "projectPriority": 1,
         "image": "",
         "title": "Coworkspace",
-        "description": "A modern, conversion-focused website template for co-working space providers, built with Next.js. Features membership tiers (day passes, dedicated desks, private and team offices), member testimonials, location details, an amenities checklist, and clear \"Book a Tour\" calls to action, with clean typography and workspace hero imagery.",
+        "description": "A complete platform for coworking businesses: a public website with plans, locations, blog and enquiry form; a client portal to log in and book meeting rooms; and an admin panel to manage clients and bookings and to email invoices. Live demo on request.",
         "technology": "NextJS, HTML, CSS, Tailwind CSS",
         "repositoryLink": "",
         "projectLink": "https://coworkspace.nikhilvishwakarma.com/",
+        "caseStudyLink": "/projects/coworkspace",
         "androidAppStoreLink": "",
         "appleAppStoreLink": "",
         "otherLink": "",
@@ -155,7 +184,8 @@
     {
         "key": "invoice-generator",
         "projectType": "normal",
-        "projectPriority": 3,
+        "category": "personal",
+        "projectPriority": 4,
         "image": "invoice-generator.png",
         "title": "Invoice Generator",
         "description": "Full-stack invoice management tool built with React.js and Webpack, simplifying invoice creation, preview, PDF download, and email sending. Leverages the Bravo library for email functionality and is deployed on Vercel and Render.",
@@ -172,6 +202,7 @@
     {
         "key": "housekeeping-application",
         "projectType": "",
+        "category": "work",
         "projectPriority": "",
         "image": "",
         "title": "HouseKeeping Application",
@@ -189,6 +220,7 @@
     {
         "key": "bookanartist-website",
         "projectType": "",
+        "category": "work",
         "projectPriority": "",
         "image": "bookanartist.png",
         "title": "Bookanartist.co",
@@ -204,8 +236,27 @@
         "createdDate": "01-07-2021"
     },
     {
+        "key": "infinity-realty-pune",
+        "projectType": "",
+        "category": "freelance",
+        "projectPriority": "",
+        "image": "",
+        "title": "Infinity Realty",
+        "description": "Real estate website for Infinity Realty, which sells farmhouse, weekend-home and investment plots near Pune in the Sahyadri Hills. Features a page for each project location, plot types, amenities, buyer FAQs, legal and document guidance before booking, customer testimonials and an enquiry form that connects buyers with plot advisors.",
+        "technology": "HTML, CSS, JavaScript, Tailwind CSS, PHP",
+        "repositoryLink": "",
+        "projectLink": "https://infinityrealtypune.com/",
+        "androidAppStoreLink": "",
+        "appleAppStoreLink": "",
+        "otherLink": "",
+        "companyName": "Infinity Realty",
+        "companyLink": "https://infinityrealtypune.com/",
+        "createdDate": "01-11-2026"
+    },
+    {
         "key": "prime-properties-jd",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "primepropertiesjd.avif",
         "title": "Prime Properties JD",
@@ -223,6 +274,7 @@
     {
         "key": "personal-portfolio-V2",
         "projectType": "",
+        "category": "personal",
         "projectPriority": "",
         "image": "personal-portfolio-V2.png",
         "title": "Personal Portfolio V2",
@@ -240,6 +292,7 @@
     {
         "key": "app-usage-visualizer",
         "projectType": "",
+        "category": "personal",
         "projectPriority": "",
         "image": "app-usage-visualizer.png",
         "title": "App Usage Visualizer",
@@ -257,6 +310,7 @@
     {
         "key": "qusere",
         "projectType": "",
+        "category": "personal",
         "projectPriority": "",
         "image": "qusere.png",
         "title": "Qusere.in",
@@ -273,8 +327,9 @@
     },
     {
         "key": "bookanartist-booktree",
-        "projectType": "normal",
-        "projectPriority": 4,
+        "projectType": "",
+        "category": "work",
+        "projectPriority": "",
         "image": "bookanartist-checkoutmystuff.png",
         "title": "BookTree",
         "description": "Led a collaborative effort within my team at Book An Artist to develop a dynamic link management platform using Next.js. Provides users a centralized space to showcase online links, consolidating multiple links into a single shareable page for better social media presence.",
@@ -291,6 +346,7 @@
     {
         "key": "bookanartist-wordpress",
         "projectType": "",
+        "category": "work",
         "projectPriority": "",
         "image": "bookanartist-wordpress.png",
         "title": "BookAnArtist WordPress",
@@ -308,6 +364,7 @@
     {
         "key": "space-realtors",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "space-realors-website.png",
         "title": "Spacerealtors.net",
@@ -325,6 +382,7 @@
     {
         "key": "Kshemrealty",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "kshem-realty-website.png",
         "title": "Kshemrealty.in",
@@ -342,6 +400,7 @@
     {
         "key": "real-estate-website",
         "projectType": "",
+        "category": "work",
         "projectPriority": "",
         "image": "real-estate-website.png",
         "title": "Infratech.ind.in",
@@ -359,6 +418,7 @@
     {
         "key": "vehicle-service-center-website",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "vehicle-service-center-website.png",
         "title": "Vehicle Service Center Website",
@@ -376,6 +436,7 @@
     {
         "key": "meeting-management-application",
         "projectType": "",
+        "category": "freelance",
         "projectPriority": "",
         "image": "",
         "title": "Meeting Management Application",
@@ -393,6 +454,7 @@
     {
         "key": "e-commerce-website",
         "projectType": "",
+        "category": "personal",
         "projectPriority": "",
         "image": "e-commerce-website.png",
         "title": "E-Commerce Website",
@@ -410,6 +472,7 @@
     {
         "key": "personal-portfolio-V1",
         "projectType": "",
+        "category": "personal",
         "projectPriority": "",
         "image": "personal-portfolio-V1.png",
         "title": "Personal Portfolio V1",
@@ -427,6 +490,7 @@
     {
         "key": "expense-manager-app",
         "projectType": "",
+        "category": "personal",
         "projectPriority": "",
         "image": "",
         "title": "Expense Manager App",
@@ -444,6 +508,7 @@
     {
         "key": "app-landing-page",
         "projectType": "",
+        "category": "personal",
         "projectPriority": "",
         "image": "app-landing-page.png",
         "title": "App Landing Page",

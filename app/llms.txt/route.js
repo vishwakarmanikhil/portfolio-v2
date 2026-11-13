@@ -1,6 +1,9 @@
 import workExperience from '@/components/homePageSections/workExperience.json';
 import projectsList from '@/components/projectsList.json';
 import faqList from '@/components/homePageSections/faq.json';
+import freelance from '@/components/freelance.json';
+import coworkspace from '@/components/projects/coworkspace.json';
+import enquiro from '@/components/projects/enquiro.json';
 
 export const dynamic = 'force-static';
 
@@ -12,7 +15,7 @@ function buildMarkdown() {
     const lines = [
         '# Nikhil Vishwakarma',
         '',
-        '> Full-Stack Engineer based in Mumbai, India, with 5+ years of experience building production web and mobile products across healthcare SaaS, entertainment marketplaces and real estate. Works with React, Next.js, React Native, Node.js, TypeScript, MySQL, PostgreSQL, Redis and AWS, and builds LLM-powered product features. Open to full-stack engineering roles and can join immediately.',
+        '> Senior Software Developer based in Mumbai, India, with 5+ years of full-stack experience building production web and mobile products across healthcare SaaS, entertainment marketplaces and real estate. Works with React, Next.js, React Native, Node.js, TypeScript, MySQL, PostgreSQL, Redis and AWS, and builds LLM-powered product features. Open to senior software developer roles and can join immediately.',
         '',
         '## Contact',
         '',
@@ -42,6 +45,17 @@ function buildMarkdown() {
         lines.push(`- **${p.title}**${link ? ` (${link})` : ''}: ${p.description} Technology: ${p.technology}.`);
     }
     lines.push('', `More projects: ${SITE_URL}/archive`, '');
+
+    lines.push('## Freelance web development', '', `Nikhil also takes freelance projects for small businesses: ${SITE_URL}/freelance`, '');
+    for (const s of freelance.services) lines.push(`- **${s.title}**: ${s.description}`);
+    lines.push('');
+
+    for (const product of [enquiro, coworkspace]) {
+        lines.push(`## ${product.name} (product)`, '', `${product.summary} ${product.codeNote} Details: ${SITE_URL}/projects/${product.slug}`, '');
+        for (const part of product.parts) lines.push(`- **${part.title}**: ${part.features.join('; ')}`);
+        if (product.usedBy?.length) lines.push(`- **Used by**: ${product.usedBy.map(c => c.name).join(', ')}`);
+        lines.push('');
+    }
 
     lines.push('## Frequently asked questions', '');
     for (const item of faqList) lines.push(`### ${item.question}`, '', item.answer, '');
