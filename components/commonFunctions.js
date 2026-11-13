@@ -6,4 +6,5 @@ export const projectCategoryLabel = {
     work: 'Work',
     freelance: 'Freelance',
     personal: 'Personal',
+    product: 'Product',
 };

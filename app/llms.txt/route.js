@@ -2,6 +2,7 @@ import workExperience from '@/components/homePageSections/workExperience.json';
 import projectsList from '@/components/projectsList.json';
 import faqList from '@/components/homePageSections/faq.json';
 import freelance from '@/components/freelance.json';
+import coworkspace from '@/components/projects/coworkspace.json';
 
 export const dynamic = 'force-static';
 
@@ -46,6 +47,10 @@ function buildMarkdown() {
 
     lines.push('## Freelance web development', '', `Nikhil also takes freelance projects for small businesses: ${SITE_URL}/freelance`, '');
     for (const s of freelance.services) lines.push(`- **${s.title}**: ${s.description}`);
+    lines.push('');
+
+    lines.push('## Coworkspace (product)', '', `${coworkspace.summary} ${coworkspace.codeNote} Details: ${SITE_URL}/projects/coworkspace`, '');
+    for (const part of coworkspace.parts) lines.push(`- **${part.title}**: ${part.features.join('; ')}`);
     lines.push('');
 
     lines.push('## Frequently asked questions', '');

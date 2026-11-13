@@ -131,6 +131,15 @@ const Freelance = () => {
                 </ul>
             </section>
 
+            <section className={classNames('pb-10')} id='coworkspace' data-aos='fade-up'>
+                <div className={classNames('relative overflow-hidden rounded-2xl border border-sky-500/40 bg-gradient-to-br from-sky-500/10 via-transparent to-sky-500/5 p-8 md:p-10')}>
+                    <p className={classNames('inline-block text-xs font-semibold uppercase tracking-widest text-sky-500 border border-sky-500 rounded-full px-3 py-1 mb-4')}>Ready-made platform</p>
+                    <h2 className={classNames('text-2xl md:text-3xl font-bold text-gray-800 dark:text-gray-200 mb-3')}>Run a coworking space? Get Coworkspace.</h2>
+                    <p className={classNames(textClass, 'md:w-3/4 mb-6')}>A complete platform with a public website, a client portal for meeting-room booking, and an admin panel to manage clients and email invoices. I can set it up with your branding, locations and pricing.</p>
+                    <Link href='/projects/coworkspace' className={classNames(buttonClass)}>See Coworkspace and request a demo</Link>
+                </div>
+            </section>
+
             <section className={classNames(styles.section__style)} id='client-work'>
                 <h2 className={titleClass} data-aos='fade-up'>Which businesses have I worked with?</h2>
                 <p className={classNames(textClass)} data-aos='fade-up'>These are websites and apps I built for freelance clients. For my full-time work, see <Link href='/#work' className='text-sky-500 hover:text-sky-600 hover:underline'>my main projects</Link>, or browse <Link href='/archive' className='text-sky-500 hover:text-sky-600 hover:underline'>every project in the archive</Link>.</p>

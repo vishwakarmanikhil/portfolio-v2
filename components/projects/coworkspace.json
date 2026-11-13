@@ -1,0 +1,81 @@
+{
+    "slug": "coworkspace",
+    "name": "Coworkspace",
+    "title": "Coworkspace: a complete platform for coworking businesses",
+    "summary": "Coworkspace is a ready-to-use platform for coworking businesses. It combines a public website that brings in enquiries, a client portal where members log in and book meeting rooms, and an admin panel where the team manages clients and sends invoices by email.",
+    "metaDescription": "Coworkspace is a complete platform for coworking businesses: a public website, a client portal for meeting-room booking, and an admin panel for clients and invoices. Live demo on request.",
+    "websiteUrl": "https://coworkspace.nikhilvishwakarma.com/",
+    "image": "/projects/coworkspace/website-home.png",
+    "imageAlt": "Coworkspace public website homepage with the headline 'Co-working spaces built for focus and collaboration'",
+    "codeNote": "The source code is private. I give a complete live demo of the website, client portal and admin panel on request.",
+    "parts": [
+        {
+            "icon": "website",
+            "title": "Public website",
+            "description": "A fast marketing site that turns visitors into enquiries.",
+            "features": [
+                "Membership plans: day pass, dedicated desk, private office and team office",
+                "A page for each location and each solution",
+                "Blog, FAQs and member testimonials",
+                "Enquiry form and \"Book a Tour\" calls to action"
+            ]
+        },
+        {
+            "icon": "calendar",
+            "title": "Client portal",
+            "description": "A private area where members manage their own bookings.",
+            "features": [
+                "Secure client login",
+                "Book meeting rooms by date and time"
+            ]
+        },
+        {
+            "icon": "building",
+            "title": "Admin panel",
+            "description": "One place for the team to run the business.",
+            "features": [
+                "Add, edit and manage clients",
+                "View and manage meeting-room bookings",
+                "Create, edit and delete invoices",
+                "Email invoices directly to clients"
+            ]
+        }
+    ],
+    "audience": [
+        "Coworking space operators with one or more locations",
+        "Business centres and shared offices that rent meeting rooms",
+        "Teams that want their own branded booking and billing system instead of spreadsheets and email threads"
+    ],
+    "demoSteps": [
+        {
+            "title": "Request a demo",
+            "description": "Email me a few lines about your coworking business: locations, plans and how you take bookings today."
+        },
+        {
+            "title": "Live walkthrough",
+            "description": "On a call, I show the public website, the client portal and the admin panel working end to end."
+        },
+        {
+            "title": "Customize and launch",
+            "description": "If it fits, I set it up with your branding, locations, plans and pricing, and launch it on your domain."
+        }
+    ],
+    "faq": [
+        {
+            "question": "What is Coworkspace?",
+            "answer": "Coworkspace is a complete platform for coworking businesses: a public website for enquiries, a client portal where members log in and book meeting rooms, and an admin panel to manage clients and email invoices."
+        },
+        {
+            "question": "Can I see a demo?",
+            "answer": "Yes. Email me and I will set up a live demo where you can see the website, client portal and admin panel working end to end. The public website is also live at coworkspace.nikhilvishwakarma.com."
+        },
+        {
+            "question": "Can I see the source code?",
+            "answer": "The source code is private, so it is not published. During the demo I can walk you through how it is built and answer technical questions."
+        },
+        {
+            "question": "Can it be customized for my coworking business?",
+            "answer": "Yes. The branding, locations, plans, pricing and content can be set up for your business, and it can be launched on your own domain."
+        }
+    ]
+}

@@ -4,6 +4,7 @@ import IconAssests from '../svgAssests/IconAssests';
 import { isValidValue, projectCategoryLabel } from '../commonFunctions';
 import styles from './style.module.css';
 import Color from "@/constants/color";
+import Link from 'next/link';
 
 const OtherProjects = () => {
 
@@ -33,13 +34,17 @@ const OtherProjects = () => {
                         </div>
                         {data?.category && <div className='mb-3'><span className={classNames('inline-block text-xs font-medium px-2 py-0.5 rounded-xl border border-sky-500 text-sky-500 dark:text-sky-400 align-middle')}>{projectCategoryLabel[data?.category]}</span></div>}
                         <h3 className={classNames(styles.opi_title__txt, 'block text-xl font-bold text-gray-100 dark:text-gray-300 mb-5')}>
-                            {isValidValue(data?.projectLink) ?
+                            {isValidValue(data?.caseStudyLink) ?
+                                <Link href={data?.caseStudyLink} title={`${data?.title} details`} className={classNames(styles.opi_redirect__link)}>{data?.title}</Link>
+                                : isValidValue(data?.projectLink) ?
                                 <a href={data?.projectLink} title={`${data?.title} link`} className={classNames(styles.opi_redirect__link)}>{data?.title}</a>
                                 :
                                 <span>{data?.title}</span>
                             }
                         </h3>
                         <p className={classNames('text-sm font-normal text-gray-500 md:text-gray-300 dark:text-gray-400')}>{data?.description}</p>
+                        {isValidValue(data?.caseStudyLink) &&
+                            <p className={classNames('mt-4 text-sm font-medium text-sky-400')}>See features and request a demo →</p>}
 
                         {isValidValue(data?.technology) ?
                             <ul className={classNames('flex flex-row flex-wrap gap-x-3 gap-y-1 mt-5 mb-5')}>
