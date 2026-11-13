@@ -26,7 +26,7 @@ export const metadata = {
     },
   },
   title: 'Nikhil Vishwakarma | Senior Software Developer',
-  description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+  description: 'Senior Software Developer who builds products end to end: 5+ years shipping web apps, mobile apps and SaaS with React, Next.js, React Native, Node.js and AWS. Open to any domain.',
   icons: {
     icon: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/favicon-16x16.png',
     shortcut: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/favicon-32x32.png',
@@ -41,13 +41,13 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Nikhil Vishwakarma | Senior Software Developer',
-    description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+    description: 'Senior Software Developer who builds products end to end: 5+ years shipping web apps, mobile apps and SaaS with React, Next.js, React Native, Node.js and AWS. Open to any domain.',
     creator: '@vishwakarmanikhil',
     images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
   },
   openGraph: {
     title: 'Nikhil Vishwakarma | Senior Software Developer',
-    description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+    description: 'Senior Software Developer who builds products end to end: 5+ years shipping web apps, mobile apps and SaaS with React, Next.js, React Native, Node.js and AWS. Open to any domain.',
     url: 'https://www.nikhilvishwakarma.com',
     siteName: 'Nikhil Vishwakarma',
     images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
@@ -88,7 +88,7 @@ const person = {
   url: SITE_URL,
   image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png',
   jobTitle: 'Senior Software Developer',
-  description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+  description: 'Senior Software Developer who builds products end to end: 5+ years shipping web apps, mobile apps and SaaS with React, Next.js, React Native, Node.js and AWS. Open to any domain.',
   email: 'mailto:vnikhil3101@gmail.com',
   address: {
     '@type': 'PostalAddress',

@@ -65,6 +65,8 @@
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0.2;
+    /* Decorative only: let clicks and text selection reach the content underneath. */
+    pointer-events: none;
 }
 
 .light .bg__overlay {

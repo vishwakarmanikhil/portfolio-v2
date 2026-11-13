@@ -11,22 +11,23 @@ import IconAssests from '@/components/svgAssests/IconAssests';
 import Color from '@/constants/color';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 import FaqAccordion from '@/components/FaqAccordion';
+import EnquiryForm from '@/components/EnquiryForm';
 import ServiceIcon from '@/components/freelance/ServiceIcon';
 
 const SITE_URL = 'https://www.nikhilvishwakarma.com';
 const PAGE_URL = `${SITE_URL}/freelance`;
 const EMAIL = 'vnikhil3101@gmail.com';
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent('Website project enquiry')}`;
-const DESCRIPTION = 'Freelance web developer in Mumbai building fast, SEO-ready websites and web apps for real estate firms, service businesses, agencies and professionals.';
+const DESCRIPTION = 'Freelance web and app developer in Mumbai. I turn business problems into working products: websites, web apps, mobile apps and SaaS, for any industry.';
 
 export const metadata = {
-    title: 'Freelance Web Developer in Mumbai | Nikhil Vishwakarma',
+    title: 'Freelance Web & App Developer in Mumbai | Nikhil Vishwakarma',
     description: DESCRIPTION,
     alternates: {
         canonical: '/freelance',
     },
     openGraph: {
-        title: 'Freelance Web Developer in Mumbai | Nikhil Vishwakarma',
+        title: 'Freelance Web & App Developer in Mumbai | Nikhil Vishwakarma',
         description: DESCRIPTION,
         url: PAGE_URL,
         siteName: 'Nikhil Vishwakarma',
@@ -111,19 +112,19 @@ const Freelance = () => {
 
             <section className={classNames(archiveStyles.archive__banner_wrap)}>
                 <p className={classNames('text-sm font-medium text-sky-500 mb-5')} data-aos='fade-up' data-aos-delay='100'>Freelance</p>
-                <h1 className={classNames(archiveStyles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-6')} data-aos='fade-up' data-aos-delay='150'>Freelance web developer in Mumbai.</h1>
+                <h1 className={classNames(archiveStyles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-6')} data-aos='fade-up' data-aos-delay='150'>Freelance web and app developer in Mumbai.</h1>
                 <p className={classNames(textClass, 'md:w-2/3 mb-8')} data-aos='fade-up' data-aos-delay='200'>
-                    I build fast, SEO-ready websites and web apps for small businesses: real estate firms, service businesses, agencies and professionals. I have 5+ years of experience as a full-stack developer, and I have delivered projects for {clientProjects.length} clients since 2021.
+                    I turn business problems into working products: websites, web apps, mobile apps and SaaS, for any industry. I have 5+ years of experience building products end to end as a full-stack developer, and I have delivered projects for {clientProjects.length} clients since 2021.
                 </p>
                 <div data-aos='fade-up' data-aos-delay='250'>
-                    <a href={MAILTO} className={buttonClass} title={`Email ${EMAIL}`}>Email me about your project</a>
+                    <a href='#contact' className={buttonClass} title='Go to the enquiry form'>Tell me about your project</a>
                     <a href='#client-work' className={buttonClass} title='See client work'>See client work</a>
                 </div>
             </section>
 
             <section className={classNames(styles.section__style)} id='services'>
                 <h2 className={titleClass} data-aos='fade-up'>What can I build for your business?</h2>
-                <p className={classNames(textClass, 'mb-10')} data-aos='fade-up'>Websites and web apps that load fast, work well on phones, and help customers find and contact you.</p>
+                <p className={classNames(textClass, 'mb-10')} data-aos='fade-up'>{freelance.servicesIntro}</p>
                 <ul className={classNames('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5')}>
                     {freelance.services.map((service, key) => (
                         <li key={`service-${key}`} data-aos='fade-up' data-aos-delay={`${(key % 3) * 100}`}>
@@ -222,8 +223,10 @@ const Freelance = () => {
             <section className={classNames(styles.section__style, 'flex flex-col items-center text-center')} id='contact'>
                 <h2 className={classNames('text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-5')} data-aos='fade-up'>Have a project in mind?</h2>
                 <p className={classNames('text-lg font-medium text-gray-500 dark:text-gray-400 mb-6 md:w-2/3')} data-aos='fade-up' data-aos-delay='100'>Send me a few lines about your business and what you need. I will reply to set up a short call.</p>
-                <p className={classNames(textClass, 'mb-8')} data-aos='fade-up' data-aos-delay='150'>Email: <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a></p>
-                <a href={MAILTO} className={buttonClass} data-aos='fade-up' data-aos-delay='200' title={`Email ${EMAIL}`}>Start a project</a>
+                <div className={classNames('w-full max-w-3xl rounded-2xl border border-gray-200 dark:border-gray-700/80 bg-white/70 dark:bg-gray-800/40 p-6 md:p-10')}>
+                    <EnquiryForm submitLabel='Send my enquiry' />
+                </div>
+                <p className={classNames(textClass, 'mt-8')}>Prefer email? Write to <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a></p>
             </section>
 
             <div className={classNames('pb-5')}>

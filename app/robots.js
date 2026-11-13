@@ -3,6 +3,7 @@ export default function robots() {
         rules: {
             userAgent: '*',
             allow: '/',
+            disallow: '/admin',
         },
         sitemap: 'https://www.nikhilvishwakarma.com/sitemap.xml',
         host: 'https://www.nikhilvishwakarma.com',

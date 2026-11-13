@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState, Fragment } from "react";
+import { usePathname } from "next/navigation";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import LogoAssets from "@/components/svgAssests/LogoAssets";
@@ -10,9 +11,11 @@ import Color from "@/constants/color";
 // engines and AI crawlers); the preloader is a full-screen cover drawn on top
 // of it for the first 2 seconds. Scroll animations start once the cover lifts.
 export default function Loader({ children }) {
-    const [loading, setLoading] = useState(true)
+    const isAdmin = usePathname()?.startsWith('/admin') ?? false;
+    const [loading, setLoading] = useState(!isAdmin)
 
     useEffect(() => {
+        if (isAdmin) return;
         document.body.style.overflow = 'hidden';
         const timer = setTimeout(() => {
             setLoading(false);
@@ -28,7 +31,7 @@ export default function Loader({ children }) {
             clearTimeout(timer);
             document.body.style.overflow = '';
         };
-    }, [])
+    }, [isAdmin])
 
     return (
         <Fragment>

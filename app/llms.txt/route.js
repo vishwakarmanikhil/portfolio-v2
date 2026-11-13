@@ -16,7 +16,7 @@ function buildMarkdown() {
     const lines = [
         '# Nikhil Vishwakarma',
         '',
-        '> Senior Software Developer based in Mumbai, India, with 5+ years of full-stack experience building production web and mobile products across healthcare SaaS, entertainment marketplaces and real estate. Works with React, Next.js, React Native, Node.js, TypeScript, MySQL, PostgreSQL, Redis and AWS, and builds LLM-powered product features. Open to senior software developer roles and can join immediately.',
+        '> Senior Software Developer based in Mumbai, India, who builds products end to end and solves problems with technology. 5+ years of full-stack experience shipping web apps, mobile apps and SaaS across healthcare, entertainment marketplaces and real estate, with React, Next.js, React Native, Node.js, TypeScript, PostgreSQL, MySQL, Redis and AWS, including LLM-powered features. Open to senior software developer roles in any domain (web, mobile, SaaS), can join immediately, and also takes freelance projects.',
         '',
         '## Contact',
         '',

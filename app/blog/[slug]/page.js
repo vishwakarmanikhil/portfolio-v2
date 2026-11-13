@@ -129,7 +129,7 @@ export default async function BlogPost({ params }) {
 
             <section className={classNames('max-w-3xl mt-16 rounded-2xl border border-sky-500/40 bg-gradient-to-br from-sky-500/10 via-transparent to-sky-500/5 p-6 md:p-8')}>
                 <p className={classNames('text-lg font-bold text-gray-800 dark:text-gray-200 mb-2')}>Written by Nikhil Vishwakarma</p>
-                <p className={classNames('text-base leading-7 text-gray-500 dark:text-gray-400 mb-5')}>Senior Software Developer in Mumbai with 5+ years of full-stack experience in React, Next.js, Node.js and AWS. I am open to senior software developer roles, and I build websites and web apps for businesses.</p>
+                <p className={classNames('text-base leading-7 text-gray-500 dark:text-gray-400 mb-5')}>Senior Software Developer in Mumbai who builds products end to end: 5+ years shipping web apps, mobile apps and SaaS with React, Next.js, React Native, Node.js and AWS. I am open to senior roles in any domain, and I build websites, web apps, mobile apps and SaaS for businesses.</p>
                 <div className={classNames('flex flex-wrap gap-3')}>
                     <Link href='/' className={classNames('rounded-lg bg-sky-500 px-5 py-3 text-sm font-medium text-white hover:bg-sky-600')}>About me and my work</Link>
                     <Link href='/freelance' className={classNames('rounded-lg border border-sky-500 px-5 py-3 text-sm font-medium text-sky-500 hover:bg-sky-500/10')}>Hire me for a project</Link>

@@ -12,6 +12,8 @@ const AboutMe = () => {
 
           <div className={classNames('text-base font-medium text-gray-500 dark:text-gray-400 mb-3')}>Today, with 5+ years of experience across <a href='https://www.apl.com/' target='_blank' title='APL India Private Limited' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>logistics</a>, <a href='https://www.bhaktivedantahospital.com/' target='_blank' title='Bhaktivedanta Hospital & Research Institute' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>healthcare</a>, <a href='https://infratech.ind.in/' target='_blank' title='Infratech' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>real estate</a>, and <a href='https://bookanartist.co/' target='_blank' title='Book An Artist' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>SaaS</a>, most recently I worked at <a href='https://aartas.com/' target='_blank' title='Aartas' className={classNames('text-sky-500 hover:text-sky-600 hover:underline')}>Aartas</a> — building core modules of a multi-tenant healthcare platform, leading a team of 6 developers, managing AWS infrastructure, and shipping LLM-powered clinical workflows. I use AI coding tools like Claude, ChatGPT and GitHub Copilot every day to build faster.</div>
 
+          <p className={classNames('text-base font-medium text-gray-500 dark:text-gray-400 mb-3')}>What I enjoy most is building products: taking a messy problem, understanding the people who have it, and turning it into software that works, from the database and APIs to the screens people use. The domain doesn&apos;t limit me. I&apos;m happy to work on websites, web apps, mobile apps or SaaS products in any industry.</p>
+
           <p className={classNames('text-base font-medium text-gray-500 dark:text-gray-400 mb-3')}>Outside of work, I enjoy being a helping hand and visiting temples to delve deeper into Indian sanskriti. !! Hare Krishna<span>❤ </span>
             !!</p>
         </div>
@@ -23,6 +25,7 @@ const AboutMe = () => {
             <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>TypeScript</li>
             <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>React</li>
             <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>Next.js</li>
+            <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>React Native</li>
             <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>Node.js</li>
             <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>AWS</li>
             <li className={classNames(styles.skill__item, 'text-xs font-medium text-gray-500 dark:text-gray-400')}>Redis</li>
