@@ -9,6 +9,7 @@ import Loader from './loader';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Script from 'next/script';
 import workExperience from '@/components/homePageSections/workExperience.json';
+import { SITE_URL, PERSON_ID, BUSINESS_ID, WEBSITE_ID, DEFAULT_OG_IMAGE, jsonLd } from '@/lib/seo';
 
 const lexend = Lexend({ subsets: ['latin'] });
 
@@ -16,16 +17,29 @@ export const viewport = {
   themeColor: '#111827',
 }
 
+const DESCRIPTION = 'Senior Software Developer in Mumbai who builds web apps, mobile apps and SaaS end to end with React, Next.js, React Native, Node.js and AWS.';
+
+// Site-wide defaults. Every page overrides title, description, canonical and
+// social tags through pageMetadata() in lib/seo.js.
 export const metadata = {
-  metadataBase: new URL('https://www.nikhilvishwakarma.com'),
-  alternates: {
-    canonical: '/',
-    types: {
-      'text/markdown': '/llms.txt',
-    },
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: 'Nikhil Vishwakarma – Senior Software Developer, Mumbai',
+    template: '%s | Nikhil Vishwakarma',
   },
-  title: 'Nikhil Vishwakarma | Senior Software Developer',
-  description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+  description: DESCRIPTION,
+  applicationName: 'Nikhil Vishwakarma',
+  authors: [{ name: 'Nikhil Vishwakarma', url: SITE_URL }],
+  creator: 'Nikhil Vishwakarma',
+  publisher: 'Nikhil Vishwakarma',
+  category: 'technology',
+  keywords: ['Nikhil Vishwakarma', 'Senior Software Developer', 'Full Stack Developer', 'Mumbai'],
+  formatDetection: { telephone: false, email: false, address: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1, 'max-video-preview': -1 },
+  },
   icons: {
     icon: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/favicon-16x16.png',
     shortcut: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/favicon-32x32.png',
@@ -37,32 +51,22 @@ export const metadata = {
     },
   },
   manifest: '/site.webmanifest',
+  openGraph: {
+    siteName: 'Nikhil Vishwakarma',
+    locale: 'en_IN',
+    type: 'website',
+    images: [DEFAULT_OG_IMAGE],
+  },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nikhil Vishwakarma | Senior Software Developer',
-    description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
     creator: '@vishwakarmanikhil',
-    images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
-  },
-  openGraph: {
-    title: 'Nikhil Vishwakarma | Senior Software Developer',
-    description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
-    url: 'https://www.nikhilvishwakarma.com',
-    siteName: 'Nikhil Vishwakarma',
-    images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
-    locale: 'en_US',
-    type: 'website',
-  },
-  other: {
-    author: 'Nikhil Vishwakarma',
+    images: [DEFAULT_OG_IMAGE],
   },
   verification: {
     google: 'KK0pw48bFRbf5iwW7yHi5JDOEoP_bYxG1SXs1iPff9o'
   }
 }
 
-const SITE_URL = 'https://www.nikhilvishwakarma.com';
-const PERSON_ID = `${SITE_URL}/#person`;
 const currentJob = workExperience[0];
 
 const allSkills = [...new Set(
@@ -87,7 +91,7 @@ const person = {
   url: SITE_URL,
   image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png',
   jobTitle: 'Senior Software Developer',
-  description: 'Senior Software Developer with 5+ years of full-stack experience building production SaaS and healthcare products with React, Next.js, Node.js, TypeScript, AWS and LLM-powered workflows.',
+  description: DESCRIPTION,
   email: 'mailto:vnikhil3101@gmail.com',
   address: {
     '@type': 'PostalAddress',
@@ -123,20 +127,40 @@ const person = {
   },
 };
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE_URL}/#website`,
-      name: 'Nikhil Vishwakarma',
-      url: SITE_URL,
-      inLanguage: 'en',
-      publisher: { '@id': PERSON_ID },
-    },
-    person,
-  ],
+// The freelance business (a LocalBusiness subtype), defined once for the whole site.
+const business = {
+  '@type': 'ProfessionalService',
+  '@id': BUSINESS_ID,
+  name: 'Nikhil Vishwakarma – Web & App Development',
+  url: `${SITE_URL}/freelance`,
+  description: 'Freelance web and app development in Mumbai: websites, web apps, mobile apps and SaaS products for businesses in any industry.',
+  image: DEFAULT_OG_IMAGE,
+  logo: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/favicon/apple-touch-icon.png',
+  email: 'mailto:vnikhil3101@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Mumbai',
+    addressRegion: 'Maharashtra',
+    addressCountry: 'IN',
+  },
+  areaServed: { '@type': 'Country', name: 'India' },
+  founder: { '@id': PERSON_ID },
+  knowsAbout: ['Website development', 'Web application development', 'Mobile app development', 'SaaS development', 'Real estate websites', 'Lead management systems', 'SEO and AI search visibility'],
+  sameAs: ['https://www.linkedin.com/in/vishwakarmanikhil/', 'https://github.com/vishwakarmanikhil'],
 };
+
+const structuredData = jsonLd([
+  {
+    '@type': 'WebSite',
+    '@id': WEBSITE_ID,
+    name: 'Nikhil Vishwakarma',
+    url: SITE_URL,
+    inLanguage: 'en-IN',
+    publisher: { '@id': PERSON_ID },
+  },
+  person,
+  business,
+]);
 
 export default function RootLayout({ children }) {
   return (
@@ -161,7 +185,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{ __html: structuredData }}
         />
         <div className='bg__overlay'></div>
         <Providers>

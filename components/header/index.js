@@ -15,6 +15,7 @@ const menuLink = [
     { name: 'Experience', link: 'experience' },
     { name: 'Work', link: 'work' },
     { name: 'Contact', link: 'contact' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Freelance', href: '/freelance' },
 ]
 

@@ -4,6 +4,7 @@ import faqList from '@/components/homePageSections/faq.json';
 import freelance from '@/components/freelance.json';
 import coworkspace from '@/components/projects/coworkspace.json';
 import enquiro from '@/components/projects/enquiro.json';
+import { getAllPosts } from '@/lib/blog';
 
 export const dynamic = 'force-static';
 
@@ -15,7 +16,7 @@ function buildMarkdown() {
     const lines = [
         '# Nikhil Vishwakarma',
         '',
-        '> Senior Software Developer based in Mumbai, India, with 5+ years of full-stack experience building production web and mobile products across healthcare SaaS, entertainment marketplaces and real estate. Works with React, Next.js, React Native, Node.js, TypeScript, MySQL, PostgreSQL, Redis and AWS, and builds LLM-powered product features. Open to senior software developer roles and can join immediately.',
+        '> Senior Software Developer based in Mumbai, India, who builds products end to end and solves problems with technology. 5+ years of full-stack experience shipping web apps, mobile apps and SaaS across healthcare, entertainment marketplaces and real estate, with React, Next.js, React Native, Node.js, TypeScript, PostgreSQL, MySQL, Redis and AWS, including LLM-powered features. Open to senior software developer roles in any domain (web, mobile, SaaS), can join immediately, and also takes freelance projects.',
         '',
         '## Contact',
         '',
@@ -54,6 +55,13 @@ function buildMarkdown() {
         lines.push(`## ${product.name} (product)`, '', `${product.summary} ${product.codeNote} Details: ${SITE_URL}/projects/${product.slug}`, '');
         for (const part of product.parts) lines.push(`- **${part.title}**: ${part.features.join('; ')}`);
         if (product.usedBy?.length) lines.push(`- **Used by**: ${product.usedBy.map(c => c.name).join(', ')}`);
+        lines.push('');
+    }
+
+    const posts = getAllPosts();
+    if (posts.length) {
+        lines.push('## Blog posts', '');
+        for (const post of posts) lines.push(`- [${post.title}](${post.url}): ${post.description}`);
         lines.push('');
     }
 

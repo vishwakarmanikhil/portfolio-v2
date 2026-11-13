@@ -1,6 +1,3 @@
-'use client';
-
-import { useEffect } from 'react';
 import classNames from 'classnames';
 import styles from './page.module.css';
 import Link from 'next/link';
@@ -13,56 +10,46 @@ import PageBanner from '@/components/homePageSections/PageBanner';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 import Faq from '@/components/homePageSections/Faq';
 import faqList from '@/components/homePageSections/faq.json';
+import HashScroll from '@/components/HashScroll';
+import { pageMetadata, faqPage, jsonLd, SITE_URL, WEBSITE_ID, PERSON_ID } from '@/lib/seo';
 
-const SITE_URL = 'https://www.nikhilvishwakarma.com';
-
-// Homepage-only structured data. WebSite and Person are defined site-wide in layout.js.
-const homeStructuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'ProfilePage',
-      '@id': `${SITE_URL}/#profilepage`,
-      url: SITE_URL,
-      name: 'Nikhil Vishwakarma | Senior Software Developer',
-      isPartOf: { '@id': `${SITE_URL}/#website` },
-      mainEntity: { '@id': `${SITE_URL}/#person` },
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': `${SITE_URL}/#faq`,
-      url: SITE_URL,
-      mainEntity: faqList.map(item => ({
-        '@type': 'Question',
-        name: item.question,
-        acceptedAnswer: { '@type': 'Answer', text: item.answer },
-      })),
-    },
-  ],
+export const metadata = {
+  ...pageMetadata({
+    title: 'Nikhil Vishwakarma – Senior Software Developer, Mumbai',
+    description: 'Senior Software Developer in Mumbai who builds web apps, mobile apps and SaaS end to end with React, Next.js, React Native, Node.js and AWS. Open to any domain.',
+    path: '/',
+    type: 'profile',
+    keywords: [
+      'Nikhil Vishwakarma', 'Senior Software Developer', 'Full Stack Developer Mumbai', 'React developer',
+      'Next.js developer', 'Node.js developer', 'React Native developer', 'SaaS developer', 'Product engineer',
+      'Hire software developer Mumbai',
+    ],
+  }),
 };
 
-export default function Home() {
-  useEffect(() => {
-    const anchor = window.location.hash.substring(1);
+// Homepage-only structured data. WebSite, Person and the business are defined site-wide in layout.js.
+const homeStructuredData = jsonLd([
+  {
+    '@type': 'ProfilePage',
+    '@id': `${SITE_URL}/#profilepage`,
+    url: SITE_URL,
+    name: 'Nikhil Vishwakarma – Senior Software Developer, Mumbai',
+    isPartOf: { '@id': WEBSITE_ID },
+    mainEntity: { '@id': PERSON_ID },
+  },
+  faqPage('/', faqList),
+]);
 
-    const targetElement = document.getElementById(anchor);
-    if (targetElement) {
-      setTimeout(() => {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 1000);
-    }
-  }, []);
+export default function Home() {
 
 
   return (
     <div className={classNames(styles.main)}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeStructuredData) }}
+        dangerouslySetInnerHTML={{ __html: homeStructuredData }}
       />
+      <HashScroll />
       <section className={classNames(styles.hero__section)} id='main'>
         <PageBanner />
       </section>

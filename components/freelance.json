@@ -1,64 +1,64 @@
 {
     "services": [
         {
-            "title": "Business websites",
-            "description": "Fast, mobile-friendly websites built with Next.js and Tailwind CSS, with clear service pages, contact forms and the SEO basics set up from day one.",
+            "title": "Websites",
             "icon": "website",
             "tags": [
                 "Next.js",
                 "Tailwind CSS",
                 "SEO"
-            ]
+            ],
+            "description": "Fast, mobile-friendly websites with clear pages, enquiry forms and SEO set up from day one. I have built them for real estate firms, an accounting firm, a marketing agency and a vehicle service center."
         },
         {
-            "title": "Real estate and property websites",
-            "description": "Property listing pages, location pages, legal-document highlights, lead-capture forms and an admin panel to export each day's leads. I have built these for Infinity Realty, LandCity Properties, Prime Properties JD, Space Realtors and Kshemrealty.",
+            "title": "Web apps and admin panels",
             "icon": "building",
             "tags": [
-                "Listings",
-                "Lead capture",
-                "Admin panel"
-            ]
-        },
-        {
-            "title": "Booking and enquiry systems",
-            "description": "Appointment booking, enquiry management and Excel exports for service businesses, plus internal tools such as a meeting management app with roles, agendas and scheduling.",
-            "icon": "calendar",
-            "tags": [
+                "Dashboards",
                 "Bookings",
-                "Excel export",
-                "Admin tools"
-            ]
+                "Excel export"
+            ],
+            "description": "Booking systems, enquiry and lead management, dashboards and internal tools that replace spreadsheets and WhatsApp groups. Enquiro, my lead management system, runs at every real estate client I work with."
         },
         {
-            "title": "WhatsApp and payment integrations",
-            "description": "Meta WhatsApp Business API for notifications and customer messages, and Razorpay or PhonePe for online payments. I have run these in production for a healthcare platform with 500+ doctors.",
-            "icon": "chat",
+            "title": "Mobile apps",
+            "icon": "mobile",
+            "tags": [
+                "React Native",
+                "Android",
+                "iOS"
+            ],
+            "description": "Android and iOS apps from one codebase with React Native. I built the Book An Artist app, which is live on Google Play and the Apple App Store."
+        },
+        {
+            "title": "SaaS products",
+            "icon": "layers",
+            "tags": [
+                "Multi-tenant",
+                "User roles",
+                "Payments"
+            ],
+            "description": "Software you can sell to many customers, with separate data for each organization, user roles and payments. I built core parts of HiGalen, a healthcare SaaS used by 500+ doctors, and my own products Enquiro and Coworkspace."
+        },
+        {
+            "title": "Integrations and AI features",
+            "icon": "sparkles",
             "tags": [
                 "WhatsApp API",
                 "Razorpay",
-                "PhonePe"
-            ]
+                "LLMs"
+            ],
+            "description": "Meta WhatsApp Business API, Razorpay and PhonePe payments, and LLM-powered features such as document summarization, all of which I have run in production."
         },
         {
             "title": "Google and AI search visibility",
-            "description": "Server-rendered pages, structured data, sitemaps, robots.txt and llms.txt, so your site can be read by Google and by AI assistants such as ChatGPT, Claude and Perplexity.",
             "icon": "search",
             "tags": [
                 "SEO",
                 "Structured data",
                 "llms.txt"
-            ]
-        },
-        {
-            "title": "Custom web apps and AI features",
-            "description": "Dashboards, admin panels and LLM-powered features such as document summarization, built with React, Node.js and AWS.",
-            "icon": "sparkles",
-            "tags": [
-                "React",
-                "Node.js",
-                "LLMs"
-            ]
+            ],
+            "description": "Server-rendered pages, structured data, sitemaps, robots.txt and llms.txt, so your site can be read by Google and by AI assistants such as ChatGPT, Claude and Perplexity."
         }
     ],
     "process": [
@@ -85,8 +85,8 @@
             "answer": "It depends on the number of pages and features you need. After a short call, I send a written quote with a fixed scope and timeline before any work starts, so there are no surprises."
         },
         {
-            "question": "What kind of businesses have you built websites for?",
-            "answer": "I have built websites and web apps for real estate firms, an accounting and compliance firm, a performance marketing agency, a vehicle service center and a hospital. You can see the client projects on this page."
+            "question": "Do you work with businesses in any industry?",
+            "answer": "Yes. I have built websites, web apps and mobile apps for real estate firms, an accounting and compliance firm, a performance marketing agency, a vehicle service center, a hospital, a healthcare SaaS platform and an artist-booking marketplace. What matters is understanding the problem you need solved, not the industry."
         },
         {
             "question": "Will my website show up on Google?",
@@ -94,11 +94,12 @@
         },
         {
             "question": "What technology do you use?",
-            "answer": "For most business websites I use Next.js and Tailwind CSS. For web apps I use React, Node.js, MySQL or PostgreSQL, and AWS. I choose the simplest setup that does the job well."
+            "answer": "For websites I mostly use Next.js and Tailwind CSS. For web apps and SaaS I use React, Node.js, PostgreSQL or MySQL, and AWS, and for mobile apps React Native. I choose the simplest setup that solves the problem well."
         },
         {
             "question": "How do I get started?",
             "answer": "Email me at vnikhil3101@gmail.com with a few lines about your business and what you need. I will reply to set up a short call."
         }
-    ]
+    ],
+    "servicesIntro": "Whatever your industry, I start from the problem you need solved, then build the right thing for it: a website, a web app, a mobile app or a SaaS product."
 }

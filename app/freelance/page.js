@@ -11,30 +11,24 @@ import IconAssests from '@/components/svgAssests/IconAssests';
 import Color from '@/constants/color';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 import FaqAccordion from '@/components/FaqAccordion';
+import EnquiryButton from '@/components/EnquiryForm';
 import ServiceIcon from '@/components/freelance/ServiceIcon';
+import { pageMetadata, faqPage, breadcrumbs, jsonLd, absoluteUrl, BUSINESS_ID, WEBSITE_ID } from '@/lib/seo';
 
-const SITE_URL = 'https://www.nikhilvishwakarma.com';
-const PAGE_URL = `${SITE_URL}/freelance`;
 const EMAIL = 'vnikhil3101@gmail.com';
 const MAILTO = `mailto:${EMAIL}?subject=${encodeURIComponent('Website project enquiry')}`;
-const DESCRIPTION = 'Freelance web developer in Mumbai building fast, SEO-ready websites and web apps for real estate firms, service businesses, agencies and professionals.';
 
-export const metadata = {
-    title: 'Freelance Web Developer in Mumbai | Nikhil Vishwakarma',
-    description: DESCRIPTION,
-    alternates: {
-        canonical: '/freelance',
-    },
-    openGraph: {
-        title: 'Freelance Web Developer in Mumbai | Nikhil Vishwakarma',
-        description: DESCRIPTION,
-        url: PAGE_URL,
-        siteName: 'Nikhil Vishwakarma',
-        images: ['https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png'],
-        locale: 'en_US',
-        type: 'website',
-    },
-};
+export const metadata = pageMetadata({
+    title: 'Freelance Web & App Developer in Mumbai',
+    description: 'Freelance web and app developer in Mumbai. I turn business problems into working products: websites, web apps, mobile apps and SaaS, for any industry.',
+    path: '/freelance',
+    image: null, // app/freelance/opengraph-image.js
+    keywords: [
+        'Freelance web developer Mumbai', 'Freelance app developer', 'Website development', 'Web app development',
+        'Mobile app development', 'React Native app developer', 'SaaS development', 'Real estate website developer',
+        'Next.js developer for hire', 'Lead management system',
+    ],
+});
 
 const products = [
     {
@@ -57,45 +51,31 @@ const clientProjects = projectsList
     .filter(p => p.category === 'freelance')
     .sort((a, b) => toDate(b.createdDate) - toDate(a.createdDate));
 
-const structuredData = {
-    '@context': 'https://schema.org',
-    '@graph': [
-        {
-            '@type': 'ProfessionalService',
-            '@id': `${PAGE_URL}#service`,
-            name: 'Nikhil Vishwakarma – Freelance Web Development',
-            url: PAGE_URL,
-            description: DESCRIPTION,
-            image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png',
-            email: `mailto:${EMAIL}`,
-            address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Mumbai',
-                addressRegion: 'Maharashtra',
-                addressCountry: 'IN',
-            },
-            founder: { '@id': `${SITE_URL}/#person` },
-            hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Web development services',
-                itemListElement: freelance.services.map(s => ({
-                    '@type': 'Offer',
-                    itemOffered: { '@type': 'Service', name: s.title, description: s.description },
-                })),
-            },
-        },
-        {
-            '@type': 'FAQPage',
-            '@id': `${PAGE_URL}#faq`,
-            url: PAGE_URL,
-            mainEntity: freelance.faq.map(item => ({
-                '@type': 'Question',
-                name: item.question,
-                acceptedAnswer: { '@type': 'Answer', text: item.answer },
+const structuredData = jsonLd([
+    {
+        // Merges with the business defined site-wide in layout.js (same @id).
+        '@type': 'ProfessionalService',
+        '@id': BUSINESS_ID,
+        hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Web and app development services',
+            itemListElement: freelance.services.map(service => ({
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: service.title, description: service.description, provider: { '@id': BUSINESS_ID } },
             })),
         },
-    ],
-};
+    },
+    {
+        '@type': 'WebPage',
+        '@id': `${absoluteUrl('/freelance')}#webpage`,
+        url: absoluteUrl('/freelance'),
+        name: 'Freelance Web & App Developer in Mumbai',
+        isPartOf: { '@id': WEBSITE_ID },
+        about: { '@id': BUSINESS_ID },
+    },
+    faqPage('/freelance', freelance.faq),
+    breadcrumbs(['Freelance', '/freelance']),
+]);
 
 const buttonClass = 'inline-block px-6 py-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900';
 const titleClass = classNames(styles.section__title, 'text-2xl text-gray-800 dark:text-gray-200 font-bold');
@@ -106,24 +86,24 @@ const Freelance = () => {
         <div className={classNames('mx-auto')} style={{ maxWidth: 1000 }}>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+                dangerouslySetInnerHTML={{ __html: structuredData }}
             />
 
             <section className={classNames(archiveStyles.archive__banner_wrap)}>
                 <p className={classNames('text-sm font-medium text-sky-500 mb-5')} data-aos='fade-up' data-aos-delay='100'>Freelance</p>
-                <h1 className={classNames(archiveStyles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-6')} data-aos='fade-up' data-aos-delay='150'>Freelance web developer in Mumbai.</h1>
+                <h1 className={classNames(archiveStyles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-6')} data-aos='fade-up' data-aos-delay='150'>Freelance web and app developer in Mumbai.</h1>
                 <p className={classNames(textClass, 'md:w-2/3 mb-8')} data-aos='fade-up' data-aos-delay='200'>
-                    I build fast, SEO-ready websites and web apps for small businesses: real estate firms, service businesses, agencies and professionals. I have 5+ years of experience as a full-stack developer, and I have delivered projects for {clientProjects.length} clients since 2021.
+                    I turn business problems into working products: websites, web apps, mobile apps and SaaS, for any industry. I have 5+ years of experience building products end to end as a full-stack developer, and I have delivered projects for {clientProjects.length} clients since 2021.
                 </p>
                 <div data-aos='fade-up' data-aos-delay='250'>
-                    <a href={MAILTO} className={buttonClass} title={`Email ${EMAIL}`}>Email me about your project</a>
+                    <EnquiryButton label='Tell me about your project' className={buttonClass} />
                     <a href='#client-work' className={buttonClass} title='See client work'>See client work</a>
                 </div>
             </section>
 
             <section className={classNames(styles.section__style)} id='services'>
                 <h2 className={titleClass} data-aos='fade-up'>What can I build for your business?</h2>
-                <p className={classNames(textClass, 'mb-10')} data-aos='fade-up'>Websites and web apps that load fast, work well on phones, and help customers find and contact you.</p>
+                <p className={classNames(textClass, 'mb-10')} data-aos='fade-up'>{freelance.servicesIntro}</p>
                 <ul className={classNames('grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5')}>
                     {freelance.services.map((service, key) => (
                         <li key={`service-${key}`} data-aos='fade-up' data-aos-delay={`${(key % 3) * 100}`}>
@@ -222,8 +202,13 @@ const Freelance = () => {
             <section className={classNames(styles.section__style, 'flex flex-col items-center text-center')} id='contact'>
                 <h2 className={classNames('text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-5')} data-aos='fade-up'>Have a project in mind?</h2>
                 <p className={classNames('text-lg font-medium text-gray-500 dark:text-gray-400 mb-6 md:w-2/3')} data-aos='fade-up' data-aos-delay='100'>Send me a few lines about your business and what you need. I will reply to set up a short call.</p>
-                <p className={classNames(textClass, 'mb-8')} data-aos='fade-up' data-aos-delay='150'>Email: <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a></p>
-                <a href={MAILTO} className={buttonClass} data-aos='fade-up' data-aos-delay='200' title={`Email ${EMAIL}`}>Start a project</a>
+                <EnquiryButton
+                    label='Start a project'
+                    submitLabel='Send my enquiry'
+                    autoOpenHash
+                    className={classNames('relative z-10 rounded-lg bg-sky-500 px-8 py-4 text-base font-semibold text-white hover:bg-sky-600')}
+                />
+                <p className={classNames(textClass, 'mt-8')}>Prefer email? Write to <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a></p>
             </section>
 
             <div className={classNames('pb-5')}>

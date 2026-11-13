@@ -2,20 +2,40 @@
     "slug": "enquiro",
     "name": "Enquiro",
     "title": "Enquiro: enquiry management for businesses that get leads online",
-    "metaTitle": "Enquiro – Enquiry and Lead Management for Real Estate and Small Businesses",
+    "metaTitle": "Enquiro – Lead Management Software for Real Estate",
     "badge": "Product · In use by real estate firms",
     "summary": "Enquiro collects every enquiry from your website into one admin panel. Admins see and export all enquiries, allocate them to employees, and each employee works only on the enquiries allocated to them, adding comments and updating the status as the lead moves forward.",
-    "metaDescription": "Enquiro is an enquiry and lead management system: all website enquiries in one place, filters and Excel export, allocation to employees, comments and status updates. Used by real estate firms. Live demo on request.",
+    "metaDescription": "Enquiro is lead management software: every website enquiry in one place, Excel export, allocation to employees and status updates. Used by real estate firms.",
     "websiteUrl": "",
     "image": "",
     "codeNote": "The source code is private. I give a complete live demo of the admin and employee views on request.",
     "usedByIntro": "Every real estate client I have built a website for runs its enquiries on Enquiro.",
     "usedBy": [
-        { "name": "Infinity Realty", "note": "Plots near Pune", "url": "https://infinityrealtypune.com/" },
-        { "name": "LandCity Properties", "note": "Plots in Navi Mumbai", "url": "https://landcityproperties.com/" },
-        { "name": "Prime Properties JD", "note": "Plots in Navi Mumbai, Thane, Panvel and Pen", "url": "https://primepropertiesjd.com/" },
-        { "name": "Space Realtors", "note": "Residential plots", "url": "https://spacerealtors.net/" },
-        { "name": "Kshemrealty", "note": "Flats and plots", "url": "https://kshemrealty.in/" }
+        {
+            "name": "Infinity Realty",
+            "note": "Plots near Pune",
+            "url": "https://infinityrealtypune.com/"
+        },
+        {
+            "name": "LandCity Properties",
+            "note": "Plots in Navi Mumbai",
+            "url": "https://landcityproperties.com/"
+        },
+        {
+            "name": "Prime Properties JD",
+            "note": "Plots in Navi Mumbai, Thane, Panvel and Pen",
+            "url": "https://primepropertiesjd.com/"
+        },
+        {
+            "name": "Space Realtors",
+            "note": "Residential plots",
+            "url": "https://spacerealtors.net/"
+        },
+        {
+            "name": "Kshemrealty",
+            "note": "Flats and plots",
+            "url": "https://kshemrealty.in/"
+        }
     ],
     "partsIntro": "Everything a sales team needs to stop losing website enquiries, with each person seeing only what they should.",
     "parts": [
@@ -58,7 +78,13 @@
         "Teams that currently share enquiries over Excel sheets, email or WhatsApp groups"
     ],
     "techIntro": "A React admin panel on a Node.js backend with an SQL database.",
-    "techStack": ["React", "Node.js", "SQL", "Excel export", "Role-based access"],
+    "techStack": [
+        "React",
+        "Node.js",
+        "SQL",
+        "Excel export",
+        "Role-based access"
+    ],
     "demoSteps": [
         {
             "title": "Request a demo",
@@ -95,5 +121,14 @@
             "question": "Can I see the source code?",
             "answer": "The source code is private, so it is not published. During the demo I can walk you through how it is built and answer technical questions."
         }
+    ],
+    "keywords": [
+        "Lead management software",
+        "Enquiry management system",
+        "Real estate CRM",
+        "Real estate lead management",
+        "Sales lead tracking",
+        "Export leads to Excel",
+        "Enquiro"
     ]
 }

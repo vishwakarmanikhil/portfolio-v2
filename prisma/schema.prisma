@@ -1,0 +1,40 @@
+// Enquiries submitted through the website's enquiry form.
+// Connection URLs live in prisma.config.mjs (CLI) and lib/prisma.js (app).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum EnquiryStatus {
+  NEW
+  CONTACTED
+  IN_DISCUSSION
+  WON
+  LOST
+  SPAM
+}
+
+model Enquiry {
+  id         String        @id @default(cuid())
+  name       String
+  phone      String
+  email      String?
+  message    String?
+  /// Set automatically from where the form was opened, e.g. "Enquiro demo".
+  topic      String?
+  sourcePage String?
+  status     EnquiryStatus @default(NEW)
+  notes      String?
+  ipHash     String?
+  userAgent  String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
+
+  @@index([createdAt])
+  @@index([status])
+  @@index([ipHash, createdAt])
+}

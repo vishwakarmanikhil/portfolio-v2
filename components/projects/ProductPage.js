@@ -6,72 +6,57 @@ import archiveStyles from '@/app/archive/style.module.css';
 import FaqAccordion from '@/components/FaqAccordion';
 import ServiceIcon from '@/components/freelance/ServiceIcon';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
+import EnquiryButton from '@/components/EnquiryForm';
+import { pageMetadata, faqPage, breadcrumbs, jsonLd, absoluteUrl, PERSON_ID, BUSINESS_ID, WEBSITE_ID } from '@/lib/seo';
 
 // Shared layout for product showcase pages (/projects/<slug>).
 // All text comes from components/projects/<slug>.json; the page passes in a
 // `preview` (screenshot or illustration) to show under the hero.
 
-export const SITE_URL = 'https://www.nikhilvishwakarma.com';
 const EMAIL = 'vnikhil3101@gmail.com';
 
-const pageUrl = project => `${SITE_URL}/projects/${project.slug}`;
+const pagePath = project => `/projects/${project.slug}`;
 const mailto = project => `mailto:${EMAIL}?subject=${encodeURIComponent(`${project.name} demo request`)}`;
 
-export function productMetadata(project) {
-    const image = project.image ? `${SITE_URL}${project.image}` : 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/og.png';
-    return {
-        title: `${project.metaTitle} | Nikhil Vishwakarma`,
+/** Page metadata from the product's JSON. Products with an opengraph-image file pass `image: null`. */
+export function productMetadata(project, { image } = {}) {
+    return pageMetadata({
+        title: project.metaTitle,
         description: project.metaDescription,
-        alternates: { canonical: `/projects/${project.slug}` },
-        openGraph: {
-            title: project.title,
-            description: project.metaDescription,
-            url: pageUrl(project),
-            siteName: 'Nikhil Vishwakarma',
-            images: [image],
-            locale: 'en_US',
-            type: 'website',
-        },
-    };
+        path: pagePath(project),
+        keywords: project.keywords ?? [],
+        image: image === undefined ? (project.image ? absoluteUrl(project.image) : undefined) : image,
+    });
 }
 
 function structuredData(project) {
-    const url = pageUrl(project);
-    return {
-        '@context': 'https://schema.org',
-        '@graph': [
-            {
-                '@type': 'SoftwareApplication',
-                '@id': `${url}#app`,
-                name: project.name,
-                url,
-                description: project.summary,
-                applicationCategory: 'BusinessApplication',
-                operatingSystem: 'Web',
-                ...(project.image && { image: `${SITE_URL}${project.image}` }),
-                author: { '@id': `${SITE_URL}/#person` },
-                featureList: project.parts.flatMap(part => part.features),
-            },
-            {
-                '@type': 'FAQPage',
-                '@id': `${url}#faq`,
-                url,
-                mainEntity: project.faq.map(item => ({
-                    '@type': 'Question',
-                    name: item.question,
-                    acceptedAnswer: { '@type': 'Answer', text: item.answer },
-                })),
-            },
-            {
-                '@type': 'BreadcrumbList',
-                itemListElement: [
-                    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-                    { '@type': 'ListItem', position: 2, name: 'Freelance', item: `${SITE_URL}/freelance` },
-                    { '@type': 'ListItem', position: 3, name: project.name, item: url },
-                ],
-            },
-        ],
-    };
+    const url = absoluteUrl(pagePath(project));
+    return jsonLd([
+        {
+            '@type': 'SoftwareApplication',
+            '@id': `${url}#app`,
+            name: project.name,
+            url,
+            description: project.summary,
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web',
+            ...(project.image && { image: absoluteUrl(project.image), screenshot: absoluteUrl(project.image) }),
+            author: { '@id': PERSON_ID },
+            provider: { '@id': BUSINESS_ID },
+            featureList: project.parts.flatMap(part => part.features),
+            keywords: (project.keywords ?? []).join(', '),
+        },
+        {
+            '@type': 'WebPage',
+            '@id': `${url}#webpage`,
+            url,
+            name: project.metaTitle,
+            isPartOf: { '@id': WEBSITE_ID },
+            about: { '@id': `${url}#app` },
+        },
+        faqPage(pagePath(project), project.faq),
+        breadcrumbs(['Freelance', '/freelance'], [project.name, pagePath(project)]),
+    ]);
 }
 
 const buttonClass = 'inline-block px-6 py-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900';
@@ -96,7 +81,7 @@ const ProductPage = ({ project, preview }) => {
         <div className={classNames('mx-auto')} style={{ maxWidth: 1000 }}>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData(project)) }}
+                dangerouslySetInnerHTML={{ __html: structuredData(project) }}
             />
 
             <section className={classNames(archiveStyles.archive__banner_wrap)}>
@@ -111,7 +96,14 @@ const ProductPage = ({ project, preview }) => {
                 <h1 className={classNames(archiveStyles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-6')} data-aos='fade-up' data-aos-delay='150'>{project.title}.</h1>
                 <p className={classNames(textClass, 'md:w-3/4 mb-8')} data-aos='fade-up' data-aos-delay='200'>{project.summary}</p>
                 <div data-aos='fade-up' data-aos-delay='250'>
-                    <a href={MAILTO} className={solidButtonClass} title={`Email ${EMAIL} to request a demo`}>Request a live demo</a>
+                    <EnquiryButton
+                        label='Request a live demo'
+                        topic={`${project.name} demo`}
+                        title={`Request a live demo of ${project.name}`}
+                        description='Leave your name and mobile number and I’ll set up a live demo for you.'
+                        submitLabel='Request demo'
+                        className={solidButtonClass}
+                    />
                     {project.websiteUrl &&
                         <a href={project.websiteUrl} target='_blank' rel='noopener' className={buttonClass} title={`Open the ${project.name} public website`}>View the public website</a>}
                 </div>
@@ -217,11 +209,16 @@ const ProductPage = ({ project, preview }) => {
             <section className={classNames(styles.section__style, 'flex flex-col items-center text-center')} id='contact'>
                 <h2 className={classNames('text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-5')} data-aos='fade-up'>Want to see it running?</h2>
                 <p className={classNames('text-lg font-medium text-gray-500 dark:text-gray-400 mb-6 md:w-2/3')} data-aos='fade-up' data-aos-delay='100'>{project.demoCta}</p>
-                <p className={classNames(textClass, 'mb-8')} data-aos='fade-up' data-aos-delay='150'>Email: <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a></p>
-                <div data-aos='fade-up' data-aos-delay='200'>
-                    <a href={MAILTO} className={solidButtonClass} title={`Email ${EMAIL} to request a demo`}>Request a live demo</a>
-                    <Link href='/freelance' className={buttonClass}>See my other freelance work</Link>
-                </div>
+                <EnquiryButton
+                    label='Request a live demo'
+                    topic={`${project.name} demo`}
+                    title={`Request a live demo of ${project.name}`}
+                    description='Leave your name and mobile number and I’ll set up a live demo for you.'
+                    submitLabel='Request demo'
+                    autoOpenHash
+                    className={classNames('relative z-10 rounded-lg bg-sky-500 px-8 py-4 text-base font-semibold text-white hover:bg-sky-600')}
+                />
+                <p className={classNames(textClass, 'mt-8')}>Prefer email? Write to <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a> · <Link href='/freelance' className='text-sky-500 hover:underline'>See my other freelance work</Link></p>
             </section>
 
             <div className={classNames('pb-5')}>
