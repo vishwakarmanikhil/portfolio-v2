@@ -68,4 +68,4 @@ Be careful if:
 - **Have your content ready** before development starts.
 - **Make decisions quickly.** Waiting time stretches every project.
 
-If you'd like a clear, written quote for your website, web app, mobile app or SaaS idea, [tell me about your project](/freelance#contact). I'll ask the right questions first.
+If you'd like a clear, written quote for your website, web app, mobile app or SaaS idea, [tell me about your project](/freelance#enquire). I'll ask the right questions first.

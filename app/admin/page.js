@@ -2,7 +2,7 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import { getPrisma } from '@/lib/prisma';
 import { requireAdmin } from '@/lib/adminAuth';
-import { buildEnquiryWhere, formatDateTime, PROJECT_TYPES, STATUSES, statusLabel } from '@/lib/enquiries';
+import { buildEnquiryWhere, formatDateTime, STATUSES, statusLabel } from '@/lib/enquiries';
 import { logout } from './actions';
 
 const PAGE_SIZE = 50;
@@ -23,7 +23,6 @@ export default async function AdminEnquiries({ searchParams }) {
     const params = await searchParams;
     const filters = {
         status: params.status ?? '',
-        projectType: params.projectType ?? '',
         q: (params.q ?? '').trim(),
         from: params.from ?? '',
         to: params.to ?? '',
@@ -70,18 +69,12 @@ export default async function AdminEnquiries({ searchParams }) {
 
             <form method='get' className='mb-6 flex flex-wrap items-end gap-3 rounded-xl border border-gray-200 dark:border-gray-700 p-4'>
                 <label className='flex flex-col gap-1 text-xs font-semibold text-gray-500'>Search
-                    <input name='q' defaultValue={filters.q} placeholder='Name, email, phone, message' className={classNames(inputClass, 'w-64')} />
+                    <input name='q' defaultValue={filters.q} placeholder='Name, mobile, email, message' className={classNames(inputClass, 'w-64')} />
                 </label>
                 <label className='flex flex-col gap-1 text-xs font-semibold text-gray-500'>Status
                     <select name='status' defaultValue={filters.status} className={inputClass}>
                         <option value=''>All except spam</option>
                         {STATUSES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
-                    </select>
-                </label>
-                <label className='flex flex-col gap-1 text-xs font-semibold text-gray-500'>Looking for
-                    <select name='projectType' defaultValue={filters.projectType} className={inputClass}>
-                        <option value=''>All</option>
-                        {PROJECT_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
                     </select>
                 </label>
                 <label className='flex flex-col gap-1 text-xs font-semibold text-gray-500'>From
@@ -107,8 +100,8 @@ export default async function AdminEnquiries({ searchParams }) {
                             <tr>
                                 <th className='px-4 py-3'>Received</th>
                                 <th className='px-4 py-3'>Name</th>
-                                <th className='px-4 py-3'>Looking for</th>
-                                <th className='px-4 py-3'>Budget</th>
+                                <th className='px-4 py-3'>Mobile</th>
+                                <th className='px-4 py-3'>About</th>
                                 <th className='px-4 py-3'>Status</th>
                                 <th className='px-4 py-3'>Message</th>
                             </tr>
@@ -119,12 +112,12 @@ export default async function AdminEnquiries({ searchParams }) {
                                     <td className='whitespace-nowrap px-4 py-3 text-gray-500'>{formatDateTime(e.createdAt)}</td>
                                     <td className='px-4 py-3'>
                                         <Link href={`/admin/enquiries/${e.id}`} className='font-semibold text-gray-800 dark:text-gray-200 hover:text-sky-500'>{e.name}</Link>
-                                        <span className='block text-xs text-gray-500'>{e.email}</span>
+                                        {e.email && <span className='block text-xs text-gray-500'>{e.email}</span>}
                                     </td>
-                                    <td className='px-4 py-3'>{e.projectType}</td>
-                                    <td className='px-4 py-3 text-gray-500'>{e.budget ?? '—'}</td>
+                                    <td className='whitespace-nowrap px-4 py-3'><a href={`tel:${e.phone}`} className='hover:text-sky-500'>{e.phone}</a></td>
+                                    <td className='px-4 py-3 text-gray-500'>{e.topic ?? '—'}</td>
                                     <td className='px-4 py-3'><span className={classNames('whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-semibold', statusBadge[e.status])}>{statusLabel(e.status)}</span></td>
-                                    <td className='max-w-xs truncate px-4 py-3 text-gray-500'>{e.message}</td>
+                                    <td className='max-w-xs truncate px-4 py-3 text-gray-500'>{e.message ?? '—'}</td>
                                 </tr>
                             ))}
                         </tbody>

@@ -11,7 +11,7 @@ import IconAssests from '@/components/svgAssests/IconAssests';
 import Color from '@/constants/color';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
 import FaqAccordion from '@/components/FaqAccordion';
-import EnquiryForm from '@/components/EnquiryForm';
+import EnquiryButton from '@/components/EnquiryForm';
 import ServiceIcon from '@/components/freelance/ServiceIcon';
 
 const SITE_URL = 'https://www.nikhilvishwakarma.com';
@@ -117,7 +117,7 @@ const Freelance = () => {
                     I turn business problems into working products: websites, web apps, mobile apps and SaaS, for any industry. I have 5+ years of experience building products end to end as a full-stack developer, and I have delivered projects for {clientProjects.length} clients since 2021.
                 </p>
                 <div data-aos='fade-up' data-aos-delay='250'>
-                    <a href='#contact' className={buttonClass} title='Go to the enquiry form'>Tell me about your project</a>
+                    <EnquiryButton label='Tell me about your project' className={buttonClass} />
                     <a href='#client-work' className={buttonClass} title='See client work'>See client work</a>
                 </div>
             </section>
@@ -223,9 +223,12 @@ const Freelance = () => {
             <section className={classNames(styles.section__style, 'flex flex-col items-center text-center')} id='contact'>
                 <h2 className={classNames('text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-5')} data-aos='fade-up'>Have a project in mind?</h2>
                 <p className={classNames('text-lg font-medium text-gray-500 dark:text-gray-400 mb-6 md:w-2/3')} data-aos='fade-up' data-aos-delay='100'>Send me a few lines about your business and what you need. I will reply to set up a short call.</p>
-                <div className={classNames('w-full max-w-3xl rounded-2xl border border-gray-200 dark:border-gray-700/80 bg-white/70 dark:bg-gray-800/40 p-6 md:p-10')}>
-                    <EnquiryForm submitLabel='Send my enquiry' />
-                </div>
+                <EnquiryButton
+                    label='Start a project'
+                    submitLabel='Send my enquiry'
+                    autoOpenHash
+                    className={classNames('relative z-10 rounded-lg bg-sky-500 px-8 py-4 text-base font-semibold text-white hover:bg-sky-600')}
+                />
                 <p className={classNames(textClass, 'mt-8')}>Prefer email? Write to <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a></p>
             </section>
 

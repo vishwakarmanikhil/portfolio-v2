@@ -20,7 +20,7 @@ function hashIp(ip) {
  */
 export async function submitEnquiry(_previousState, formData) {
     const values = Object.fromEntries(
-        ['name', 'email', 'phone', 'company', 'projectType', 'budget', 'message', 'sourcePage']
+        ['name', 'phone', 'email', 'message', 'topic', 'sourcePage']
             .map(key => [key, String(formData.get(key) ?? '')]),
     );
 

@@ -19,21 +19,20 @@ enum EnquiryStatus {
 }
 
 model Enquiry {
-  id          String        @id @default(cuid())
-  name        String
-  email       String
-  phone       String?
-  company     String?
-  projectType String
-  budget      String?
-  message     String
-  sourcePage  String?
-  status      EnquiryStatus @default(NEW)
-  notes       String?
-  ipHash      String?
-  userAgent   String?
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
+  id         String        @id @default(cuid())
+  name       String
+  phone      String
+  email      String?
+  message    String?
+  /// Set automatically from where the form was opened, e.g. "Enquiro demo".
+  topic      String?
+  sourcePage String?
+  status     EnquiryStatus @default(NEW)
+  notes      String?
+  ipHash     String?
+  userAgent  String?
+  createdAt  DateTime      @default(now())
+  updatedAt  DateTime      @updatedAt
 
   @@index([createdAt])
   @@index([status])

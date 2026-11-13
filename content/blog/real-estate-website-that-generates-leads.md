@@ -76,4 +76,4 @@ I wrote about the technical side in [why ChatGPT couldn't read my portfolio](/bl
 - [ ] Fast on mobile
 - [ ] One system where every enquiry is tracked until it is closed
 
-If you run a real estate business and want a website that brings in enquiries, and a system to follow them up, [tell me about your project](/freelance#contact).
+If you run a real estate business and want a website that brings in enquiries, and a system to follow them up, [tell me about your project](/freelance#enquire).

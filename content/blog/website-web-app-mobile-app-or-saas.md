@@ -84,4 +84,4 @@ Ask yourself:
 
 You can also start small and grow: a website first, a web app when the process outgrows spreadsheets, and a mobile app or SaaS when the demand is proven.
 
-If you're not sure which one fits your business, [tell me what you're trying to solve](/freelance#contact). I'll tell you honestly what I'd build, and what I wouldn't.
+If you're not sure which one fits your business, [tell me what you're trying to solve](/freelance#enquire). I'll tell you honestly what I'd build, and what I wouldn't.

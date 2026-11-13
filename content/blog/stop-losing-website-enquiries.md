@@ -67,4 +67,4 @@ Either way, choose something your team will actually use every day. A simple sys
 - [ ] You can filter and export enquiries any time
 - [ ] New enquiries trigger an instant alert
 
-If you'd like to see how this works in practice, [request a demo of Enquiro](/projects/enquiro#contact), or [tell me about your project](/freelance#contact) if you need something built for your own process.
+If you'd like to see how this works in practice, [request a demo of Enquiro](/projects/enquiro#enquire), or [tell me about your project](/freelance#enquire) if you need something built for your own process.

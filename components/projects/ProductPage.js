@@ -6,7 +6,7 @@ import archiveStyles from '@/app/archive/style.module.css';
 import FaqAccordion from '@/components/FaqAccordion';
 import ServiceIcon from '@/components/freelance/ServiceIcon';
 import DeveloperCredit from '@/components/homePageSections/DeveloperCredit';
-import EnquiryForm from '@/components/EnquiryForm';
+import EnquiryButton from '@/components/EnquiryForm';
 
 // Shared layout for product showcase pages (/projects/<slug>).
 // All text comes from components/projects/<slug>.json; the page passes in a
@@ -112,7 +112,14 @@ const ProductPage = ({ project, preview }) => {
                 <h1 className={classNames(archiveStyles.main_heading__txt, 'text-gray-800 dark:text-gray-200 font-bold mb-6')} data-aos='fade-up' data-aos-delay='150'>{project.title}.</h1>
                 <p className={classNames(textClass, 'md:w-3/4 mb-8')} data-aos='fade-up' data-aos-delay='200'>{project.summary}</p>
                 <div data-aos='fade-up' data-aos-delay='250'>
-                    <a href='#contact' className={solidButtonClass} title='Go to the demo request form'>Request a live demo</a>
+                    <EnquiryButton
+                        label='Request a live demo'
+                        topic={`${project.name} demo`}
+                        title={`Request a live demo of ${project.name}`}
+                        description='Leave your name and mobile number and I’ll set up a live demo for you.'
+                        submitLabel='Request demo'
+                        className={solidButtonClass}
+                    />
                     {project.websiteUrl &&
                         <a href={project.websiteUrl} target='_blank' rel='noopener' className={buttonClass} title={`Open the ${project.name} public website`}>View the public website</a>}
                 </div>
@@ -218,9 +225,15 @@ const ProductPage = ({ project, preview }) => {
             <section className={classNames(styles.section__style, 'flex flex-col items-center text-center')} id='contact'>
                 <h2 className={classNames('text-3xl md:text-5xl font-bold text-gray-800 dark:text-gray-200 mb-5')} data-aos='fade-up'>Want to see it running?</h2>
                 <p className={classNames('text-lg font-medium text-gray-500 dark:text-gray-400 mb-6 md:w-2/3')} data-aos='fade-up' data-aos-delay='100'>{project.demoCta}</p>
-                <div className={classNames('w-full max-w-3xl rounded-2xl border border-gray-200 dark:border-gray-700/80 bg-white/70 dark:bg-gray-800/40 p-6 md:p-10')}>
-                    <EnquiryForm defaultProjectType={`${project.name} demo`} submitLabel='Request a live demo' />
-                </div>
+                <EnquiryButton
+                    label='Request a live demo'
+                    topic={`${project.name} demo`}
+                    title={`Request a live demo of ${project.name}`}
+                    description='Leave your name and mobile number and I’ll set up a live demo for you.'
+                    submitLabel='Request demo'
+                    autoOpenHash
+                    className={classNames('relative z-10 rounded-lg bg-sky-500 px-8 py-4 text-base font-semibold text-white hover:bg-sky-600')}
+                />
                 <p className={classNames(textClass, 'mt-8')}>Prefer email? Write to <a href={MAILTO} className='text-sky-500 hover:text-sky-600 hover:underline'>{EMAIL}</a> · <Link href='/freelance' className='text-sky-500 hover:underline'>See my other freelance work</Link></p>
             </section>
 

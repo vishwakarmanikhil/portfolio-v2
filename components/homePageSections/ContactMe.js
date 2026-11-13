@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import Link from 'next/link';
+import EnquiryButton from '../EnquiryForm';
 import styles from './style.module.css';
 
 const ContactMe = () => {
@@ -10,7 +11,10 @@ const ContactMe = () => {
             <p className={classNames('text-lg font-medium text-gray-500 dark:text-gray-400 mb-6')} data-aos='fade-up' data-aos-delay='200'>Whether you have a question or just want to say hi, feel free to reach out. I&apos;ll do my best to respond promptly!</p>
             <p className={classNames('text-base font-medium text-gray-500 dark:text-gray-400 mb-8')} data-aos='fade-up' data-aos-delay='300'>Email: <a href='mailto:vnikhil3101@gmail.com' className='text-sky-500 hover:text-sky-600 hover:underline'>vnikhil3101@gmail.com</a> · LinkedIn: <a href='https://www.linkedin.com/in/vishwakarmanikhil/' target='_blank' rel='noopener' className='text-sky-500 hover:text-sky-600 hover:underline'>linkedin.com/in/vishwakarmanikhil</a></p>
             <p className={classNames('text-sm font-medium text-gray-500 dark:text-gray-400 mb-8')} data-aos='fade-up' data-aos-delay='400'>Need a website for your business? See my <Link href='/freelance' className='text-sky-500 hover:text-sky-600 hover:underline'>freelance web development services</Link>.</p>
-            <a href='mailto:vnikhil3101@gmail.com' title='mail to vnikhil3101@gmail.com' className="inline-block p-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900 min-w-36" data-aos='fade-up' data-aos-delay='500'>Say Hello</a>
+            <div className='flex flex-wrap justify-center gap-2' data-aos='fade-up' data-aos-delay='500'>
+                <EnquiryButton label='Send an enquiry' title='Get in touch' className="inline-block p-4 mb-2 text-sm font-medium text-white bg-sky-500 rounded-lg border border-sky-500 hover:bg-sky-600 min-w-36" />
+                <a href='mailto:vnikhil3101@gmail.com' title='mail to vnikhil3101@gmail.com' className="inline-block p-4 me-2 mb-2 text-sm font-medium text-sky-500 focus:outline-none bg-white rounded-lg border border-sky-500 hover:bg-gray-100 hover:text-sky-600 hover:border-sky-600 focus:z-10 focus:ring-4 focus:ring-transparent dark:bg-transparent hover:dark:bg-sky-900 min-w-36">Say Hello</a>
+            </div>
         </div>
     );
 };

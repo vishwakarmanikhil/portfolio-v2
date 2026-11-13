@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import classNames from 'classnames';
 import { getPrisma } from '@/lib/prisma';
 import { requireAdmin } from '@/lib/adminAuth';
-import { formatDateTime, STATUSES } from '@/lib/enquiries';
+import { formatDateTime, STATUSES, whatsappNumber } from '@/lib/enquiries';
 import { updateEnquiry, deleteEnquiry } from '../../actions';
 
 const inputClass = 'w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 px-3 py-2 text-sm text-gray-800 dark:text-gray-200 focus:border-sky-500 focus:outline-none';
@@ -16,11 +16,9 @@ export default async function AdminEnquiry({ params, searchParams }) {
     if (!enquiry) notFound();
 
     const details = [
-        ['Email', <a key='email' href={`mailto:${enquiry.email}`} className='text-sky-500 hover:underline'>{enquiry.email}</a>],
-        ['Phone', enquiry.phone && <span key='phone'>{enquiry.phone} · <a href={`tel:${enquiry.phone}`} className='text-sky-500 hover:underline'>Call</a> · <a href={`https://wa.me/${enquiry.phone.replace(/\D/g, '')}`} target='_blank' rel='noopener' className='text-sky-500 hover:underline'>WhatsApp</a></span>],
-        ['Company', enquiry.company],
-        ['Looking for', enquiry.projectType],
-        ['Budget', enquiry.budget],
+        ['Mobile', <span key='phone'>{enquiry.phone} · <a href={`tel:${enquiry.phone}`} className='text-sky-500 hover:underline'>Call</a> · <a href={`https://wa.me/${whatsappNumber(enquiry.phone)}`} target='_blank' rel='noopener' className='text-sky-500 hover:underline'>WhatsApp</a></span>],
+        ['Email', enquiry.email && <a key='email' href={`mailto:${enquiry.email}`} className='text-sky-500 hover:underline'>{enquiry.email}</a>],
+        ['About', enquiry.topic],
         ['Sent from page', enquiry.sourcePage],
         ['Received', formatDateTime(enquiry.createdAt)],
         ['Last updated', formatDateTime(enquiry.updatedAt)],
@@ -30,7 +28,7 @@ export default async function AdminEnquiry({ params, searchParams }) {
         <div>
             <Link href='/admin' className='text-sm text-sky-500 hover:underline'>← All enquiries</Link>
             <h1 className='mt-4 mb-1 text-3xl font-bold text-gray-800 dark:text-gray-200'>{enquiry.name}</h1>
-            <p className='mb-8 text-sm text-gray-500 dark:text-gray-400'>{enquiry.projectType}{enquiry.company ? ` · ${enquiry.company}` : ''}</p>
+            <p className='mb-8 text-sm text-gray-500 dark:text-gray-400'>{enquiry.phone}{enquiry.topic ? ` · ${enquiry.topic}` : ''}</p>
 
             {saved && <p className='mb-6 rounded-lg bg-emerald-500/10 px-4 py-3 text-sm text-emerald-600'>Saved.</p>}
 
@@ -38,7 +36,7 @@ export default async function AdminEnquiry({ params, searchParams }) {
                 <div className='space-y-6'>
                     <section className='rounded-xl border border-gray-200 dark:border-gray-700 p-6'>
                         <h2 className='mb-3 text-xs font-semibold uppercase tracking-widest text-gray-500'>Message</h2>
-                        <p className='whitespace-pre-wrap text-gray-700 dark:text-gray-300'>{enquiry.message}</p>
+                        <p className='whitespace-pre-wrap text-gray-700 dark:text-gray-300'>{enquiry.message || <span className='text-gray-400'>No message was added.</span>}</p>
                     </section>
                     <section className='rounded-xl border border-gray-200 dark:border-gray-700 p-6'>
                         <h2 className='mb-3 text-xs font-semibold uppercase tracking-widest text-gray-500'>Details</h2>
