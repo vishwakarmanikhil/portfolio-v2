@@ -7,8 +7,8 @@
     "summary": "Coworkspace is a ready-to-use platform for coworking businesses. It combines a public website that brings in enquiries, a client portal where members log in and book meeting rooms, and an admin panel where the team manages clients and sends invoices by email.",
     "metaDescription": "Coworkspace is software for coworking businesses: a public website, a client portal for meeting-room booking, and an admin panel for clients and invoices.",
     "websiteUrl": "https://coworkspace.nikhilvishwakarma.com/",
-    "image": "/projects/coworkspace/website-home.png",
-    "imageAlt": "Coworkspace public website homepage with the headline 'Co-working spaces built for focus and collaboration'",
+    "image": "/projects/coworkspace/website-home-v2.png",
+    "imageAlt": "Coworkspace public website homepage: a photo of people working at desks in a coworking space, with the headline 'Co-working spaces built for focus and collaboration'",
     "codeNote": "The source code is private. I give a complete live demo of the website, client portal and admin panel on request.",
     "parts": [
         {
