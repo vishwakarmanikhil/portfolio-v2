@@ -15,12 +15,12 @@ import { pageMetadata, faqPage, jsonLd, SITE_URL, WEBSITE_ID, PERSON_ID } from '
 
 export const metadata = {
   ...pageMetadata({
-    title: 'Nikhil Vishwakarma – Senior Software Developer, Mumbai',
-    description: 'Senior Software Developer in Mumbai who builds web apps, mobile apps and SaaS end to end with React, Next.js, React Native, Node.js and AWS. Open to any domain.',
+    title: 'Nikhil Vishwakarma – Software Developer, Mumbai',
+    description: 'Software Developer in Mumbai who builds web apps, mobile apps and SaaS end to end with React, Next.js, React Native, Node.js and AWS. Open to any domain.',
     path: '/',
     type: 'profile',
     keywords: [
-      'Nikhil Vishwakarma', 'Senior Software Developer', 'Full Stack Developer Mumbai', 'React developer',
+      'Nikhil Vishwakarma', 'Software Developer', 'Full Stack Developer Mumbai', 'React developer',
       'Next.js developer', 'Node.js developer', 'React Native developer', 'SaaS developer', 'Product engineer',
       'Hire software developer Mumbai',
     ],
@@ -33,7 +33,7 @@ const homeStructuredData = jsonLd([
     '@type': 'ProfilePage',
     '@id': `${SITE_URL}/#profilepage`,
     url: SITE_URL,
-    name: 'Nikhil Vishwakarma – Senior Software Developer, Mumbai',
+    name: 'Nikhil Vishwakarma – Software Developer, Mumbai',
     isPartOf: { '@id': WEBSITE_ID },
     mainEntity: { '@id': PERSON_ID },
   },

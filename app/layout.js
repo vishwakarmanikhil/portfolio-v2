@@ -17,14 +17,14 @@ export const viewport = {
   themeColor: '#111827',
 }
 
-const DESCRIPTION = 'Senior Software Developer in Mumbai who builds web apps, mobile apps and SaaS end to end with React, Next.js, React Native, Node.js and AWS.';
+const DESCRIPTION = 'Software Developer in Mumbai who builds web apps, mobile apps and SaaS end to end with React, Next.js, React Native, Node.js and AWS.';
 
 // Site-wide defaults. Every page overrides title, description, canonical and
 // social tags through pageMetadata() in lib/seo.js.
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Nikhil Vishwakarma – Senior Software Developer, Mumbai',
+    default: 'Nikhil Vishwakarma – Software Developer, Mumbai',
     template: '%s | Nikhil Vishwakarma',
   },
   description: DESCRIPTION,
@@ -33,7 +33,7 @@ export const metadata = {
   creator: 'Nikhil Vishwakarma',
   publisher: 'Nikhil Vishwakarma',
   category: 'technology',
-  keywords: ['Nikhil Vishwakarma', 'Senior Software Developer', 'Full Stack Developer', 'Mumbai'],
+  keywords: ['Nikhil Vishwakarma', 'Software Developer', 'Full Stack Developer', 'Mumbai'],
   formatDetection: { telephone: false, email: false, address: false },
   robots: {
     index: true,
@@ -90,7 +90,7 @@ const person = {
   name: 'Nikhil Vishwakarma',
   url: SITE_URL,
   image: 'https://ik.imagekit.io/vishwakarmanikhil/portfolio-v2/person.png',
-  jobTitle: 'Senior Software Developer',
+  jobTitle: 'Software Developer',
   description: DESCRIPTION,
   email: 'mailto:vnikhil3101@gmail.com',
   address: {
@@ -122,7 +122,7 @@ const person = {
   knowsAbout: allSkills,
   hasOccupation: {
     '@type': 'Occupation',
-    name: 'Senior Software Developer',
+    name: 'Software Developer',
     skills: allSkills.join(', '),
   },
 };
