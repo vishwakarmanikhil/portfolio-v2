@@ -1,6 +1,6 @@
 import { getPrisma } from '@/lib/prisma';
-import { isAdmin } from '@/lib/adminAuth';
 import { buildEnquiryWhere, statusLabel } from '@/lib/enquiries';
+import { readAdminFilters } from '@/lib/adminApi';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,12 +23,16 @@ function cell(value) {
     return `"${text.replace(/"/g, '""')}"`;
 }
 
-export async function GET(request) {
-    if (!(await isAdmin())) return new Response('Not authorised', { status: 401 });
+/**
+ * POST /admin/api/export
+ * Body: the same filters as /admin/api/enquiries. Returns every matching enquiry as CSV (opens in Excel).
+ */
+export async function POST(request) {
+    const { filters, error } = await readAdminFilters(request);
+    if (error) return error;
 
-    const params = Object.fromEntries(new URL(request.url).searchParams);
     const enquiries = await getPrisma().enquiry.findMany({
-        where: buildEnquiryWhere(params),
+        where: buildEnquiryWhere(filters),
         orderBy: { createdAt: 'desc' },
     });
 
@@ -38,12 +42,12 @@ export async function GET(request) {
     ];
     // UTF-8 BOM so Excel shows ₹ and other characters correctly.
     const csv = `﻿${lines.join('\r\n')}`;
-    const date = new Date().toISOString().slice(0, 10);
+    const range = filters.from || filters.to ? `${filters.from || 'start'}-to-${filters.to || 'today'}` : 'all-time';
 
     return new Response(csv, {
         headers: {
             'Content-Type': 'text/csv; charset=utf-8',
-            'Content-Disposition': `attachment; filename="enquiries-${date}.csv"`,
+            'Content-Disposition': `attachment; filename="enquiries-${range}.csv"`,
             'Cache-Control': 'no-store',
         },
     });
