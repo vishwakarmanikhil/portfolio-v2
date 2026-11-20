@@ -50,7 +50,8 @@
 
 @media only screen and (max-width: 767.5px) {
     .ap__row {
-        grid-template-columns: 50px 1fr 70px;
+        /* Title column can shrink; the link icons take only the width they need. */
+        grid-template-columns: 50px minmax(0, 1fr) auto;
         gap: 10px;
         padding: 15px 10px !important;
     }
